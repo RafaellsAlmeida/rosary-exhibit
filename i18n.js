@@ -559,8 +559,8 @@
     "Guided Rosary (Portuguese)": "Rosário guiado (português)",
     "Frei Gilson / Som do Monte — official channel (daily Santo Rosário)":
       "Frei Gilson / Som do Monte — canal oficial (Santo Rosário diário)",
-    "Instituto Hesed — official channel (Santo Rosário da madrugada; Padre Paulo Ricardo)":
-      "Instituto Hesed — canal oficial (Santo Rosário da madrugada; Padre Paulo Ricardo)",
+    "Padre Paulo Ricardo — guided Rosary (full mysteries on YouTube)":
+      "Padre Paulo Ricardo — Rosário guiado (mistérios completos no YouTube)",
     "Directory on Popular Piety and the Liturgy": "Diretório sobre a piedade popular e a liturgia",
     "Compendium of the Catechism of the Catholic Church": "Compêndio do Catecismo da Igreja Católica",
     "Sanctuary of Fatima": "Santuário de Fátima",

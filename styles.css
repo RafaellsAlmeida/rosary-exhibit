@@ -44,6 +44,14 @@ body.home-page {
   padding-bottom: var(--pull-rosary-height);
 }
 
+body.home-page.no-pull-rosary {
+  padding-bottom: 0;
+}
+
+body.no-pull-rosary .pull-rosary[hidden] {
+  display: none;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -2924,6 +2932,10 @@ p {
     min-height: 0;
   }
 
+  body.home-page.no-pull-rosary .rosary-rail {
+    inset: 82px 0 30px;
+  }
+
   .rosary-string {
     width: min(700px, 128vw);
     height: min(660px, 72dvh);
@@ -3006,6 +3018,10 @@ p {
     width: 100%;
     max-height: calc(42vh - 12px);
     background: transparent;
+  }
+
+  body.home-page.no-pull-rosary .bead-panel {
+    bottom: 12px;
   }
 
   .home-page .bead-panel::before {
@@ -3113,6 +3129,10 @@ p {
 
   .home-immersive-hero {
     padding-bottom: calc(60px + var(--pull-rosary-height));
+  }
+
+  body.home-page.no-pull-rosary .home-immersive-hero {
+    padding-bottom: 60px;
   }
 
   .immersive-hero h1 {

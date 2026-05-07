@@ -1050,9 +1050,8 @@ const sourceGroups = [
         url: "https://www.youtube.com/c/FreiGilsonSomdoMonteOFICIAL",
       },
       {
-        title:
-          "Instituto Hesed — official channel (Santo Rosário da madrugada; Padre Paulo Ricardo)",
-        url: "https://www.youtube.com/@institutohesed",
+        title: "Padre Paulo Ricardo — guided Rosary (full mysteries on YouTube)",
+        url: "https://www.youtube.com/watch?v=HVS7vafu8fw",
       },
     ],
   },
