@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An immersive long-scroll variation of the Rosary exhibition, moving slowly bead by bead through prayer and mystery."
+    />
+    <title>Immersive Rosary Path</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+    <script defer src="./immersive.js"></script>
+  </head>
+  <body class="immersive-page">
+    <a class="skip-link" href="#immersive-path">Skip to content</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="./index.html#top">The Rosary</a>
+      <div class="nav-links">
+        <a href="./index.html#rosary-scroll">Compact Rosary</a>
+        <a href="#immersive-path">Immersive Path</a>
+        <a href="./index.html#mysteries">Mysteries</a>
+        <a href="./index.html#how-to-pray">How to Pray</a>
+        <a href="./history.html">History</a>
+        <a href="./saints.html">Saints</a>
+        <a href="./index.html#sources">Sources</a>
+      </div>
+    </nav>
+
+    <header class="immersive-hero">
+      <div>
+        <p class="eyebrow">Variation two</p>
+        <h1>Walk the Rosary slowly.</h1>
+        <p>
+          A larger, slower version where every bead becomes its own room. The
+          rosary stays behind the content while the scroll carries you through
+          each prayer, decade, and witness.
+        </p>
+      </div>
+      <a class="button button-primary" href="#immersive-path">Begin at the Cross</a>
+    </header>
+
+    <main class="immersive-shell" id="immersive-path">
+      <div class="immersive-backdrop" aria-hidden="true">
+        <div id="immersive-map" class="immersive-map"></div>
+      </div>
+      <div id="immersive-stops" class="immersive-stops"></div>
+    </main>
+  </body>
+</html>

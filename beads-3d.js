@@ -4,13 +4,29 @@
 
   const THREE = window.THREE;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const buttons = Array.from(document.querySelectorAll("[data-step]")).sort(
+  const buttons = Array.from(document.querySelectorAll("#rosary-map button[data-step]")).sort(
     (a, b) => Number(a.dataset.step) - Number(b.dataset.step)
   );
 
   if (!buttons.length) return;
 
   document.body.classList.add("has-webgl-beads");
+
+  const buttonByStep = new Map();
+  const positionByStep = new Map();
+  const orderByStep = new Map();
+
+  buttons.forEach((button, order) => {
+    const stepIndex = Number(button.dataset.step);
+    const x = parseFloat(button.style.getPropertyValue("--x"));
+    const y = parseFloat(button.style.getPropertyValue("--y"));
+    buttonByStep.set(stepIndex, button);
+    positionByStep.set(stepIndex, {
+      x: Number.isFinite(x) ? x : 50,
+      y: Number.isFinite(y) ? y : 50,
+    });
+    orderByStep.set(stepIndex, order);
+  });
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
@@ -20,6 +36,7 @@
     canvas,
     alpha: true,
     antialias: true,
+    preserveDrawingBuffer: true,
     powerPreference: "high-performance",
   });
   renderer.setClearColor(0x000000, 0);
@@ -44,6 +61,7 @@
 
   const palette = {
     opening: 0xd8c59b,
+    closing: 0xf1d99c,
     joyful: 0xd6b15f,
     luminous: 0x74a8bf,
     sorrowful: 0x9e5260,
@@ -52,32 +70,28 @@
   };
 
   function percentForStep(stepIndex) {
-    if (stepIndex < 4) {
-      const offsets = [-9, 9, -9, 9];
-      return {
-        x: 50 + offsets[stepIndex],
-        y: 7 + stepIndex * 4.9,
-      };
-    }
+    return positionByStep.get(stepIndex) || { x: 50, y: 50 };
+  }
 
-    const beadIndex = stepIndex - 4;
-    const decadeIndex = Math.floor(beadIndex / 10);
-    const beadInDecade = beadIndex % 10;
-    const isReverse = decadeIndex % 2 === 1;
-    const horizontalIndex = isReverse ? 9 - beadInDecade : beadInDecade;
-
-    return {
-      x: 15 + horizontalIndex * 7.75 + Math.sin((beadInDecade / 9) * Math.PI) * 4,
-      y: 28 + decadeIndex * 13.2 + beadInDecade * 0.86,
-    };
+  function stepKind(stepIndex) {
+    const button = buttonByStep.get(stepIndex);
+    if (!button) return "bead";
+    if (button.classList.contains("closing-marker")) return "closing";
+    if (button.classList.contains("opening-marker")) return "opening";
+    return "bead";
   }
 
   function pointForStep(stepIndex) {
     const percent = percentForStep(stepIndex);
-    const beadIndex = Math.max(stepIndex - 4, 0);
-    const beadInDecade = beadIndex % 10;
-    const z = stepIndex < 4 ? 0.28 - stepIndex * 0.06 : Math.sin((beadInDecade / 9) * Math.PI) * 0.42;
-    return new THREE.Vector3((percent.x - 50) * 0.062, 5.15 - percent.y * 0.105, z);
+    const order = orderByStep.get(stepIndex) || 0;
+    const kind = stepKind(stepIndex);
+    const z =
+      kind === "opening"
+        ? 0.3 - percent.y * 0.004
+        : kind === "closing"
+          ? 0.26
+          : Math.sin(order * 0.38) * 0.18 + Math.cos((percent.x / 100) * Math.PI) * 0.1;
+    return new THREE.Vector3((percent.x - 50) * 0.056, 4.25 - percent.y * 0.083, z);
   }
 
   const points = buttons.map((button) => pointForStep(Number(button.dataset.step)));
@@ -96,14 +110,16 @@
 
   const beadGeometry = new THREE.SphereGeometry(0.17, 28, 20);
   const openingGeometry = new THREE.SphereGeometry(0.2, 28, 20);
+  const closingGeometry = new THREE.SphereGeometry(0.23, 32, 22);
   const beadMeshes = [];
 
   buttons.forEach((button) => {
     const stepIndex = Number(button.dataset.step);
+    const kind = stepKind(stepIndex);
     const decade =
       Array.from(button.classList).find((className) =>
         ["joyful", "luminous", "sorrowful", "glorious", "witness"].includes(className)
-      ) || "opening";
+      ) || kind;
     const color = palette[decade] || palette.opening;
     const material = new THREE.MeshStandardMaterial({
       color,
@@ -111,10 +127,13 @@
       roughness: 0.32,
       metalness: 0.08,
     });
-    const mesh = new THREE.Mesh(stepIndex < 4 ? openingGeometry : beadGeometry, material);
+    const mesh = new THREE.Mesh(
+      kind === "closing" ? closingGeometry : kind === "opening" ? openingGeometry : beadGeometry,
+      material
+    );
     mesh.position.copy(pointForStep(stepIndex));
     mesh.userData.stepIndex = stepIndex;
-    mesh.userData.baseScale = stepIndex < 4 ? 1.08 : 1;
+    mesh.userData.baseScale = kind === "closing" ? 1.22 : kind === "opening" ? 1.06 : 1;
     mesh.userData.targetScale = mesh.userData.baseScale;
     beadMeshes.push(mesh);
     group.add(mesh);

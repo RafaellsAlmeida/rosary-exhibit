@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A focused history page for the Rosary exhibition, tracing counted prayer, Dominican tradition, Lepanto, Lourdes, Fatima, and modern papal teaching."
+    />
+    <title>Rosary History Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body class="content-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="./index.html#top">The Rosary</a>
+      <div class="nav-links">
+        <a href="./index.html#rosary-scroll">Rosary Path</a>
+        <a href="./index.html#how-to-pray">How to Pray</a>
+        <a href="./index.html#mysteries">Mysteries</a>
+        <a href="./history.html" aria-current="page">History</a>
+        <a href="./saints.html">Saints</a>
+        <a href="./variation-immersive.html">Immersive Path</a>
+        <a href="./index.html#sources">Sources</a>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <img src="./assets/papal-study.png" alt="Rosary beads and sacred art arranged near candlelight" />
+      <div class="page-hero-copy">
+        <p class="eyebrow">History and public memory</p>
+        <h1>How the Rosary took shape over time.</h1>
+        <p>
+          The Rosary grew through counted prayer, preaching, papal teaching,
+          shrine witness, and ordinary Catholic practice. This page keeps
+          history, tradition, and devotional memory clearly labeled.
+        </p>
+      </div>
+    </header>
+
+    <main class="site-main" id="main">
+      <section class="section timeline-section tone-deep" aria-labelledby="history-timeline-heading">
+        <div class="split">
+          <div>
+            <p class="section-kicker">Chronology</p>
+            <h2 id="history-timeline-heading">A prayer shaped by centuries</h2>
+            <p class="section-note">
+              These entries distinguish historical development from devotional
+              interpretation, so visitors can follow the story without confusing
+              source types.
+            </p>
+          </div>
+          <div id="chronology" class="chronology"></div>
+        </div>
+      </section>
+
+      <section class="section tone-paper" aria-labelledby="lepanto-heading">
+        <div class="split">
+          <div>
+            <p class="section-kicker">A careful example</p>
+            <h2 id="lepanto-heading">Lepanto and Catholic memory</h2>
+          </div>
+          <div class="copy-stack">
+            <p>
+              The Battle of Lepanto belongs first to history. Catholic devotion
+              remembers it alongside Rosary prayer, thanksgiving, and the feast
+              of Our Lady of the Rosary.
+            </p>
+            <p>
+              The exhibit presents the event without triumphalism: prayer is
+              shown as dependence on God, not as a tool for spectacle.
+            </p>
+            <a class="text-link" href="https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html" target="_blank" rel="noreferrer">
+              Read Rosarium Virginis Mariae
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section sources-section tone-midnight" aria-labelledby="history-sources-heading">
+        <div class="split">
+          <div>
+            <p class="section-kicker">Sources</p>
+            <h2 id="history-sources-heading">Primary links for deeper study</h2>
+            <p class="section-note">
+              Start with Church documents and shrine sources, then use the
+              downloadable research report from the main page for a fuller audit.
+            </p>
+          </div>
+          <div id="source-groups" class="source-groups"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

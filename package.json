@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "python3 -m http.server 4173",
     "start": "python3 -m http.server 4173",
-    "check": "node --check app.js && node --check beads-3d.js"
+    "check": "node --check app.js && node --check beads-3d.js && node --check immersive.js"
   },
   "keywords": [
     "rosary",

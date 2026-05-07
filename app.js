@@ -99,11 +99,33 @@ const openingBeads = [
   },
   {
     type: "opening",
-    marker: "3 Hail Marys",
-    title: "Faith, Hope, and Charity",
+    marker: "Faith",
+    title: "First Hail Mary: Faith",
     scripture: "Hail Mary, full of grace...",
     body:
-      "The opening Hail Marys are traditionally prayed for an increase in faith, hope, and charity before entering the mysteries.",
+      "The first opening Hail Mary is traditionally prayed for an increase in faith before entering the mysteries.",
+    image: imageLibrary.opening[2],
+    alt: "The three children of Fatima in a historical photograph",
+    action: { label: "Mary's requests", href: "#marys-requests" },
+  },
+  {
+    type: "opening",
+    marker: "Hope",
+    title: "Second Hail Mary: Hope",
+    scripture: "Hail Mary, full of grace...",
+    body:
+      "The second opening Hail Mary asks for hope: the grace to keep walking when the mystery is not yet clear.",
+    image: imageLibrary.opening[1],
+    alt: "Candlelit papal desk with rosary beads and devotional objects",
+    action: { label: "Learn the rhythm", href: "#how-to-pray" },
+  },
+  {
+    type: "opening",
+    marker: "Charity",
+    title: "Third Hail Mary: Charity",
+    scripture: "Hail Mary, full of grace...",
+    body:
+      "The third opening Hail Mary asks for charity, so contemplation becomes love of God and neighbor.",
     image: imageLibrary.opening[2],
     alt: "The three children of Fatima in a historical photograph",
     action: { label: "Mary's requests", href: "#marys-requests" },
@@ -118,6 +140,20 @@ const openingBeads = [
     image: imageLibrary.opening[3],
     alt: "Sacred art of the Coronation of Mary",
     action: { label: "Enter the mysteries", href: "#mysteries" },
+  },
+];
+
+const closingBeads = [
+  {
+    type: "closing",
+    marker: "Hail Holy Queen",
+    title: "The Hail Holy Queen",
+    scripture: "Hail, holy Queen, Mother of mercy...",
+    body:
+      "Hail, holy Queen, Mother of mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.",
+    image: "./assets/witnesses/assumption.jpg",
+    alt: "Stone shrine relief of Mary holding the child Jesus",
+    action: { label: "Review the prayer guide", href: "#how-to-pray" },
   },
 ];
 
@@ -817,6 +853,10 @@ const sourceGroups = [
         title: "Kibeho Shrine Sources",
         url: "https://www.kibeho-cana.org/a-brief-history-of-the-apparitions-of-our-lady-of-kibeho/",
       },
+      {
+        title: "Blessed Bartolo Longo Vatican Biography",
+        url: "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19801026_longo_en.html",
+      },
     ],
   },
   {
@@ -863,24 +903,95 @@ function titleCase(value = "") {
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
+function slugify(value = "") {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+const decadeFormation = {
+  joyful: {
+    frame: "Joyful mystery",
+    meditation:
+      "Stay with the hiddenness of grace. These mysteries teach the soul to receive, serve, and trust God in ordinary places.",
+    prayer: "Ask for humility, fidelity in family life, and the courage to say yes before everything is visible.",
+  },
+  luminous: {
+    frame: "Luminous mystery",
+    meditation:
+      "Look at Christ in public revelation: baptized, teaching, transfigured, and self-given in the Eucharist.",
+    prayer: "Ask to live your baptism with clarity and to let Christ's light reorder attention, desire, and action.",
+  },
+  sorrowful: {
+    frame: "Sorrowful mystery",
+    meditation:
+      "Do not rush past suffering. These mysteries form patience, contrition, mercy, and love that remains faithful under pressure.",
+    prayer: "Ask for the grace to carry the cross without bitterness and to unite pain to the mercy of Christ.",
+  },
+  glorious: {
+    frame: "Glorious mystery",
+    meditation:
+      "Let the end of the Gospel interpret the present moment: resurrection, mission, heavenly hope, and final perseverance.",
+    prayer: "Ask for hope that can survive delay and for perseverance that keeps faith alive until the end.",
+  },
+  witness: {
+    frame: "Rosary witness",
+    meditation:
+      "The Rosary did not remain an idea. It passed through saints, shrines, families, historical crises, and quiet conversions.",
+    prayer: "Ask that devotion become concrete: daily prayer, truthful witness, repentance, and service.",
+  },
+};
+
+function formationForRosaryItem(item) {
+  if (item.stepType === "closing") {
+    return [
+      "Pray the Hail Holy Queen slowly. The closing is not an exit; it is entrusting the whole meditation to Mary so she can lead it back to Jesus.",
+      "Response: Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ.",
+    ];
+  }
+
+  if (item.stepType === "opening") {
+    return [
+      "This opening bead prepares the heart before the decades begin. The Rosary starts by confessing faith, receiving the Lord's Prayer, asking for the theological virtues, and praising the Trinity.",
+    ];
+  }
+
+  const formation = decadeFormation[item.decade] || decadeFormation.joyful;
+  return [
+    formation.meditation,
+    `${formation.frame}: ${item.body}`,
+    formation.prayer,
+  ];
+}
+
 function beadPosition(stepIndex) {
   if (stepIndex < openingBeads.length) {
-    const offsets = [-9, 9, -9, 9];
-    return {
-      x: 50 + offsets[stepIndex],
-      y: 7 + stepIndex * 4.9,
-    };
+    const openingPath = [
+      { x: 50, y: 5 },
+      { x: 50, y: 13 },
+      { x: 50, y: 20 },
+      { x: 50, y: 26 },
+      { x: 50, y: 32 },
+      { x: 50, y: 38 },
+    ];
+
+    return openingPath[stepIndex] || openingPath[openingPath.length - 1];
   }
 
   const beadIndex = stepIndex - openingBeads.length;
-  const decadeIndex = Math.floor(beadIndex / 10);
-  const beadInDecade = beadIndex % 10;
-  const isReverse = decadeIndex % 2 === 1;
-  const horizontalIndex = isReverse ? 9 - beadInDecade : beadInDecade;
+  if (beadIndex >= rosaryBeads.length) {
+    return { x: 50, y: 42 };
+  }
+
+  const progress = (beadIndex + 1) / (rosaryBeads.length + 1);
+  const angle = -Math.PI / 2 - progress * Math.PI * 2;
+  const radiusX = 30;
+  const radiusY = 30;
 
   return {
-    x: 15 + horizontalIndex * 7.75 + Math.sin((beadInDecade / 9) * Math.PI) * 4,
-    y: 28 + decadeIndex * 13.2 + beadInDecade * 0.86,
+    x: 50 + Math.cos(angle) * radiusX,
+    y: 70 + Math.sin(angle) * radiusY,
   };
 }
 
@@ -897,19 +1008,24 @@ function rosarySteps() {
       beadNumber: index + 1,
       stepIndex: index + openingBeads.length,
     })),
+    ...closingBeads.map((bead, index) => ({
+      ...bead,
+      stepType: "closing",
+      stepIndex: openingBeads.length + rosaryBeads.length + index,
+    })),
   ];
 }
 
 function sectionHrefForItem(item) {
-  if (item.stepType === "opening") return item.action?.href || "#how-to-pray";
-  if (item.decade === "witness") return "#saints";
+  if (item.stepType === "opening" || item.stepType === "closing") return item.action?.href || "#how-to-pray";
+  if (item.decade === "witness") return "./saints.html";
   return "#mysteries";
 }
 
 function linksForRosaryItem(item) {
   const links = [
     {
-      label: item.stepType === "opening" ? "Prayer guide" : "Read context",
+      label: item.stepType === "bead" ? "Read context" : "Prayer guide",
       href: sectionHrefForItem(item),
     },
     {
@@ -944,10 +1060,15 @@ function setActiveRosaryStep(steps, index) {
   const title = document.getElementById("bead-title");
   const scripture = document.getElementById("bead-scripture");
   const body = document.getElementById("bead-body");
+  const detail = document.getElementById("bead-detail");
   const links = document.getElementById("bead-links");
   const action = document.getElementById("bead-action");
 
   if (panel) panel.dataset.decade = item.decade || item.type || "opening";
+  if (panel) {
+    const position = beadPosition(index);
+    panel.dataset.side = position.x > 58 ? "left" : "right";
+  }
   if (image) {
     image.src = item.image;
     image.alt = item.alt || item.title;
@@ -961,6 +1082,11 @@ function setActiveRosaryStep(steps, index) {
   if (title) title.textContent = item.title;
   if (scripture) scripture.textContent = item.scripture;
   if (body) body.textContent = item.body;
+  if (detail) {
+    detail.innerHTML = formationForRosaryItem(item)
+      .map((paragraph) => `<p>${paragraph}</p>`)
+      .join("");
+  }
   if (links) {
     links.innerHTML = linksForRosaryItem(item)
       .map(
@@ -989,7 +1115,9 @@ function setActiveRosaryStep(steps, index) {
   }
 
   document.querySelectorAll("[data-step]").forEach((element) => {
-    element.classList.toggle("is-active", Number(element.dataset.step) === index);
+    const elementStep = Number(element.dataset.step);
+    element.classList.toggle("is-active", elementStep === index);
+    element.classList.toggle("is-past", elementStep < index);
   });
 
   window.dispatchEvent(
@@ -1019,6 +1147,7 @@ function renderRosaryPath() {
           class="opening-marker"
           type="button"
           data-step="${index}"
+          data-label="${bead.marker}"
           aria-label="${bead.title}"
           style="--x: ${position.x}%; --y: ${position.y}%"
         >
@@ -1038,6 +1167,7 @@ function renderRosaryPath() {
           class="rosary-bead ${bead.decade}"
           type="button"
           data-step="${stepIndex}"
+          data-label="Bead ${index + 1}"
           aria-label="Bead ${index + 1}: ${bead.title}"
           style="--x: ${position.x}%; --y: ${position.y}%"
         >
@@ -1047,15 +1177,36 @@ function renderRosaryPath() {
     })
     .join("");
 
+  const closingMarkup = closingBeads
+    .map((bead, index) => {
+      const stepIndex = openingBeads.length + rosaryBeads.length + index;
+      const position = beadPosition(stepIndex);
+      return `
+        <button
+          class="closing-marker"
+          type="button"
+          data-step="${stepIndex}"
+          data-label="${bead.marker}"
+          aria-label="${bead.title}"
+          style="--x: ${position.x}%; --y: ${position.y}%"
+        >
+          <img src="${bead.image}" alt="" loading="lazy" />
+          <span>${bead.marker}</span>
+        </button>
+      `;
+    })
+    .join("");
+
   map.innerHTML = `
     <div class="opening-track" aria-label="Opening prayers">${openingMarkup}</div>
     <div class="decade-track" aria-label="Fifty Rosary beads">${beadMarkup}</div>
+    <div class="closing-track" aria-label="Closing prayer">${closingMarkup}</div>
   `;
 
   stepRoot.innerHTML = steps
     .map(
       (item, index) => `
-        <article class="rosary-step ${item.stepType} ${item.decade || ""}" data-step="${index}">
+        <article class="rosary-step ${item.stepType} ${item.decade || ""}" data-step="${index}" aria-hidden="true">
           <span>${item.stepType === "bead" ? `Bead ${item.beadNumber}` : item.marker}</span>
           <h3>${item.title}</h3>
           <p>${item.scripture}</p>
@@ -1222,6 +1373,7 @@ function wireDownloads() {
       generatedAt: new Date().toISOString(),
       openingBeads,
       rosaryBeads,
+      closingBeads,
       mysteries: mysterySets,
       chronology,
       sourceGroups,

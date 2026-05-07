@@ -9,6 +9,8 @@ The bead strand uses a lightweight Three.js progressive enhancement for physical
 ## What Is Included
 
 - `index.html` contains the full single-page exhibit structure.
+- `history.html` and `saints.html` provide focused paths for visitors who want the chronology or witness material without scanning the whole exhibit.
+- `variation-immersive.html` contains the slower immersive Rosary path.
 - `styles.css` defines the dark blue, gold, and paper-toned visual system.
 - `app.js` renders the chronology, mysteries, daily Rosary, sources, and 50-bead scroll experience.
 - `beads-3d.js` renders the physical bead strand in Three.js and syncs it to the active scroll step.
