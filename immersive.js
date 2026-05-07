@@ -77,6 +77,9 @@
   stopsRoot.innerHTML = steps
     .map((item, index) => {
       const formation = formationForRosaryItem(item);
+      const prayerMarkup = item.prayerText
+        ? `<div class="immersive-prayer"><strong>Full prayer</strong>${formatPrayerText(item.prayerText)}</div>`
+        : "";
       const side = stopSide(index);
       return `
         <article
@@ -93,6 +96,7 @@
             <p class="immersive-scripture">${item.scripture}</p>
             <p>${item.body}</p>
             <div class="immersive-formation">
+              ${prayerMarkup}
               ${formation.map((paragraph) => `<p>${paragraph}</p>`).join("")}
             </div>
           </div>
@@ -101,16 +105,25 @@
     })
     .join("");
 
+  window.rosaryI18n?.applyTranslations(stopsRoot);
+
   function setActive(index) {
     document.querySelectorAll(".immersive-map-bead").forEach((bead) => {
       const step = Number(bead.dataset.step);
+      const distance = Math.abs(step - index);
       bead.classList.toggle("is-active", step === index);
       bead.classList.toggle("is-past", step < index);
+      bead.classList.toggle("is-near", distance > 0 && distance <= 2);
+      bead.classList.toggle("is-far", distance > 2);
     });
 
     document.querySelectorAll(".immersive-stop").forEach((stop) => {
       stop.classList.toggle("is-active", Number(stop.dataset.step) === index);
     });
+
+    const position = immersivePosition(index);
+    map.style.setProperty("--active-x", `${position.x}%`);
+    map.style.setProperty("--active-y", `${position.y}%`);
   }
 
   map.addEventListener("click", (event) => {

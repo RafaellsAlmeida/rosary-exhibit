@@ -16,6 +16,7 @@
   --line-strong: rgba(247, 240, 231, 0.26);
   --max: 1160px;
   --radius: 8px;
+  --pull-rosary-height: clamp(136px, 18vh, 188px);
 }
 
 *,
@@ -37,6 +38,10 @@ body {
     linear-gradient(180deg, rgba(18, 40, 63, 0.7), transparent 460px),
     linear-gradient(135deg, var(--bg), #0b1119 42%, #05070b);
   font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body.home-page {
+  padding-bottom: var(--pull-rosary-height);
 }
 
 body::before {
@@ -130,6 +135,45 @@ textarea {
 .nav-links a[aria-current="page"] {
   color: var(--gold-2);
   border-color: var(--gold);
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid rgba(247, 240, 231, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.language-switch-label {
+  padding: 0 7px;
+  color: var(--dim);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.language-switch button {
+  min-width: 34px;
+  min-height: 28px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  font-size: 0.76rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.language-switch button:hover,
+.language-switch button:focus-visible,
+.language-switch button.is-active {
+  color: #16110a;
+  background: var(--gold-2);
 }
 
 .hero {
@@ -357,15 +401,19 @@ p {
 }
 
 .rosary-string {
+  --active-x: 50%;
+  --active-y: 5%;
   position: absolute;
   left: 50%;
   top: 50%;
-  width: min(820px, 76vw);
+  width: min(760px, 72vw);
   height: min(940px, 89dvh);
   min-height: 650px;
   padding: 0;
   overflow: visible;
   transform: translate(-50%, -50%);
+  -webkit-mask-image: radial-gradient(ellipse 34% 23% at var(--active-x) var(--active-y), black 0 42%, rgba(0, 0, 0, 0.54) 58%, transparent 78%);
+  mask-image: radial-gradient(ellipse 34% 23% at var(--active-x) var(--active-y), black 0 42%, rgba(0, 0, 0, 0.54) 58%, transparent 78%);
 }
 
 .rosary-string::before {
@@ -382,10 +430,10 @@ p {
 .rosary-string::after {
   content: "";
   position: absolute;
-  left: 20%;
-  top: 40%;
-  width: 60%;
-  height: 60%;
+  left: 26%;
+  top: 36%;
+  width: 48%;
+  height: 68%;
   border: 2px solid rgba(211, 188, 137, 0.26);
   border-radius: 50%;
   box-shadow:
@@ -432,8 +480,9 @@ p {
     inset 3px 3px 7px rgba(255, 238, 196, 0.4),
     inset -5px -5px 9px rgba(65, 31, 13, 0.58),
     0 9px 22px rgba(0, 0, 0, 0.34);
+  opacity: 0;
   cursor: pointer;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease, opacity 220ms ease;
   transform: translate(-50%, -50%) rotate(var(--twist));
 }
 
@@ -509,6 +558,7 @@ p {
     inset 2px 2px 6px rgba(255, 238, 196, 0.24),
     inset -4px -4px 8px rgba(31, 16, 8, 0.4),
     0 8px 18px rgba(0, 0, 0, 0.22);
+  opacity: 0;
   cursor: pointer;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease, opacity 180ms ease;
   transform: translate(-50%, -50%) rotate(var(--twist));
@@ -551,7 +601,7 @@ p {
   --bead-b: #5b2d16;
 }
 
-.rosary-bead.is-past,
+.rosary-bead.is-near,
 .rosary-bead.is-active {
   border-color: rgba(255, 248, 191, 0.72);
   background:
@@ -564,13 +614,23 @@ p {
     0 0 20px rgba(241, 217, 156, 0.16);
 }
 
-.opening-marker.is-past,
+.opening-marker.is-near,
 .opening-marker.is-active {
   filter: saturate(1.12) brightness(1.08);
   border-color: var(--gold-2);
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.38),
     0 0 28px rgba(241, 217, 156, 0.18);
+}
+
+.opening-marker.is-near,
+.rosary-bead.is-near {
+  opacity: 0.46;
+}
+
+.opening-marker.is-active,
+.rosary-bead.is-active {
+  opacity: 1;
 }
 
 .opening-marker:hover,
@@ -660,8 +720,9 @@ p {
   box-shadow:
     0 18px 38px rgba(0, 0, 0, 0.42),
     0 0 0 10px rgba(255, 67, 67, 0.05);
+  opacity: 0;
   cursor: pointer;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, opacity 220ms ease;
 }
 
 .closing-marker img {
@@ -695,13 +756,21 @@ p {
 }
 
 .closing-marker.is-active,
+.closing-marker.is-near,
 .closing-marker:hover,
 .closing-marker:focus-visible {
+  opacity: 1;
   transform: translate(-50%, -50%) scale(1.08);
   border-color: var(--gold-2);
   box-shadow:
     0 18px 42px rgba(0, 0, 0, 0.46),
     0 0 0 12px rgba(241, 217, 156, 0.1);
+}
+
+.opening-marker.is-far,
+.rosary-bead.is-far,
+.closing-marker.is-far {
+  pointer-events: none;
 }
 
 .rail-caption {
@@ -759,28 +828,33 @@ p {
 .bead-media {
   position: relative;
   min-height: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(241, 217, 156, 0.08), transparent 58%),
+    rgba(5, 7, 11, 0.78);
 }
 
 .bead-media img {
   width: 100%;
   height: 176px;
   min-height: 176px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
   filter: saturate(0.94) contrast(1.04);
 }
 
 .bead-panel[data-decade="closing"] .bead-media img {
   height: 230px;
   min-height: 230px;
-  object-position: 50% 42%;
+  object-position: center center;
 }
 
 .bead-media::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, transparent 46%, rgba(7, 9, 13, 0.72));
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 68%, rgba(7, 9, 13, 0.42));
 }
 
 .bead-copy {
@@ -837,6 +911,23 @@ p {
   line-height: 1.58;
 }
 
+.bead-prayer {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(241, 217, 156, 0.18);
+  border-radius: 6px;
+  background: rgba(241, 217, 156, 0.055);
+}
+
+.bead-prayer strong {
+  color: var(--gold-2);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
 .bead-links {
   display: flex;
   flex-wrap: wrap;
@@ -887,6 +978,90 @@ p {
   color: #16110a;
   border-color: transparent;
   background: var(--gold-2);
+}
+
+.home-page .bead-panel,
+.home-page .bead-panel[data-side="left"],
+.home-page .bead-panel[data-decade="closing"] {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  width: min(560px, 36vw);
+  max-height: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.home-page .bead-panel::before {
+  inset: 0 -8vw 0 -10vw;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, transparent, rgba(5, 7, 11, 0.74) 32%, rgba(5, 7, 11, 0.94)),
+    radial-gradient(circle at 78% 24%, rgba(241, 217, 156, 0.1), transparent 34%);
+}
+
+.home-page .bead-media {
+  display: none;
+}
+
+.home-page .bead-copy {
+  width: 100%;
+  padding: clamp(28px, 5vw, 64px) clamp(20px, 4vw, 56px);
+}
+
+.home-page #bead-title {
+  font-size: clamp(2.45rem, 4vw, 4.4rem);
+  line-height: 0.96;
+}
+
+.home-page #bead-body {
+  color: rgba(247, 240, 231, 0.82);
+  font-size: 1.02rem;
+}
+
+.home-page .bead-detail {
+  gap: 12px;
+  border-top-color: rgba(241, 217, 156, 0.2);
+}
+
+.home-page .bead-prayer {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.home-page .bead-links {
+  gap: 12px 18px;
+}
+
+.home-page .bead-links a,
+.home-page .bead-action {
+  min-height: 0;
+  padding: 0 0 3px;
+  border: 0;
+  border-bottom: 1px solid rgba(241, 217, 156, 0.38);
+  border-radius: 0;
+  color: var(--gold-2);
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-page .bead-links a:hover,
+.home-page .bead-links a:focus-visible,
+.home-page .bead-action:hover,
+.home-page .bead-action:focus-visible {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: transparent;
+  transform: none;
 }
 
 .rosary-steps {
@@ -972,6 +1147,69 @@ p {
   line-height: 1.72;
 }
 
+.home-immersive-hero {
+  isolation: isolate;
+  min-height: 78vh;
+  overflow: hidden;
+  border-bottom: 0;
+}
+
+.home-immersive-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  z-index: -2;
+  transform: translateX(-50%);
+  background: url("./assets/hero-rosary.png") center / cover no-repeat;
+  opacity: 0.42;
+  filter: saturate(0.9) contrast(1.08);
+}
+
+.home-immersive-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  z-index: -1;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 58% 42%, rgba(241, 217, 156, 0.12), transparent 28%),
+    linear-gradient(90deg, rgba(5, 7, 11, 0.94), rgba(5, 7, 11, 0.68) 52%, rgba(5, 7, 11, 0.42)),
+    linear-gradient(180deg, rgba(5, 7, 11, 0.08), rgba(5, 7, 11, 0.86));
+}
+
+.home-immersive-hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+.immersive-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.home-immersive-path {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.legacy-home-section {
+  min-height: 78vh;
+}
+
+.legacy-home-section h2 {
+  max-width: 860px;
+  font-size: clamp(3.5rem, 7vw, 5.8rem);
+  line-height: 0.95;
+}
+
 .immersive-shell {
   position: relative;
   isolation: isolate;
@@ -989,14 +1227,19 @@ p {
 }
 
 .immersive-map {
+  --active-x: 50%;
+  --active-y: 5%;
   position: absolute;
   left: 50%;
   top: 50%;
-  width: min(760px, 70vw);
-  height: min(980px, 90dvh);
-  min-height: 680px;
-  transform: translate(-50%, -50%);
+  width: min(1520px, 140vw);
+  height: min(1960px, 180dvh);
+  min-height: 1360px;
+  transform: translate(calc(-1 * var(--active-x)), calc(-1 * var(--active-y)));
   opacity: 0.72;
+  transition: transform 420ms ease;
+  -webkit-mask-image: radial-gradient(ellipse 34% 23% at var(--active-x) var(--active-y), black 0 42%, rgba(0, 0, 0, 0.54) 58%, transparent 78%);
+  mask-image: radial-gradient(ellipse 34% 23% at var(--active-x) var(--active-y), black 0 42%, rgba(0, 0, 0, 0.54) 58%, transparent 78%);
 }
 
 .immersive-cord {
@@ -1049,6 +1292,8 @@ p {
     inset 2px 2px 6px rgba(255, 238, 196, 0.22),
     inset -4px -4px 8px rgba(31, 16, 8, 0.38),
     0 7px 16px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  transition: opacity 220ms ease, transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .immersive-map-bead:nth-child(3n) {
@@ -1076,7 +1321,7 @@ p {
     rgba(5, 7, 11, 0.68);
 }
 
-.immersive-map-bead.is-past,
+.immersive-map-bead.is-near,
 .immersive-map-bead.is-active {
   border-color: rgba(241, 217, 156, 0.86);
   background:
@@ -1088,8 +1333,17 @@ p {
     0 14px 32px rgba(0, 0, 0, 0.34);
 }
 
+.immersive-map-bead.is-near {
+  opacity: 0.46;
+}
+
 .immersive-map-bead.is-active {
+  opacity: 1;
   transform: translate(-50%, -50%) rotate(var(--twist)) scale(1.42);
+}
+
+.immersive-map-bead.is-far {
+  pointer-events: none;
 }
 
 .immersive-map-bead span {
@@ -1121,7 +1375,12 @@ p {
 .immersive-stop {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.72fr);
+  grid-template-columns:
+    minmax(18px, 1fr)
+    minmax(320px, 560px)
+    minmax(12vw, 0.52fr)
+    minmax(320px, 560px)
+    minmax(18px, 1fr);
   align-items: center;
   min-height: 152vh;
   padding: 18vh max(18px, calc((100vw - var(--max)) / 2));
@@ -1129,7 +1388,12 @@ p {
 }
 
 .immersive-stop[data-side="right"] {
-  grid-template-columns: minmax(360px, 0.72fr) minmax(0, 1fr);
+  grid-template-columns:
+    minmax(18px, 1fr)
+    minmax(320px, 560px)
+    minmax(12vw, 0.52fr)
+    minmax(320px, 560px)
+    minmax(18px, 1fr);
 }
 
 .immersive-stop-image {
@@ -1152,8 +1416,20 @@ p {
     linear-gradient(90deg, rgba(5, 7, 11, 0.9), rgba(5, 7, 11, 0.24) 45%, rgba(5, 7, 11, 0.88));
 }
 
+.immersive-stop[data-side="left"] .immersive-stop-shade {
+  background:
+    radial-gradient(circle at 50% 50%, transparent, rgba(5, 7, 11, 0.74) 58%),
+    linear-gradient(90deg, rgba(5, 7, 11, 0.94), rgba(5, 7, 11, 0.52) 44%, rgba(5, 7, 11, 0.78));
+}
+
+.immersive-stop[data-side="right"] .immersive-stop-shade {
+  background:
+    radial-gradient(circle at 50% 50%, transparent, rgba(5, 7, 11, 0.74) 58%),
+    linear-gradient(90deg, rgba(5, 7, 11, 0.78), rgba(5, 7, 11, 0.52) 56%, rgba(5, 7, 11, 0.94));
+}
+
 .immersive-stop-copy {
-  grid-column: 1;
+  grid-column: 2;
   max-width: 560px;
   transform: translateY(28px);
   opacity: 0.32;
@@ -1161,7 +1437,7 @@ p {
 }
 
 .immersive-stop[data-side="right"] .immersive-stop-copy {
-  grid-column: 2;
+  grid-column: 4;
 }
 
 .immersive-stop.is-active .immersive-stop-copy {
@@ -1213,8 +1489,124 @@ p {
   line-height: 1.72;
 }
 
+.immersive-prayer {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.immersive-prayer strong {
+  color: var(--gold-2);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
 .site-main {
   position: relative;
+}
+
+.pull-rosary {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 18;
+  isolation: isolate;
+  height: var(--pull-rosary-height);
+  overflow: hidden;
+  border-top: 1px solid rgba(241, 217, 156, 0.22);
+  background:
+    linear-gradient(180deg, rgba(8, 13, 19, 0.72), rgba(3, 5, 8, 0.96)),
+    linear-gradient(90deg, rgba(13, 20, 29, 0.96), rgba(20, 38, 53, 0.9), rgba(8, 13, 19, 0.96));
+  box-shadow: 0 -24px 56px rgba(0, 0, 0, 0.38);
+  transform: translateZ(0);
+}
+
+.pull-rosary::before,
+.pull-rosary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.pull-rosary::before {
+  background:
+    linear-gradient(90deg, transparent, rgba(241, 217, 156, 0.1) 48%, transparent),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.034) 0 1px, transparent 1px 86px);
+  opacity: 0.46;
+}
+
+.pull-rosary::after {
+  inset: 0 0 auto;
+  height: 48px;
+  background: linear-gradient(180deg, rgba(247, 240, 231, 0.08), transparent);
+}
+
+.pull-rosary canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  outline: none;
+  touch-action: none;
+}
+
+.pull-rosary.is-pulling canvas {
+  cursor: grabbing;
+}
+
+.pull-rosary-status {
+  position: absolute;
+  top: 18px;
+  left: max(18px, calc((100vw - var(--max)) / 2));
+  z-index: 2;
+  display: grid;
+  gap: 5px;
+  max-width: min(430px, 42vw);
+  pointer-events: none;
+}
+
+.pull-rosary-status span {
+  color: var(--gold-2);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pull-rosary-status strong {
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.15rem, 2.1vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.02;
+}
+
+.pull-rosary-fallback {
+  position: absolute;
+  right: max(18px, calc((100vw - var(--max)) / 2));
+  bottom: 18px;
+  z-index: 2;
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  text-align: right;
+  pointer-events: none;
+}
+
+.has-pull-rosary .pull-rosary-fallback {
+  display: none;
 }
 
 .content-page {
@@ -1583,6 +1975,39 @@ p {
   margin-top: 14px;
 }
 
+.prayer-texts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.prayer-texts article {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(241, 217, 156, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(255, 255, 255, 0.035);
+}
+
+.prayer-texts span {
+  display: block;
+  color: var(--gold-2);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.prayer-texts p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 .chronology {
   display: grid;
   gap: 12px;
@@ -1645,9 +2070,12 @@ p {
   height: auto;
   min-height: 420px;
   max-height: 560px;
-  object-fit: cover;
-  object-position: center 42%;
+  object-fit: contain;
+  object-position: center center;
   border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(241, 217, 156, 0.08), transparent 60%),
+    rgba(5, 7, 11, 0.72);
 }
 
 .image-break div {
@@ -1866,9 +2294,12 @@ p {
   aspect-ratio: 16 / 10;
   height: auto;
   margin-bottom: 18px;
-  object-fit: cover;
-  object-position: center 28%;
+  object-fit: contain;
+  object-position: center center;
   border-radius: 6px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(241, 217, 156, 0.08), transparent 60%),
+    rgba(5, 7, 11, 0.68);
   filter: saturate(0.9) contrast(1.04);
 }
 
@@ -2171,6 +2602,10 @@ p {
     gap: 10px;
   }
 
+  .language-switch {
+    align-self: flex-start;
+  }
+
   .hero {
     min-height: 86vh;
   }
@@ -2214,6 +2649,7 @@ p {
   .purpose-grid,
   .exhibit-map,
   .slide-grid,
+  .prayer-texts,
   .profile-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2271,6 +2707,7 @@ p {
   .slide-grid,
   .story-grid,
   .witness-list,
+  .prayer-texts,
   .profile-grid {
     grid-template-columns: 1fr;
   }
@@ -2419,13 +2856,23 @@ p {
     width: min(380px, 35vw);
   }
 
+  .home-page .bead-panel,
+  .home-page .bead-panel[data-side="left"],
+  .home-page .bead-panel[data-decade="closing"] {
+    width: min(450px, 44vw);
+  }
+
   .immersive-hero {
     grid-template-columns: 1fr;
     min-height: 78vh;
   }
 
+  .immersive-hero-actions {
+    justify-content: flex-start;
+  }
+
   .immersive-map {
-    width: min(680px, 82vw);
+    width: min(1360px, 164vw);
   }
 
   .immersive-stop,
@@ -2442,6 +2889,10 @@ p {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --pull-rosary-height: clamp(112px, 17vh, 138px);
+  }
+
   .rosary-scroll::before {
     inset: 28px 18px auto auto;
     width: 210px;
@@ -2469,7 +2920,7 @@ p {
   }
 
   .rosary-rail {
-    inset: 82px 0 112px;
+    inset: 82px 0 calc(var(--pull-rosary-height) + 30px);
     min-height: 0;
   }
 
@@ -2544,6 +2995,62 @@ p {
     min-height: 0;
   }
 
+  .home-page .bead-panel,
+  .home-page .bead-panel[data-side="left"],
+  .home-page .bead-panel[data-decade="closing"] {
+    top: auto;
+    right: 0;
+    bottom: var(--pull-rosary-height);
+    left: 0;
+    display: block;
+    width: 100%;
+    max-height: calc(42vh - 12px);
+    background: transparent;
+  }
+
+  .home-page .bead-panel::before {
+    inset: -18vh 0 0;
+    background:
+      linear-gradient(180deg, transparent, rgba(5, 7, 11, 0.78) 24%, rgba(5, 7, 11, 0.96)),
+      radial-gradient(circle at 82% 10%, rgba(241, 217, 156, 0.12), transparent 40%);
+  }
+
+  .home-page .bead-media {
+    display: none;
+  }
+
+  .home-page .bead-copy {
+    padding: 18px 18px 22px;
+  }
+
+  .pull-rosary-status {
+    top: 10px;
+    left: 14px;
+    max-width: calc(100vw - 28px);
+  }
+
+  .pull-rosary-status span {
+    font-size: 0.56rem;
+  }
+
+  .pull-rosary-status strong {
+    max-width: 72vw;
+    font-size: 1rem;
+  }
+
+  .pull-rosary-fallback {
+    right: 14px;
+    bottom: 10px;
+    left: 14px;
+    max-width: none;
+    font-size: 0.7rem;
+    text-align: left;
+  }
+
+  .home-page #bead-title {
+    font-size: clamp(1.8rem, 8vw, 2.7rem);
+  }
+
   .bead-media {
     min-height: 100%;
   }
@@ -2580,6 +3087,10 @@ p {
     display: none;
   }
 
+  .home-page #bead-body {
+    display: block;
+  }
+
   .rosary-steps {
     width: min(100vw - 24px, var(--max));
     margin: -88dvh auto 0;
@@ -2600,8 +3111,20 @@ p {
     padding: 82px 0 60px;
   }
 
+  .home-immersive-hero {
+    padding-bottom: calc(60px + var(--pull-rosary-height));
+  }
+
   .immersive-hero h1 {
     font-size: clamp(3.2rem, 15vw, 4.9rem);
+  }
+
+  .home-immersive-hero h1 {
+    font-size: 3rem;
+  }
+
+  .legacy-home-section h2 {
+    font-size: clamp(2.65rem, 12vw, 4rem);
   }
 
   .immersive-hero p:not(.eyebrow) {

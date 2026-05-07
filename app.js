@@ -67,6 +67,134 @@ const imageLibrary = {
   ],
 };
 
+const publicImages = {
+  ourFather: {
+    image: "./assets/public-domain/our-father.jpg",
+    alt: "Carl Bloch painting of Jesus teaching the Sermon on the Mount",
+    source: "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg",
+  },
+  faith: {
+    image: "./assets/public-domain/faith.jpg",
+    alt: "Caravaggio painting of Saint Thomas touching the wounds of the risen Christ",
+    source: "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas-Caravaggio_(1601-2).jpg",
+  },
+  hope: {
+    image: "./assets/public-domain/hope.jpg",
+    alt: "George Frederic Watts painting Hope",
+    source: "https://commons.wikimedia.org/wiki/File:George_Frederic_Watts,_1885,_Hope.jpg",
+  },
+  charity: {
+    image: "./assets/public-domain/charity.jpg",
+    alt: "Andrea del Sarto painting Charity",
+    source: "https://commons.wikimedia.org/wiki/File:Andrea_del_Sarto_-_Charity_-_WGA00368.jpg",
+  },
+  marysFiat: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Fra_Angelico_-_The_Annunciation_-_WGA00555.jpg",
+    alt: "Fra Angelico painting of the Annunciation",
+    source: "https://commons.wikimedia.org/wiki/File:Fra_Angelico_-_The_Annunciation_-_WGA00555.jpg",
+  },
+  magnificat: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/09/Cappella_Tornabuoni%2C_Visitation_02.jpg",
+    alt: "Domenico Ghirlandaio fresco of the Visitation of Mary and Elizabeth",
+    source: "https://commons.wikimedia.org/wiki/File:Cappella_Tornabuoni,_Visitation_02.jpg",
+  },
+  bethlehemsPoverty: {
+    image: "./assets/public-domain/bethlehems-poverty.jpg",
+    alt: "Gerard van Honthorst painting of the Adoration of the Shepherds",
+    source: "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_-_Adoration_of_the_Shepherds_(1622).jpg",
+  },
+  simeonsLight: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/82/Rembrandt_-_Simeon_in_the_Temple_DSC6899.jpg",
+    alt: "Rembrandt painting of Simeon holding the Christ Child in the Temple",
+    source: "https://commons.wikimedia.org/wiki/File:Rembrandt_-_Simeon_in_the_Temple_DSC6899.jpg",
+  },
+  fathersHouse: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/ChristInTheTemple.jpg",
+    alt: "Heinrich Hofmann painting of Jesus among the doctors in the Temple",
+    source: "https://commons.wikimedia.org/wiki/File:ChristInTheTemple.jpg",
+  },
+  belovedSon: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Andrea_del_Verrocchio_-_Bapt%C3%AAme_du_Christ.jpg/960px-Andrea_del_Verrocchio_-_Bapt%C3%AAme_du_Christ.jpg",
+    alt: "Andrea del Verrocchio painting of the Baptism of Christ",
+    source: "https://commons.wikimedia.org/wiki/File:Andrea_del_Verrocchio_-_Bapt%C3%AAme_du_Christ.jpg",
+  },
+  cana: {
+    image: "./assets/public-domain/ordinary-water-new-wine.jpg",
+    alt: "Paolo Veronese painting of the Marriage at Cana",
+    source: "https://commons.wikimedia.org/wiki/File:Paolo_Veronese_-_Marriage_at_Cana_-_WGA24873.jpg",
+  },
+  metanoia: {
+    image: "./assets/public-domain/metanoia.jpg",
+    alt: "Rembrandt painting of the Return of the Prodigal Son",
+    source: "https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz_van_Rijn_-_Return_of_the_Prodigal_Son_-_Google_Art_Project.jpg",
+  },
+  tabor: {
+    image: "./assets/public-domain/tabor-before-calvary.jpg",
+    alt: "Raphael painting of the Transfiguration",
+    source: "https://commons.wikimedia.org/wiki/File:Transfiguration_Raphael.jpg",
+  },
+  realPresence: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/22/The-Last-Supper-Restored-Da-Vinci_32x16.jpg",
+    alt: "Leonardo da Vinci mural of the Last Supper",
+    source: "https://commons.wikimedia.org/wiki/File:The-Last-Supper-Restored-Da-Vinci_32x16.jpg",
+  },
+  gethsemane: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Andrea_Mantegna_-_Agony_in_the_Garden_-_WGA13946.jpg",
+    alt: "Andrea Mantegna painting of the Agony in the Garden",
+    source: "https://commons.wikimedia.org/wiki/File:Andrea_Mantegna_-_Agony_in_the_Garden_-_WGA13946.jpg",
+  },
+  woundsMercy: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Christ_at_the_Column-Caravaggio_%28c._1607%29.jpg",
+    alt: "Caravaggio painting of Christ at the Column",
+    source: "https://commons.wikimedia.org/wiki/File:Christ_at_the_Column-Caravaggio_(c._1607).jpg",
+  },
+  dignityRestored: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/de/Ecce_homo_by_Antonio_Ciseri_%281%29.jpg",
+    alt: "Antonio Ciseri painting Ecce Homo",
+    source: "https://commons.wikimedia.org/wiki/File:Ecce_homo_by_Antonio_Ciseri_(1).jpg",
+  },
+  simonHelpsCarry: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/07/Brooklyn_Museum_-_Simon_the_Cyrenian_Compelled_to_Carry_the_Cross_with_Jesus_%28Simon_de_Cyr%C3%A8ne_contraint_de_porter_la_Croix_avec_J%C3%A9sus%29_-_James_Tissot.jpg",
+    alt: "James Tissot painting of Simon of Cyrene helping Jesus carry the Cross",
+    source: "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_Simon_the_Cyrenian_Compelled_to_Carry_the_Cross_with_Jesus_(Simon_de_Cyr%C3%A8ne_contraint_de_porter_la_Croix_avec_J%C3%A9sus)_-_James_Tissot.jpg",
+  },
+  throneLove: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cristo_crucificado.jpg",
+    alt: "Diego Velazquez painting of Christ crucified",
+    source: "https://commons.wikimedia.org/wiki/File:Cristo_crucificado.jpg",
+  },
+  faithAfterTomb: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/48/Giotto_di_Bondone_-_No._37_Scenes_from_the_Life_of_Christ_-_21._Resurrection_%28Noli_me_tangere%29_-_WGA09224.jpg",
+    alt: "Giotto fresco of the risen Christ appearing to Mary Magdalene",
+    source: "https://commons.wikimedia.org/wiki/File:Giotto_di_Bondone_-_No._37_Scenes_from_the_Life_of_Christ_-_21._Resurrection_(Noli_me_tangere)_-_WGA09224.jpg",
+  },
+  hopeRaisedUp: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Jesus_ascending_to_heaven.jpg/1280px-Jesus_ascending_to_heaven.jpg",
+    alt: "John Singleton Copley painting of the Ascension of Jesus",
+    source: "https://commons.wikimedia.org/wiki/File:Jesus_ascending_to_heaven.jpg",
+  },
+  giftsSpirit: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/07/El_Greco_-_The_Pentecost_-_WGA10533.jpg",
+    alt: "El Greco painting of Pentecost",
+    source: "https://commons.wikimedia.org/wiki/File:El_Greco_-_The_Pentecost_-_WGA10533.jpg",
+  },
+  throughMary: {
+    image: "./assets/public-domain/through-mary-to-jesus.jpg",
+    alt: "Titian painting of the Assumption of the Virgin",
+    source: "https://commons.wikimedia.org/wiki/File:Tizian_041.jpg",
+  },
+  finalPerseverance: {
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg",
+    alt: "Diego Velazquez painting of the Coronation of the Virgin",
+    source: "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_-_Coronation_of_the_Virgin_-_Prado.jpg",
+  },
+  lepanto: {
+    image: "./assets/public-domain/lepanto.jpg",
+    alt: "Public-domain painting of the Battle of Lepanto",
+    source: "https://commons.wikimedia.org/wiki/File:Battle_of_Lepanto_1571.jpg",
+  },
+};
+
 const downloadLinks = {
   "Joyful Mysteries": "./downloads/joyful-mysteries-slides.pptx",
   "Luminous Mysteries": "./downloads/luminous-mysteries-slides.pptx",
@@ -74,14 +202,24 @@ const downloadLinks = {
   "Glorious Mysteries": "./downloads/glorious-mysteries-slides.pptx",
 };
 
+const prayerTexts = {
+  apostlesCreed:
+    "I believe in God, the Father almighty, Creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died, and was buried; he descended into hell; on the third day he rose again from the dead; he ascended into heaven, and is seated at the right hand of God the Father almighty; from there he will come to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
+  gloryBe:
+    "Glory be to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and ever shall be, world without end. Amen.",
+  hailHolyQueen:
+    "Hail, holy Queen, Mother of mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.\n\nPray for us, O holy Mother of God, that we may be made worthy of the promises of Christ.\n\nLet us pray. O God, whose only begotten Son, by His life, death, and resurrection, has purchased for us the rewards of eternal life, grant, we beseech Thee, that while meditating on these mysteries of the most holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen.",
+};
+
 const openingBeads = [
   {
     type: "opening",
     marker: "Cross",
     title: "The Apostles' Creed",
-    scripture: "I believe in God, the Father almighty...",
+    scripture: "I believe in God, the Father almighty, Creator of heaven and earth...",
     body:
       "The Rosary begins inside the faith of the Church. The Creed is not decoration; it is the doorway into Christian memory.",
+    prayerText: prayerTexts.apostlesCreed,
     image: imageLibrary.opening[0],
     alt: "Rosary beads and sacred paper arranged on dark blue fabric",
     action: { label: "See the prayer guide", href: "#how-to-pray" },
@@ -93,8 +231,9 @@ const openingBeads = [
     scripture: "Our Father, who art in heaven...",
     body:
       "Jesus gave this prayer to the Church. In the Rosary it becomes the threshold of each decade, returning every mystery to the Father.",
-    image: imageLibrary.opening[1],
-    alt: "Candlelit papal desk with rosary beads and devotional objects",
+    image: publicImages.ourFather.image,
+    alt: publicImages.ourFather.alt,
+    imageSource: publicImages.ourFather.source,
     action: { label: "Why the prayer matters", href: "#what-is-rosary" },
   },
   {
@@ -104,8 +243,9 @@ const openingBeads = [
     scripture: "Hail Mary, full of grace...",
     body:
       "The first opening Hail Mary is traditionally prayed for an increase in faith before entering the mysteries.",
-    image: imageLibrary.opening[2],
-    alt: "The three children of Fatima in a historical photograph",
+    image: publicImages.faith.image,
+    alt: publicImages.faith.alt,
+    imageSource: publicImages.faith.source,
     action: { label: "Mary's requests", href: "#marys-requests" },
   },
   {
@@ -115,8 +255,9 @@ const openingBeads = [
     scripture: "Hail Mary, full of grace...",
     body:
       "The second opening Hail Mary asks for hope: the grace to keep walking when the mystery is not yet clear.",
-    image: imageLibrary.opening[1],
-    alt: "Candlelit papal desk with rosary beads and devotional objects",
+    image: publicImages.hope.image,
+    alt: publicImages.hope.alt,
+    imageSource: publicImages.hope.source,
     action: { label: "Learn the rhythm", href: "#how-to-pray" },
   },
   {
@@ -126,17 +267,19 @@ const openingBeads = [
     scripture: "Hail Mary, full of grace...",
     body:
       "The third opening Hail Mary asks for charity, so contemplation becomes love of God and neighbor.",
-    image: imageLibrary.opening[2],
-    alt: "The three children of Fatima in a historical photograph",
+    image: publicImages.charity.image,
+    alt: publicImages.charity.alt,
+    imageSource: publicImages.charity.source,
     action: { label: "Mary's requests", href: "#marys-requests" },
   },
   {
     type: "opening",
     marker: "Glory Be",
-    title: "Praise of the Trinity",
-    scripture: "Glory be to the Father, and to the Son, and to the Holy Spirit.",
+    title: "The Glory Be",
+    scripture: "Glory be to the Father, and to the Son, and to the Holy Spirit...",
     body:
       "The Rosary is Marian in companionship and Trinitarian in worship. Its rhythm keeps returning the soul to praise.",
+    prayerText: prayerTexts.gloryBe,
     image: imageLibrary.opening[3],
     alt: "Sacred art of the Coronation of Mary",
     action: { label: "Enter the mysteries", href: "#mysteries" },
@@ -150,7 +293,8 @@ const closingBeads = [
     title: "The Hail Holy Queen",
     scripture: "Hail, holy Queen, Mother of mercy...",
     body:
-      "Hail, holy Queen, Mother of mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.",
+      "The Rosary closes by entrusting the meditation to Mary's maternal intercession and asking that the mysteries become a lived imitation of Christ.",
+    prayerText: prayerTexts.hailHolyQueen,
     image: "./assets/witnesses/assumption.jpg",
     alt: "Stone shrine relief of Mary holding the child Jesus",
     action: { label: "Review the prayer guide", href: "#how-to-pray" },
@@ -171,8 +315,9 @@ const rosaryBeads = [
     title: "Mary's Fiat",
     scripture: "Luke 1:38",
     body: "The yes of Mary changed history because it was total. The Rosary teaches consent before control.",
-    image: imageLibrary.joyful[1],
-    alt: "Marian reflection image from the Joyful Mysteries slide deck",
+    image: publicImages.marysFiat.image,
+    alt: publicImages.marysFiat.alt,
+    imageSource: publicImages.marysFiat.source,
   },
   {
     decade: "joyful",
@@ -187,8 +332,9 @@ const rosaryBeads = [
     title: "The Magnificat",
     scripture: "Luke 1:46-47",
     body: "The prayer of Mary turns service into praise. A hidden visit becomes a public hymn of mercy.",
-    image: imageLibrary.joyful[3],
-    alt: "Joyful Mysteries devotional image of Mary and Elizabeth",
+    image: publicImages.magnificat.image,
+    alt: publicImages.magnificat.alt,
+    imageSource: publicImages.magnificat.source,
   },
   {
     decade: "joyful",
@@ -203,8 +349,9 @@ const rosaryBeads = [
     title: "Bethlehem's Poverty",
     scripture: "Luke 2:7",
     body: "The manger asks whether the heart can become simple enough to receive God.",
-    image: imageLibrary.joyful[5],
-    alt: "Bethlehem reflection image from the Joyful Mysteries slide deck",
+    image: publicImages.bethlehemsPoverty.image,
+    alt: publicImages.bethlehemsPoverty.alt,
+    imageSource: publicImages.bethlehemsPoverty.source,
   },
   {
     decade: "joyful",
@@ -219,8 +366,9 @@ const rosaryBeads = [
     title: "Simeon's Light",
     scripture: "Luke 2:32",
     body: "Simeon recognizes salvation in a child. The Rosary trains the eye to notice quiet revelation.",
-    image: imageLibrary.joyful[7],
-    alt: "Simeon reflection image from the Joyful Mysteries slide deck",
+    image: publicImages.simeonsLight.image,
+    alt: publicImages.simeonsLight.alt,
+    imageSource: publicImages.simeonsLight.source,
   },
   {
     decade: "joyful",
@@ -235,8 +383,9 @@ const rosaryBeads = [
     title: "The Father's House",
     scripture: "Luke 2:51",
     body: "Jesus returns to Nazareth in hidden obedience. Holiness can be quiet and still be complete.",
-    image: imageLibrary.joyful[9],
-    alt: "Holy Family devotional art from the Joyful Mysteries slide deck",
+    image: publicImages.fathersHouse.image,
+    alt: publicImages.fathersHouse.alt,
+    imageSource: publicImages.fathersHouse.source,
   },
   {
     decade: "luminous",
@@ -251,8 +400,9 @@ const rosaryBeads = [
     title: "Beloved Son",
     scripture: "Matthew 3:16-17",
     body: "The mystery reveals the Trinity and the humility of Christ standing with sinners in the Jordan.",
-    image: imageLibrary.luminous[1],
-    alt: "Jordan baptism reflection image from the Luminous Mysteries slide deck",
+    image: publicImages.belovedSon.image,
+    alt: publicImages.belovedSon.alt,
+    imageSource: publicImages.belovedSon.source,
   },
   {
     decade: "luminous",
@@ -267,8 +417,9 @@ const rosaryBeads = [
     title: "Ordinary Water, New Wine",
     scripture: "John 2:11",
     body: "Cana shows the ordinary transformed by Christ. Mary intercedes without taking the center.",
-    image: imageLibrary.luminous[3],
-    alt: "Cana reflection image from the Luminous Mysteries slide deck",
+    image: publicImages.cana.image,
+    alt: publicImages.cana.alt,
+    imageSource: publicImages.cana.source,
   },
   {
     decade: "luminous",
@@ -283,8 +434,9 @@ const rosaryBeads = [
     title: "Metanoia",
     scripture: "Mark 1:15",
     body: "Conversion is a reorientation of the whole person. The bead becomes a small act of return.",
-    image: imageLibrary.luminous[5],
-    alt: "Conversion reflection image from the Luminous Mysteries slide deck",
+    image: publicImages.metanoia.image,
+    alt: publicImages.metanoia.alt,
+    imageSource: publicImages.metanoia.source,
   },
   {
     decade: "luminous",
@@ -299,8 +451,9 @@ const rosaryBeads = [
     title: "Tabor Before Calvary",
     scripture: "Matthew 17:5",
     body: "The Father's voice confirms the Son. The mystery strengthens the apostles before scandal and fear.",
-    image: imageLibrary.luminous[7],
-    alt: "Tabor reflection image from the Luminous Mysteries slide deck",
+    image: publicImages.tabor.image,
+    alt: publicImages.tabor.alt,
+    imageSource: publicImages.tabor.source,
   },
   {
     decade: "luminous",
@@ -315,8 +468,9 @@ const rosaryBeads = [
     title: "Real Presence",
     scripture: "1 Corinthians 11:24",
     body: "The Rosary leads to the altar because contemplation of Christ matures into love for His self-gift.",
-    image: imageLibrary.luminous[9],
-    alt: "Eucharistic reflection image from the Luminous Mysteries slide deck",
+    image: publicImages.realPresence.image,
+    alt: publicImages.realPresence.alt,
+    imageSource: publicImages.realPresence.source,
   },
   {
     decade: "sorrowful",
@@ -331,8 +485,9 @@ const rosaryBeads = [
     title: "Gethsemane",
     scripture: "Luke 22:44",
     body: "The prayer of Jesus does not avoid anguish. It brings anguish into obedience.",
-    image: imageLibrary.sorrowful[1],
-    alt: "Gethsemane reflection image from the Sorrowful Mysteries slide deck",
+    image: publicImages.gethsemane.image,
+    alt: publicImages.gethsemane.alt,
+    imageSource: publicImages.gethsemane.source,
   },
   {
     decade: "sorrowful",
@@ -347,8 +502,9 @@ const rosaryBeads = [
     title: "Wounds and Mercy",
     scripture: "1 Peter 2:24",
     body: "The mystery asks for purity, discipline, and compassion for every wounded body.",
-    image: imageLibrary.sorrowful[3],
-    alt: "Scourging reflection image from the Sorrowful Mysteries slide deck",
+    image: publicImages.woundsMercy.image,
+    alt: publicImages.woundsMercy.alt,
+    imageSource: publicImages.woundsMercy.source,
   },
   {
     decade: "sorrowful",
@@ -363,8 +519,9 @@ const rosaryBeads = [
     title: "Dignity Restored",
     scripture: "John 19:5",
     body: "The humiliated Christ restores the dignity of the humiliated. The Rosary teaches courage without contempt.",
-    image: imageLibrary.sorrowful[5],
-    alt: "Crowning with Thorns reflection image from the Sorrowful Mysteries slide deck",
+    image: publicImages.dignityRestored.image,
+    alt: publicImages.dignityRestored.alt,
+    imageSource: publicImages.dignityRestored.source,
   },
   {
     decade: "sorrowful",
@@ -379,8 +536,9 @@ const rosaryBeads = [
     title: "Simon Helps Carry",
     scripture: "Luke 23:26",
     body: "Even Christ receives human assistance on the road. Some crosses are carried together.",
-    image: imageLibrary.sorrowful[7],
-    alt: "Cross-bearing reflection image from the Sorrowful Mysteries slide deck",
+    image: publicImages.simonHelpsCarry.image,
+    alt: publicImages.simonHelpsCarry.alt,
+    imageSource: publicImages.simonHelpsCarry.source,
   },
   {
     decade: "sorrowful",
@@ -395,8 +553,9 @@ const rosaryBeads = [
     title: "The Throne of Love",
     scripture: "John 19:30",
     body: "The Cross is not failure. It is the place where mercy speaks its final word.",
-    image: imageLibrary.sorrowful[9],
-    alt: "Crucifixion reflection image from the Sorrowful Mysteries slide deck",
+    image: publicImages.throneLove.image,
+    alt: publicImages.throneLove.alt,
+    imageSource: publicImages.throneLove.source,
   },
   {
     decade: "glorious",
@@ -411,8 +570,9 @@ const rosaryBeads = [
     title: "Faith After the Tomb",
     scripture: "John 20:29",
     body: "The empty tomb asks for faith that can live after grief and confusion.",
-    image: imageLibrary.glorious[1],
-    alt: "Resurrection reflection image from the Glorious Mysteries slide deck",
+    image: publicImages.faithAfterTomb.image,
+    alt: publicImages.faithAfterTomb.alt,
+    imageSource: publicImages.faithAfterTomb.source,
   },
   {
     decade: "glorious",
@@ -427,8 +587,9 @@ const rosaryBeads = [
     title: "Hope Raised Up",
     scripture: "John 14:2",
     body: "The Ascension keeps Christian life from shrinking into the present moment only.",
-    image: imageLibrary.glorious[3],
-    alt: "Ascension reflection image from the Glorious Mysteries slide deck",
+    image: publicImages.hopeRaisedUp.image,
+    alt: publicImages.hopeRaisedUp.alt,
+    imageSource: publicImages.hopeRaisedUp.source,
   },
   {
     decade: "glorious",
@@ -443,8 +604,9 @@ const rosaryBeads = [
     title: "Gifts of the Spirit",
     scripture: "Acts 1:8",
     body: "The fruit is not noise but courage, wisdom, love, zeal, and renewal.",
-    image: imageLibrary.glorious[5],
-    alt: "Pentecost reflection image from the Glorious Mysteries slide deck",
+    image: publicImages.giftsSpirit.image,
+    alt: publicImages.giftsSpirit.alt,
+    imageSource: publicImages.giftsSpirit.source,
   },
   {
     decade: "glorious",
@@ -459,8 +621,9 @@ const rosaryBeads = [
     title: "Through Mary to Jesus",
     scripture: "Luke 1:48",
     body: "Marian devotion is not a detour. It is a maternal path into the life of Christ.",
-    image: imageLibrary.glorious[7],
-    alt: "Assumption reflection image from the Glorious Mysteries slide deck",
+    image: publicImages.throughMary.image,
+    alt: publicImages.throughMary.alt,
+    imageSource: publicImages.throughMary.source,
   },
   {
     decade: "glorious",
@@ -475,8 +638,9 @@ const rosaryBeads = [
     title: "Final Perseverance",
     scripture: "2 Timothy 4:7",
     body: "The last bead asks for fidelity until the end: not a mood, but a life completed in grace.",
-    image: imageLibrary.glorious[9],
-    alt: "Coronation reflection image from the Glorious Mysteries slide deck",
+    image: publicImages.finalPerseverance.image,
+    alt: publicImages.finalPerseverance.alt,
+    imageSource: publicImages.finalPerseverance.source,
   },
   {
     decade: "witness",
@@ -499,8 +663,9 @@ const rosaryBeads = [
     title: "Lepanto",
     scripture: "1571",
     body: "Catholic memory tied the naval victory to Rosary prayer and gratitude to Our Lady. The emphasis here is dependence, not triumphalism.",
-    image: imageLibrary.witness[2],
-    alt: "Portrait of Pope Pius V used for the Lepanto memory",
+    image: publicImages.lepanto.image,
+    alt: publicImages.lepanto.alt,
+    imageSource: publicImages.lepanto.source,
   },
   {
     decade: "witness",
@@ -876,6 +1041,21 @@ const sourceGroups = [
       },
     ],
   },
+  {
+    heading: "Guided Rosary (Portuguese)",
+    sources: [
+      {
+        title:
+          "Frei Gilson / Som do Monte — official channel (daily Santo Rosário)",
+        url: "https://www.youtube.com/c/FreiGilsonSomdoMonteOFICIAL",
+      },
+      {
+        title:
+          "Instituto Hesed — official channel (Santo Rosário da madrugada; Padre Paulo Ricardo)",
+        url: "https://www.youtube.com/@institutohesed",
+      },
+    ],
+  },
 ];
 
 function renderChronology() {
@@ -965,6 +1145,15 @@ function formationForRosaryItem(item) {
   ];
 }
 
+function formatPrayerText(value = "") {
+  return value
+    .split("\n\n")
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+    .map((paragraph) => `<p>${paragraph}</p>`)
+    .join("");
+}
+
 function beadPosition(stepIndex) {
   if (stepIndex < openingBeads.length) {
     const openingPath = [
@@ -986,8 +1175,8 @@ function beadPosition(stepIndex) {
 
   const progress = (beadIndex + 1) / (rosaryBeads.length + 1);
   const angle = -Math.PI / 2 - progress * Math.PI * 2;
-  const radiusX = 30;
-  const radiusY = 30;
+  const radiusX = 24;
+  const radiusY = 34;
 
   return {
     x: 50 + Math.cos(angle) * radiusX,
@@ -1038,6 +1227,13 @@ function linksForRosaryItem(item) {
     },
   ];
 
+  if (item.imageSource) {
+    links.splice(2, 0, {
+      label: "Image source",
+      href: item.imageSource,
+    });
+  }
+
   const deck = downloadLinks[`${titleCase(item.decade)} Mysteries`];
   if (deck) {
     links.splice(1, 0, {
@@ -1083,9 +1279,14 @@ function setActiveRosaryStep(steps, index) {
   if (scripture) scripture.textContent = item.scripture;
   if (body) body.textContent = item.body;
   if (detail) {
-    detail.innerHTML = formationForRosaryItem(item)
+    const prayerMarkup = item.prayerText
+      ? `<div class="bead-prayer"><strong>Full prayer</strong>${formatPrayerText(item.prayerText)}</div>`
+      : "";
+    const formationMarkup = formationForRosaryItem(item)
       .map((paragraph) => `<p>${paragraph}</p>`)
       .join("");
+
+    detail.innerHTML = `${prayerMarkup}${formationMarkup}`;
   }
   if (links) {
     links.innerHTML = linksForRosaryItem(item)
@@ -1114,11 +1315,23 @@ function setActiveRosaryStep(steps, index) {
     }
   }
 
-  document.querySelectorAll("[data-step]").forEach((element) => {
-    const elementStep = Number(element.dataset.step);
-    element.classList.toggle("is-active", elementStep === index);
-    element.classList.toggle("is-past", elementStep < index);
-  });
+  document
+    .querySelectorAll("#rosary-map [data-step], #rosary-steps [data-step]")
+    .forEach((element) => {
+      const elementStep = Number(element.dataset.step);
+      const distance = Math.abs(elementStep - index);
+      element.classList.toggle("is-active", elementStep === index);
+      element.classList.toggle("is-past", elementStep < index);
+      element.classList.toggle("is-near", distance > 0 && distance <= 2);
+      element.classList.toggle("is-far", distance > 2);
+    });
+
+  const map = document.getElementById("rosary-map");
+  if (map) {
+    const position = beadPosition(index);
+    map.style.setProperty("--active-x", `${position.x}%`);
+    map.style.setProperty("--active-y", `${position.y}%`);
+  }
 
   window.dispatchEvent(
     new CustomEvent("rosary:active-step", {
@@ -1416,6 +1629,17 @@ function wireTestimonyForm() {
   });
 }
 
+window.rosaryPath = {
+  steps: rosarySteps,
+  setActive(index) {
+    setActiveRosaryStep(rosarySteps(), index);
+  },
+  scrollTo(index) {
+    const target = document.querySelector(`#rosary-steps [data-step="${Number(index) || 0}"]`);
+    target?.scrollIntoView({ behavior: "smooth", block: "center" });
+  },
+};
+
 renderRosaryPath();
 renderChronology();
 renderMysteries();
@@ -1425,3 +1649,4 @@ wireRevealAnimations();
 wireDownloads();
 wirePrint();
 wireTestimonyForm();
+window.rosaryI18n?.init();

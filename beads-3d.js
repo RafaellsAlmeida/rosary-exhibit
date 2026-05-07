@@ -1,36 +1,73 @@
-(function initRosaryBeads3D() {
-  const canvas = document.getElementById("rosary-3d");
-  if (!canvas || !window.THREE) return;
+(function loadPullableRosary3D() {
+  const threeModuleUrl = "https://unpkg.com/three@0.160.0/build/three.module.js";
 
-  const THREE = window.THREE;
+  if (window.THREE) {
+    initPullableRosary3D(window.THREE);
+    return;
+  }
+
+  import(threeModuleUrl)
+    .then((module) => initPullableRosary3D(module))
+    .catch(() => {
+      document.getElementById("pull-rosary")?.classList.add("is-fallback");
+    });
+})();
+
+function initPullableRosary3D(THREE) {
+  const canvas = document.getElementById("rosary-3d");
+  const dock = document.getElementById("pull-rosary");
+  const title = document.getElementById("pull-rosary-title");
+  const kicker = document.getElementById("pull-rosary-kicker");
+
+  if (!canvas || !dock) return;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const buttons = Array.from(document.querySelectorAll("#rosary-map button[data-step]")).sort(
+  const stepButtons = Array.from(document.querySelectorAll("#rosary-map button[data-step]")).sort(
     (a, b) => Number(a.dataset.step) - Number(b.dataset.step)
   );
 
-  if (!buttons.length) return;
+  if (!stepButtons.length) return;
 
-  document.body.classList.add("has-webgl-beads");
+  document.body.classList.add("has-pull-rosary");
 
-  const buttonByStep = new Map();
-  const positionByStep = new Map();
-  const orderByStep = new Map();
+  const maxStep = stepButtons.length - 1;
+  const pickables = [];
+  const beadEntries = [];
+  const segments = [];
+  const clock = new THREE.Clock();
+  const pointer = new THREE.Vector2();
+  const raycaster = new THREE.Raycaster();
+  const yAxis = new THREE.Vector3(0, 1, 0);
 
-  buttons.forEach((button, order) => {
-    const stepIndex = Number(button.dataset.step);
-    const x = parseFloat(button.style.getPropertyValue("--x"));
-    const y = parseFloat(button.style.getPropertyValue("--y"));
-    buttonByStep.set(stepIndex, button);
-    positionByStep.set(stepIndex, {
-      x: Number.isFinite(x) ? x : 50,
-      y: Number.isFinite(y) ? y : 50,
-    });
-    orderByStep.set(stepIndex, order);
+  const stepMeta = stepButtons.map((button, order) => {
+    const step = Number(button.dataset.step);
+    const label = button.dataset.label || button.textContent.trim();
+    const classList = Array.from(button.classList);
+    const type = classList.includes("closing-marker")
+      ? "closing"
+      : classList.includes("opening-marker")
+        ? "opening"
+        : "bead";
+    const decade =
+      classList.find((className) =>
+        ["joyful", "luminous", "sorrowful", "glorious", "witness"].includes(className)
+      ) || type;
+
+    return {
+      step,
+      order,
+      type,
+      decade,
+      label,
+      title: window.rosaryI18n?.getOriginalAttribute?.(button, "aria-label") || button.getAttribute("aria-label") || label,
+    };
   });
 
+  const orderByStep = new Map(stepMeta.map((item) => [item.step, item.order]));
+  const metaByStep = new Map(stepMeta.map((item) => [item.step, item]));
+
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
-  camera.position.set(0, 0, 15);
+  const camera = new THREE.OrthographicCamera(-8, 8, 2.4, -2.4, 0.1, 100);
+  camera.position.set(0, 0, 10);
 
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -40,176 +77,350 @@
     powerPreference: "high-performance",
   });
   renderer.setClearColor(0x000000, 0);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.55));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
 
   const group = new THREE.Group();
+  group.position.y = -0.14;
   scene.add(group);
 
-  scene.add(new THREE.AmbientLight(0xe8d7bc, 0.86));
+  scene.add(new THREE.AmbientLight(0xe9dbc3, 0.82));
 
-  const keyLight = new THREE.DirectionalLight(0xffefc4, 1.75);
-  keyLight.position.set(2.6, 4.8, 6);
+  const keyLight = new THREE.DirectionalLight(0xffefc6, 1.65);
+  keyLight.position.set(-3.5, 5, 5.4);
   scene.add(keyLight);
 
-  const blueFill = new THREE.PointLight(0x6fa9d4, 0.9, 18);
-  blueFill.position.set(-3.8, -2.2, 5);
-  scene.add(blueFill);
+  const rimLight = new THREE.DirectionalLight(0x84b6d6, 0.72);
+  rimLight.position.set(4, 2.2, 5);
+  scene.add(rimLight);
 
-  const goldFill = new THREE.PointLight(0xe0ba67, 0.58, 14);
-  goldFill.position.set(3.8, 1.4, 4);
-  scene.add(goldFill);
+  const lowGold = new THREE.PointLight(0xf0c46b, 1.1, 18);
+  lowGold.position.set(0, -2.5, 3.2);
+  scene.add(lowGold);
 
   const palette = {
-    opening: 0xd8c59b,
+    opening: 0xd99c45,
     closing: 0xf1d99c,
-    joyful: 0xd6b15f,
-    luminous: 0x74a8bf,
-    sorrowful: 0x9e5260,
-    glorious: 0xf0d989,
-    witness: 0x789b83,
+    joyful: 0xcd8141,
+    luminous: 0x77adc0,
+    sorrowful: 0xa95862,
+    glorious: 0xe7c66c,
+    witness: 0x789d81,
   };
 
-  function percentForStep(stepIndex) {
-    return positionByStep.get(stepIndex) || { x: 50, y: 50 };
-  }
+  const beadGeometry = new THREE.SphereGeometry(0.18, 18, 14);
+  const openingGeometry = new THREE.SphereGeometry(0.2, 18, 14);
+  const medalGeometry = new THREE.SphereGeometry(0.3, 22, 16);
+  const cordGeometry = new THREE.CylinderGeometry(0.026, 0.026, 1, 6);
+  const cordMaterial = new THREE.MeshStandardMaterial({
+    color: 0xb58a48,
+    roughness: 0.68,
+    metalness: 0.12,
+    transparent: true,
+    opacity: 0.82,
+  });
 
-  function stepKind(stepIndex) {
-    const button = buttonByStep.get(stepIndex);
-    if (!button) return "bead";
-    if (button.classList.contains("closing-marker")) return "closing";
-    if (button.classList.contains("opening-marker")) return "opening";
-    return "bead";
-  }
-
-  function pointForStep(stepIndex) {
-    const percent = percentForStep(stepIndex);
-    const order = orderByStep.get(stepIndex) || 0;
-    const kind = stepKind(stepIndex);
-    const z =
-      kind === "opening"
-        ? 0.3 - percent.y * 0.004
-        : kind === "closing"
-          ? 0.26
-          : Math.sin(order * 0.38) * 0.18 + Math.cos((percent.x / 100) * Math.PI) * 0.1;
-    return new THREE.Vector3((percent.x - 50) * 0.056, 4.25 - percent.y * 0.083, z);
-  }
-
-  const points = buttons.map((button) => pointForStep(Number(button.dataset.step)));
-  const curve = new THREE.CatmullRomCurve3(points);
-  const cord = new THREE.Mesh(
-    new THREE.TubeGeometry(curve, 260, 0.026, 8, false),
-    new THREE.MeshStandardMaterial({
-      color: 0xa98747,
-      roughness: 0.72,
-      metalness: 0.16,
-      transparent: true,
-      opacity: 0.78,
-    })
-  );
-  group.add(cord);
-
-  const beadGeometry = new THREE.SphereGeometry(0.17, 28, 20);
-  const openingGeometry = new THREE.SphereGeometry(0.2, 28, 20);
-  const closingGeometry = new THREE.SphereGeometry(0.23, 32, 22);
-  const beadMeshes = [];
-
-  buttons.forEach((button) => {
-    const stepIndex = Number(button.dataset.step);
-    const kind = stepKind(stepIndex);
-    const decade =
-      Array.from(button.classList).find((className) =>
-        ["joyful", "luminous", "sorrowful", "glorious", "witness"].includes(className)
-      ) || kind;
-    const color = palette[decade] || palette.opening;
-    const material = new THREE.MeshStandardMaterial({
-      color,
-      emissive: 0x000000,
-      roughness: 0.32,
+  function materialFor(decade) {
+    return new THREE.MeshStandardMaterial({
+      color: palette[decade] || palette.opening,
+      roughness: 0.3,
       metalness: 0.08,
+      emissive: 0x000000,
     });
-    const mesh = new THREE.Mesh(
-      kind === "closing" ? closingGeometry : kind === "opening" ? openingGeometry : beadGeometry,
-      material
-    );
-    mesh.position.copy(pointForStep(stepIndex));
-    mesh.userData.stepIndex = stepIndex;
-    mesh.userData.baseScale = kind === "closing" ? 1.22 : kind === "opening" ? 1.06 : 1;
+  }
+
+  function addCross(meta) {
+    const cross = new THREE.Group();
+    const material = new THREE.MeshStandardMaterial({
+      color: 0xd3a44c,
+      roughness: 0.38,
+      metalness: 0.22,
+    });
+    const vertical = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.72, 0.1), material);
+    const horizontal = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.1, 0.1), material);
+    horizontal.position.y = 0.13;
+    cross.add(vertical, horizontal);
+    cross.rotation.z = -0.08;
+    cross.userData.step = meta.step;
+    cross.userData.baseScale = 1;
+    cross.userData.targetScale = 1;
+    vertical.userData.step = meta.step;
+    horizontal.userData.step = meta.step;
+    pickables.push(vertical, horizontal);
+    group.add(cross);
+    beadEntries.push({ meta, mesh: cross, material, baseScale: 1, isCross: true });
+  }
+
+  stepMeta.forEach((meta) => {
+    if (meta.step === 0) {
+      addCross(meta);
+      return;
+    }
+
+    const geometry =
+      meta.type === "closing" ? medalGeometry : meta.type === "opening" ? openingGeometry : beadGeometry;
+    const material = materialFor(meta.decade);
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.userData.step = meta.step;
+    mesh.userData.baseScale = meta.type === "closing" ? 1.16 : meta.type === "opening" ? 1.03 : 1;
     mesh.userData.targetScale = mesh.userData.baseScale;
-    beadMeshes.push(mesh);
+
+    if (meta.type === "closing") {
+      mesh.scale.set(1.18, 0.78, 1.18);
+      mesh.rotation.x = 0.5;
+    }
+
+    pickables.push(mesh);
     group.add(mesh);
+    beadEntries.push({ meta, mesh, material, baseScale: mesh.userData.baseScale, isCross: false });
   });
 
-  const crossGroup = new THREE.Group();
-  const crossMaterial = new THREE.MeshStandardMaterial({
-    color: 0xc39a45,
-    roughness: 0.42,
-    metalness: 0.26,
-  });
-  const crossVertical = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.72, 0.08), crossMaterial);
-  const crossHorizontal = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.08, 0.08), crossMaterial);
-  crossHorizontal.position.y = 0.12;
-  crossGroup.add(crossVertical, crossHorizontal);
-  crossGroup.position.copy(pointForStep(0)).add(new THREE.Vector3(0, 0.62, 0.02));
-  group.add(crossGroup);
+  for (let index = 0; index < stepMeta.length - 1; index += 1) {
+    const segment = new THREE.Mesh(cordGeometry, cordMaterial);
+    segment.visible = false;
+    group.add(segment);
+    segments.push(segment);
+  }
 
-  let activeIndex = 0;
-  let pointerX = 0;
-  let pointerY = 0;
-  let visible = true;
+  let activeStep = 0;
+  let targetOffset = 0;
+  let displayOffset = 0;
+  let viewWidth = 16;
+  let viewHeight = 4.8;
+  let isDragging = false;
+  let dragMoved = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let dragStartOffset = 0;
+  let liftTarget = 0;
+  let lift = 0;
   let frame = 0;
+  let lastFrameTime = 0;
+  let visible = true;
 
-  function setActive(index) {
-    activeIndex = Number(index) || 0;
-    beadMeshes.forEach((mesh) => {
-      const isActive = mesh.userData.stepIndex === activeIndex;
-      mesh.userData.targetScale = isActive ? mesh.userData.baseScale * 1.74 : mesh.userData.baseScale;
-      mesh.material.emissive.setHex(isActive ? 0x5c4218 : 0x000000);
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function pointForOrder(order, offset, elapsed) {
+    const spacing = 0.43;
+    const x = (order - offset) * spacing;
+    const wave = Math.sin(order * 0.52 + elapsed * 0.8) * 0.06;
+    const centerPull = Math.max(0, 1 - Math.abs(order - offset) / 6);
+    const y = -0.45 - Math.cos((order - offset) * 0.22) * 0.22 + centerPull * (0.42 + lift) + wave;
+    const z = Math.sin(order * 0.38 + elapsed * 0.4) * 0.15 + centerPull * 0.18;
+    return new THREE.Vector3(x, y, z);
+  }
+
+  function alignSegment(segment, start, end) {
+    const direction = end.clone().sub(start);
+    const length = direction.length();
+    if (length <= 0.001) {
+      segment.visible = false;
+      return;
+    }
+
+    segment.visible = true;
+    segment.position.copy(start).add(end).multiplyScalar(0.5);
+    segment.scale.set(1, length, 1);
+    segment.quaternion.setFromUnitVectors(yAxis, direction.normalize());
+  }
+
+  function stepLabel(meta) {
+    if (meta.type === "closing") return "Closing prayer";
+    if (meta.type === "opening") return meta.label || "Opening prayer";
+    return `${meta.label || `Bead ${meta.order}`} / ${meta.decade}`;
+  }
+
+  function updateStatus(step) {
+    const meta = metaByStep.get(step) || stepMeta[0];
+    if (title) title.textContent = meta.title;
+    if (kicker) kicker.textContent = stepLabel(meta);
+  }
+
+  function syncPath(step, shouldScroll) {
+    activeStep = clamp(Number(step) || 0, 0, maxStep);
+    updateStatus(activeStep);
+
+    if (window.rosaryPath?.setActive) {
+      window.rosaryPath.setActive(activeStep);
+    }
+
+    updateActiveMaterials();
+
+    if (shouldScroll) {
+      if (window.rosaryPath?.scrollTo) {
+        window.rosaryPath.scrollTo(activeStep);
+      } else {
+        document
+          .querySelector(`#rosary-steps [data-step="${activeStep}"]`)
+          ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  }
+
+  function setActiveStep(step, options = {}) {
+    const nextStep = clamp(Number(step) || 0, 0, maxStep);
+    const nextOrder = orderByStep.get(nextStep) || 0;
+    targetOffset = nextOrder;
+    syncPath(nextStep, Boolean(options.scroll));
+    if (reducedMotion) renderScene();
+  }
+
+  function setActiveFromOffset(offset) {
+    const order = clamp(Math.round(offset), 0, maxStep);
+    const next = stepMeta[order]?.step || 0;
+    targetOffset = clamp(offset, 0, maxStep);
+    if (next !== activeStep) syncPath(next, false);
+    if (reducedMotion) renderScene();
+  }
+
+  function updateActiveMaterials() {
+    beadEntries.forEach(({ meta, mesh, material, baseScale, isCross }) => {
+      const isActive = meta.step === activeStep;
+      const targetScale = isActive ? baseScale * 1.66 : baseScale;
+      mesh.userData.targetScale = targetScale;
+      if (material?.emissive) material.emissive.setHex(isActive ? 0x604516 : 0x000000);
+      if (isCross) {
+        mesh.children.forEach((child) => child.material.emissive?.setHex(isActive ? 0x604516 : 0x000000));
+      }
     });
-
-    if (reducedMotion) renderOnce();
   }
 
   function resize() {
     const width = Math.max(canvas.clientWidth, 1);
     const height = Math.max(canvas.clientHeight, 1);
-    camera.aspect = width / height;
+    const aspect = width / height;
+    viewHeight = 4.8;
+    viewWidth = viewHeight * aspect;
+    camera.left = -viewWidth / 2;
+    camera.right = viewWidth / 2;
+    camera.top = viewHeight / 2;
+    camera.bottom = -viewHeight / 2;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height, false);
-    renderOnce();
   }
 
-  function renderOnce() {
+  function renderScene() {
+    const elapsed = clock.getElapsedTime();
+    displayOffset += (targetOffset - displayOffset) * (isDragging ? 0.34 : 0.13);
+    lift += (liftTarget - lift) * 0.14;
+
+    const points = stepMeta.map((meta) => pointForOrder(meta.order, displayOffset, elapsed));
+
+    beadEntries.forEach(({ meta, mesh, isCross }) => {
+      const point = points[meta.order];
+      const centerPull = Math.max(0, 1 - Math.abs(meta.order - displayOffset) / 7);
+      const targetScale = mesh.userData.targetScale || mesh.userData.baseScale || 1;
+      const currentScale = mesh.scale.x || 1;
+      const nextScale = currentScale + (targetScale - currentScale) * 0.18;
+
+      mesh.position.copy(point);
+      if (isCross) {
+        mesh.position.y -= 0.14;
+        mesh.scale.setScalar(nextScale);
+        mesh.rotation.y = Math.sin(elapsed * 0.7 + meta.order) * 0.12 + centerPull * 0.18;
+      } else if (meta.type === "closing") {
+        mesh.scale.set(nextScale * 1.18, nextScale * 0.78, nextScale * 1.18);
+        mesh.rotation.y = elapsed * 0.18 + centerPull * 0.6;
+      } else {
+        mesh.scale.setScalar(nextScale);
+        mesh.rotation.y = elapsed * 0.22 + meta.order * 0.08;
+      }
+    });
+
+    segments.forEach((segment, index) => {
+      const start = points[index];
+      const end = points[index + 1];
+      const isVisible =
+        Math.abs(start.x) < viewWidth * 0.6 ||
+        Math.abs(end.x) < viewWidth * 0.6 ||
+        (start.x < -viewWidth / 2 && end.x > viewWidth / 2);
+      if (!isVisible) {
+        segment.visible = false;
+        return;
+      }
+      alignSegment(segment, start, end);
+    });
+
+    group.rotation.x = -0.08 + lift * 0.1;
+    group.rotation.y = Math.sin(elapsed * 0.32) * 0.035;
     renderer.render(scene, camera);
   }
 
   function animate(time = 0) {
-    if (!visible) return;
-
-    const t = time * 0.001;
-    group.rotation.y = pointerX * 0.18 + Math.sin(t * 0.38) * 0.06;
-    group.rotation.x = pointerY * -0.08 + Math.sin(t * 0.24) * 0.025;
-
-    beadMeshes.forEach((mesh, index) => {
-      const target = mesh.userData.targetScale;
-      const current = mesh.scale.x;
-      const next = current + (target - current) * 0.12;
-      mesh.scale.setScalar(next);
-      mesh.position.z = pointForStep(mesh.userData.stepIndex).z + Math.sin(t * 1.1 + index * 0.27) * 0.025;
-    });
-
-    crossGroup.rotation.z = Math.sin(t * 0.55) * 0.025;
-    renderer.render(scene, camera);
+    if (!visible && !isDragging) return;
+    const frameInterval = isDragging ? 16 : 50;
+    if (time - lastFrameTime >= frameInterval) {
+      renderScene();
+      lastFrameTime = time;
+    }
     frame = window.requestAnimationFrame(animate);
   }
 
-  window.addEventListener("rosary:active-step", (event) => {
-    setActive(event.detail.index);
+  function pointerToCanvas(event) {
+    const rect = canvas.getBoundingClientRect();
+    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  }
+
+  function pickedStep(event) {
+    pointerToCanvas(event);
+    raycaster.setFromCamera(pointer, camera);
+    const hits = raycaster.intersectObjects(pickables, false);
+    return hits[0]?.object?.userData?.step;
+  }
+
+  canvas.addEventListener("pointerdown", (event) => {
+    isDragging = true;
+    dragMoved = false;
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    dragStartOffset = targetOffset;
+    dock.classList.add("is-pulling");
+    canvas.setPointerCapture(event.pointerId);
   });
 
   canvas.addEventListener("pointermove", (event) => {
-    const rect = canvas.getBoundingClientRect();
-    pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-    pointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    if (!isDragging) return;
+
+    const deltaX = event.clientX - dragStartX;
+    const deltaY = event.clientY - dragStartY;
+    const pixelsPerBead = Math.max(20, canvas.clientWidth / 32);
+    dragMoved = dragMoved || Math.abs(deltaX) > 4 || Math.abs(deltaY) > 4;
+    liftTarget = clamp(-deltaY / 150, -0.28, 0.62);
+    setActiveFromOffset(dragStartOffset - deltaX / pixelsPerBead);
+  });
+
+  function finishPointer(event) {
+    if (!isDragging) return;
+
+    isDragging = false;
+    liftTarget = 0;
+    dock.classList.remove("is-pulling");
+
+    if (canvas.hasPointerCapture(event.pointerId)) {
+      canvas.releasePointerCapture(event.pointerId);
+    }
+
+    if (!dragMoved) {
+      const step = pickedStep(event);
+      if (Number.isFinite(step)) setActiveStep(step, { scroll: true });
+      return;
+    }
+
+    setActiveStep(activeStep, { scroll: true });
+  }
+
+  canvas.addEventListener("pointerup", finishPointer);
+  canvas.addEventListener("pointercancel", finishPointer);
+
+  window.addEventListener("rosary:active-step", (event) => {
+    const step = Number(event.detail.index);
+    if (!Number.isFinite(step) || step === activeStep) return;
+    activeStep = clamp(step, 0, maxStep);
+    targetOffset = orderByStep.get(activeStep) || 0;
+    updateStatus(activeStep);
+    updateActiveMaterials();
   });
 
   const resizeObserver = new ResizeObserver(resize);
@@ -223,15 +434,18 @@
         frame = window.requestAnimationFrame(animate);
       }
     },
-    { threshold: 0.05 }
+    { threshold: 0.01 }
   );
-  visibilityObserver.observe(canvas);
+  visibilityObserver.observe(dock);
 
-  const activeButton = buttons.find((button) => button.classList.contains("is-active"));
-  setActive(activeButton ? Number(activeButton.dataset.step) : 0);
   resize();
+  setActiveStep(0, { scroll: false });
+  updateActiveMaterials();
+  renderScene();
 
   if (!reducedMotion) {
-    frame = window.requestAnimationFrame(animate);
+    window.setTimeout(() => {
+      frame = window.requestAnimationFrame(animate);
+    }, 120);
   }
-})();
+}
