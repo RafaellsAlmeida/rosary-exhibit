@@ -1,0 +1,1122 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - navigation "Primary navigation" [ref=e3]:
+    - link "The Rosary" [ref=e4] [cursor=pointer]:
+      - /url: "#top"
+    - generic [ref=e5]:
+      - link "Rosary Path" [ref=e6] [cursor=pointer]:
+        - /url: "#rosary-scroll"
+      - link "What Is the Rosary?" [ref=e7] [cursor=pointer]:
+        - /url: "#what-is-rosary"
+      - link "How to Pray" [ref=e8] [cursor=pointer]:
+        - /url: "#how-to-pray"
+      - link "Mysteries" [ref=e9] [cursor=pointer]:
+        - /url: "#mysteries"
+      - link "Mary's Requests" [ref=e10] [cursor=pointer]:
+        - /url: "#marys-requests"
+      - link "Testimonies" [ref=e11] [cursor=pointer]:
+        - /url: "#testimonies"
+      - link "Daily Rosary" [ref=e12] [cursor=pointer]:
+        - /url: "#daily-rosary"
+      - link "Sources" [ref=e13] [cursor=pointer]:
+        - /url: "#sources"
+  - banner [ref=e14]:
+    - img "A rosary, sealed paper, candlelight, and sacred art on dark blue fabric" [ref=e15]
+    - generic [ref=e17]:
+      - paragraph [ref=e18]: A digital Catholic exhibition
+      - 'heading "The Rosary: A Path Through the Life of Christ" [level=1] [ref=e19]'
+      - paragraph [ref=e20]: A digital exhibition on the prayer Our Lady asked for, the mysteries of Christ it reveals, and the graces it has carried through history.
+      - paragraph [ref=e21]: Walk through the life of Christ with Mary, one mystery at a time.
+      - generic [ref=e22]:
+        - link "Enter the Rosary Path" [ref=e23] [cursor=pointer]:
+          - /url: "#rosary-scroll"
+        - link "Learn How to Pray" [ref=e24] [cursor=pointer]:
+          - /url: "#how-to-pray"
+    - generic [ref=e25]: Begin with the prayer
+  - main [ref=e26]:
+    - region "Rosary" [ref=e27]:
+      - generic [ref=e29]:
+        - generic "Rosary bead navigation" [ref=e31]:
+          - generic "Opening prayers" [ref=e32]:
+            - button "The Apostles' Creed" [ref=e33] [cursor=pointer]:
+              - generic [ref=e34]: Cross
+            - button "The Our Father" [ref=e35] [cursor=pointer]:
+              - generic [ref=e36]: Our Father
+            - 'button "First Hail Mary: Faith" [ref=e37] [cursor=pointer]':
+              - generic [ref=e38]: Faith
+            - 'button "Second Hail Mary: Hope" [ref=e39] [cursor=pointer]':
+              - generic [ref=e40]: Hope
+            - 'button "Third Hail Mary: Charity" [ref=e41] [cursor=pointer]':
+              - generic [ref=e42]: Charity
+            - button "Praise of the Trinity" [ref=e43] [cursor=pointer]:
+              - generic [ref=e44]: Glory Be
+          - generic "Fifty Rosary beads" [ref=e45]:
+            - 'button "Bead 1: The Annunciation" [ref=e46] [cursor=pointer]':
+              - generic [ref=e47]: "1"
+            - 'button "Bead 2: Mary''s Fiat" [ref=e48] [cursor=pointer]':
+              - generic [ref=e49]: "2"
+            - 'button "Bead 3: The Visitation" [ref=e50] [cursor=pointer]':
+              - generic [ref=e51]: "3"
+            - 'button "Bead 4: The Magnificat" [ref=e52] [cursor=pointer]':
+              - generic [ref=e53]: "4"
+            - 'button "Bead 5: The Nativity" [ref=e54] [cursor=pointer]':
+              - generic [ref=e55]: "5"
+            - 'button "Bead 6: Bethlehem''s Poverty" [ref=e56] [cursor=pointer]':
+              - generic [ref=e57]: "6"
+            - 'button "Bead 7: The Presentation" [ref=e58] [cursor=pointer]':
+              - generic [ref=e59]: "7"
+            - 'button "Bead 8: Simeon''s Light" [ref=e60] [cursor=pointer]':
+              - generic [ref=e61]: "8"
+            - 'button "Bead 9: The Finding in the Temple" [ref=e62] [cursor=pointer]':
+              - generic [ref=e63]: "9"
+            - 'button "Bead 10: The Father''s House" [ref=e64] [cursor=pointer]':
+              - generic [ref=e65]: "10"
+            - 'button "Bead 11: The Baptism of Jesus" [ref=e66] [cursor=pointer]':
+              - generic [ref=e67]: "11"
+            - 'button "Bead 12: Beloved Son" [ref=e68] [cursor=pointer]':
+              - generic [ref=e69]: "12"
+            - 'button "Bead 13: The Wedding at Cana" [ref=e70] [cursor=pointer]':
+              - generic [ref=e71]: "13"
+            - 'button "Bead 14: Ordinary Water, New Wine" [ref=e72] [cursor=pointer]':
+              - generic [ref=e73]: "14"
+            - 'button "Bead 15: The Kingdom Proclaimed" [ref=e74] [cursor=pointer]':
+              - generic [ref=e75]: "15"
+            - 'button "Bead 16: Metanoia" [ref=e76] [cursor=pointer]':
+              - generic [ref=e77]: "16"
+            - 'button "Bead 17: The Transfiguration" [ref=e78] [cursor=pointer]':
+              - generic [ref=e79]: "17"
+            - 'button "Bead 18: Tabor Before Calvary" [ref=e80] [cursor=pointer]':
+              - generic [ref=e81]: "18"
+            - 'button "Bead 19: The Eucharist Instituted" [ref=e82] [cursor=pointer]':
+              - generic [ref=e83]: "19"
+            - 'button "Bead 20: Real Presence" [ref=e84] [cursor=pointer]':
+              - generic [ref=e85]: "20"
+            - 'button "Bead 21: Agony in the Garden" [ref=e86] [cursor=pointer]':
+              - generic [ref=e87]: "21"
+            - 'button "Bead 22: Gethsemane" [ref=e88] [cursor=pointer]':
+              - generic [ref=e89]: "22"
+            - 'button "Bead 23: The Scourging" [ref=e90] [cursor=pointer]':
+              - generic [ref=e91]: "23"
+            - 'button "Bead 24: Wounds and Mercy" [ref=e92] [cursor=pointer]':
+              - generic [ref=e93]: "24"
+            - 'button "Bead 25: Crowning with Thorns" [ref=e94] [cursor=pointer]':
+              - generic [ref=e95]: "25"
+            - 'button "Bead 26: Dignity Restored" [ref=e96] [cursor=pointer]':
+              - generic [ref=e97]: "26"
+            - 'button "Bead 27: Carrying the Cross" [ref=e98] [cursor=pointer]':
+              - generic [ref=e99]: "27"
+            - 'button "Bead 28: Simon Helps Carry" [ref=e100] [cursor=pointer]':
+              - generic [ref=e101]: "28"
+            - 'button "Bead 29: The Crucifixion" [ref=e102] [cursor=pointer]':
+              - generic [ref=e103]: "29"
+            - 'button "Bead 30: The Throne of Love" [ref=e104] [cursor=pointer]':
+              - generic [ref=e105]: "30"
+            - 'button "Bead 31: The Resurrection" [ref=e106] [cursor=pointer]':
+              - generic [ref=e107]: "31"
+            - 'button "Bead 32: Faith After the Tomb" [ref=e108] [cursor=pointer]':
+              - generic [ref=e109]: "32"
+            - 'button "Bead 33: The Ascension" [ref=e110] [cursor=pointer]':
+              - generic [ref=e111]: "33"
+            - 'button "Bead 34: Hope Raised Up" [ref=e112] [cursor=pointer]':
+              - generic [ref=e113]: "34"
+            - 'button "Bead 35: Pentecost" [ref=e114] [cursor=pointer]':
+              - generic [ref=e115]: "35"
+            - 'button "Bead 36: Gifts of the Spirit" [ref=e116] [cursor=pointer]':
+              - generic [ref=e117]: "36"
+            - 'button "Bead 37: The Assumption" [ref=e118] [cursor=pointer]':
+              - generic [ref=e119]: "37"
+            - 'button "Bead 38: Through Mary to Jesus" [ref=e120] [cursor=pointer]':
+              - generic [ref=e121]: "38"
+            - 'button "Bead 39: The Coronation" [ref=e122] [cursor=pointer]':
+              - generic [ref=e123]: "39"
+            - 'button "Bead 40: Final Perseverance" [ref=e124] [cursor=pointer]':
+              - generic [ref=e125]: "40"
+            - 'button "Bead 41: Saint Dominic" [ref=e126] [cursor=pointer]':
+              - generic [ref=e127]: "41"
+            - 'button "Bead 42: Pope Pius V" [ref=e128] [cursor=pointer]':
+              - generic [ref=e129]: "42"
+            - 'button "Bead 43: Lepanto" [ref=e130] [cursor=pointer]':
+              - generic [ref=e131]: "43"
+            - 'button "Bead 44: Saint Bernadette" [ref=e132] [cursor=pointer]':
+              - generic [ref=e133]: "44"
+            - 'button "Bead 45: Fatima" [ref=e134] [cursor=pointer]':
+              - generic [ref=e135]: "45"
+            - 'button "Bead 46: Blessed Bartolo Longo" [ref=e136] [cursor=pointer]':
+              - generic [ref=e137]: "46"
+            - 'button "Bead 47: Kibeho" [ref=e138] [cursor=pointer]':
+              - generic [ref=e139]: "47"
+            - 'button "Bead 48: Saint Louis de Montfort" [ref=e140] [cursor=pointer]':
+              - generic [ref=e141]: "48"
+            - 'button "Bead 49: Pope Leo XIII" [ref=e142] [cursor=pointer]':
+              - generic [ref=e143]: "49"
+            - 'button "Bead 50: Saint John Paul II" [ref=e144] [cursor=pointer]':
+              - generic [ref=e145]: "50"
+          - generic "Closing prayer" [ref=e146]:
+            - button "The Hail Holy Queen" [ref=e147] [cursor=pointer]:
+              - generic [ref=e148]: Hail Holy Queen
+        - article [ref=e149]:
+          - img "Rosary beads and sacred paper arranged on dark blue fabric" [ref=e151]
+          - generic [ref=e152]:
+            - generic [ref=e153]: Cross
+            - heading "The Apostles' Creed" [level=3] [ref=e154]
+            - paragraph [ref=e155]: I believe in God, the Father almighty...
+      - generic:
+        - article:
+          - generic: Cross
+          - heading [level=3]: The Apostles' Creed
+          - paragraph: I believe in God, the Father almighty...
+        - article:
+          - generic: Our Father
+          - heading [level=3]: The Our Father
+          - paragraph: Our Father, who art in heaven...
+        - article:
+          - generic: Faith
+          - heading [level=3]: "First Hail Mary: Faith"
+          - paragraph: Hail Mary, full of grace...
+        - article:
+          - generic: Hope
+          - heading [level=3]: "Second Hail Mary: Hope"
+          - paragraph: Hail Mary, full of grace...
+        - article:
+          - generic: Charity
+          - heading [level=3]: "Third Hail Mary: Charity"
+          - paragraph: Hail Mary, full of grace...
+        - article:
+          - generic: Glory Be
+          - heading [level=3]: Praise of the Trinity
+          - paragraph: Glory be to the Father, and to the Son, and to the Holy Spirit.
+        - article:
+          - generic: Bead 1
+          - heading [level=3]: The Annunciation
+          - paragraph: Luke 1:28
+        - article:
+          - generic: Bead 2
+          - heading [level=3]: Mary's Fiat
+          - paragraph: Luke 1:38
+        - article:
+          - generic: Bead 3
+          - heading [level=3]: The Visitation
+          - paragraph: Luke 1:42
+        - article:
+          - generic: Bead 4
+          - heading [level=3]: The Magnificat
+          - paragraph: Luke 1:46-47
+        - article:
+          - generic: Bead 5
+          - heading [level=3]: The Nativity
+          - paragraph: Luke 2:14
+        - article:
+          - generic: Bead 6
+          - heading [level=3]: Bethlehem's Poverty
+          - paragraph: Luke 2:7
+        - article:
+          - generic: Bead 7
+          - heading [level=3]: The Presentation
+          - paragraph: Luke 2:30-31
+        - article:
+          - generic: Bead 8
+          - heading [level=3]: Simeon's Light
+          - paragraph: Luke 2:32
+        - article:
+          - generic: Bead 9
+          - heading [level=3]: The Finding in the Temple
+          - paragraph: Luke 2:49
+        - article:
+          - generic: Bead 10
+          - heading [level=3]: The Father's House
+          - paragraph: Luke 2:51
+        - article:
+          - generic: Bead 11
+          - heading [level=3]: The Baptism of Jesus
+          - paragraph: Matthew 3:17
+        - article:
+          - generic: Bead 12
+          - heading [level=3]: Beloved Son
+          - paragraph: Matthew 3:16-17
+        - article:
+          - generic: Bead 13
+          - heading [level=3]: The Wedding at Cana
+          - paragraph: John 2:5
+        - article:
+          - generic: Bead 14
+          - heading [level=3]: Ordinary Water, New Wine
+          - paragraph: John 2:11
+        - article:
+          - generic: Bead 15
+          - heading [level=3]: The Kingdom Proclaimed
+          - paragraph: Matthew 4:17
+        - article:
+          - generic: Bead 16
+          - heading [level=3]: Metanoia
+          - paragraph: Mark 1:15
+        - article:
+          - generic: Bead 17
+          - heading [level=3]: The Transfiguration
+          - paragraph: Matthew 17:2
+        - article:
+          - generic: Bead 18
+          - heading [level=3]: Tabor Before Calvary
+          - paragraph: Matthew 17:5
+        - article:
+          - generic: Bead 19
+          - heading [level=3]: The Eucharist Instituted
+          - paragraph: Luke 22:19
+        - article:
+          - generic: Bead 20
+          - heading [level=3]: Real Presence
+          - paragraph: 1 Corinthians 11:24
+        - article:
+          - generic: Bead 21
+          - heading [level=3]: Agony in the Garden
+          - paragraph: Luke 22:42
+        - article:
+          - generic: Bead 22
+          - heading [level=3]: Gethsemane
+          - paragraph: Luke 22:44
+        - article:
+          - generic: Bead 23
+          - heading [level=3]: The Scourging
+          - paragraph: Isaiah 53:5
+        - article:
+          - generic: Bead 24
+          - heading [level=3]: Wounds and Mercy
+          - paragraph: 1 Peter 2:24
+        - article:
+          - generic: Bead 25
+          - heading [level=3]: Crowning with Thorns
+          - paragraph: Matthew 27:29
+        - article:
+          - generic: Bead 26
+          - heading [level=3]: Dignity Restored
+          - paragraph: John 19:5
+        - article:
+          - generic: Bead 27
+          - heading [level=3]: Carrying the Cross
+          - paragraph: Matthew 16:24
+        - article:
+          - generic: Bead 28
+          - heading [level=3]: Simon Helps Carry
+          - paragraph: Luke 23:26
+        - article:
+          - generic: Bead 29
+          - heading [level=3]: The Crucifixion
+          - paragraph: Luke 23:46
+        - article:
+          - generic: Bead 30
+          - heading [level=3]: The Throne of Love
+          - paragraph: John 19:30
+        - article:
+          - generic: Bead 31
+          - heading [level=3]: The Resurrection
+          - paragraph: Matthew 28:6
+        - article:
+          - generic: Bead 32
+          - heading [level=3]: Faith After the Tomb
+          - paragraph: John 20:29
+        - article:
+          - generic: Bead 33
+          - heading [level=3]: The Ascension
+          - paragraph: Acts 1:9
+        - article:
+          - generic: Bead 34
+          - heading [level=3]: Hope Raised Up
+          - paragraph: John 14:2
+        - article:
+          - generic: Bead 35
+          - heading [level=3]: Pentecost
+          - paragraph: Acts 2:4
+        - article:
+          - generic: Bead 36
+          - heading [level=3]: Gifts of the Spirit
+          - paragraph: Acts 1:8
+        - article:
+          - generic: Bead 37
+          - heading [level=3]: The Assumption
+          - paragraph: Revelation 12:1
+        - article:
+          - generic: Bead 38
+          - heading [level=3]: Through Mary to Jesus
+          - paragraph: Luke 1:48
+        - article:
+          - generic: Bead 39
+          - heading [level=3]: The Coronation
+          - paragraph: Revelation 12:1
+        - article:
+          - generic: Bead 40
+          - heading [level=3]: Final Perseverance
+          - paragraph: 2 Timothy 4:7
+        - article:
+          - generic: Bead 41
+          - heading [level=3]: Saint Dominic
+          - paragraph: Dominican tradition
+        - article:
+          - generic: Bead 42
+          - heading [level=3]: Pope Pius V
+          - paragraph: "1569"
+        - article:
+          - generic: Bead 43
+          - heading [level=3]: Lepanto
+          - paragraph: "1571"
+        - article:
+          - generic: Bead 44
+          - heading [level=3]: Saint Bernadette
+          - paragraph: Lourdes, 1858
+        - article:
+          - generic: Bead 45
+          - heading [level=3]: Fatima
+          - paragraph: "1917"
+        - article:
+          - generic: Bead 46
+          - heading [level=3]: Blessed Bartolo Longo
+          - paragraph: Pompeii
+        - article:
+          - generic: Bead 47
+          - heading [level=3]: Kibeho
+          - paragraph: Rwanda, 1981-1989
+        - article:
+          - generic: Bead 48
+          - heading [level=3]: Saint Louis de Montfort
+          - paragraph: The Secret of the Rosary
+        - article:
+          - generic: Bead 49
+          - heading [level=3]: Pope Leo XIII
+          - paragraph: Rosary encyclicals
+        - article:
+          - generic: Bead 50
+          - heading [level=3]: Saint John Paul II
+          - paragraph: Rosarium Virginis Mariae, 2002
+        - article:
+          - generic: Hail Holy Queen
+          - heading [level=3]: The Hail Holy Queen
+          - paragraph: Hail, holy Queen, Mother of mercy...
+    - region "A compendium of the Gospel" [ref=e156]:
+      - generic [ref=e157]: What Is the Rosary?
+      - generic [ref=e158]:
+        - generic [ref=e159]:
+          - heading "A compendium of the Gospel" [level=2] [ref=e160]
+          - group [ref=e161]:
+            - generic "Quiet distinction" [ref=e162] [cursor=pointer]
+        - generic [ref=e163]:
+          - paragraph [ref=e164]: The Rosary is a meditative Catholic prayer centered on the life, death, and glory of Jesus Christ.
+          - paragraph [ref=e165]: "Each decade invites us to contemplate one mystery from the Gospel: the Annunciation, the Nativity, the Baptism of Jesus, the Crucifixion, the Resurrection, Pentecost, and many others."
+          - paragraph [ref=e166]: The Church has often called the Rosary a compendium of the Gospel because it gathers the central events of salvation history into a prayer that can be carried in the hand, prayed in the home, whispered in suffering, or proclaimed in procession.
+          - paragraph [ref=e167]: The Rosary is Marian because we pray it with Mary. It is Christ-centered because every mystery leads us to Jesus.
+    - region "To rediscover the Rosary with faith and clarity" [ref=e168]:
+      - generic [ref=e169]: Why This Exhibition Exists
+      - generic [ref=e170]:
+        - heading "To rediscover the Rosary with faith and clarity" [level=2] [ref=e171]
+        - paragraph [ref=e172]: Many Catholics know the Rosary as a family tradition. Some know it as a daily devotion. Others see it as repetitive and do not yet understand its depth.
+      - generic [ref=e173]:
+        - generic [ref=e174]: A prayer of contemplation
+        - generic [ref=e175]: A school of holiness
+        - generic [ref=e176]: A weapon for peace
+        - generic [ref=e177]: A guide through the Gospel
+        - generic [ref=e178]: A devotion loved by popes, saints, shrines, and families
+        - generic [ref=e179]: A prayer connected to conversion, healing, protection, and hope
+      - generic [ref=e180]:
+        - paragraph [ref=e181]: This exhibition does not treat every miracle story the same way. Some events are official Church teaching. Some are shrine-documented testimonies. Some are devotional traditions. Some are popular stories that need more evidence.
+        - strong [ref=e182]: Faith does not require exaggeration. The truth is already beautiful enough.
+        - group [ref=e183]:
+          - generic "Source discipline" [ref=e184] [cursor=pointer]
+    - region "A pilgrimage through prayer, history, and witness" [ref=e185]:
+      - generic [ref=e186]: Explore the Exhibition
+      - heading "A pilgrimage through prayer, history, and witness" [level=2] [ref=e187]
+      - generic [ref=e188]:
+        - link "01 The Prayer" [ref=e189] [cursor=pointer]:
+          - /url: "#what-is-rosary"
+          - generic [ref=e190]: "01"
+          - text: The Prayer
+        - link "02 The Mysteries" [ref=e191] [cursor=pointer]:
+          - /url: "#mysteries"
+          - generic [ref=e192]: "02"
+          - text: The Mysteries
+        - link "03 Mary's Requests" [ref=e193] [cursor=pointer]:
+          - /url: "#marys-requests"
+          - generic [ref=e194]: "03"
+          - text: Mary's Requests
+        - link "04 Saints and Witnesses" [ref=e195] [cursor=pointer]:
+          - /url: "#saints"
+          - generic [ref=e196]: "04"
+          - text: Saints and Witnesses
+        - link "05 Testimonies and Miracles" [ref=e197] [cursor=pointer]:
+          - /url: "#testimonies"
+          - generic [ref=e198]: "05"
+          - text: Testimonies and Miracles
+        - link "06 The Rosary and Human Flourishing" [ref=e199] [cursor=pointer]:
+          - /url: "#science"
+          - generic [ref=e200]: "06"
+          - text: The Rosary and Human Flourishing
+    - region "A simple guide" [ref=e201]:
+      - generic [ref=e202]: How to Pray
+      - generic [ref=e203]:
+        - generic [ref=e204]:
+          - heading "A simple guide" [level=2] [ref=e205]
+          - paragraph [ref=e206]: The structure is simple. The depth comes from remaining with the mysteries of Christ.
+        - list [ref=e207]:
+          - listitem [ref=e208]:
+            - strong [ref=e209]: Begin with the Sign of the Cross.
+            - text: In the name of the Father, and of the Son, and of the Holy Spirit. Amen.
+          - listitem [ref=e210]:
+            - strong [ref=e211]: Pray the Apostles' Creed.
+            - text: This places the Rosary inside the faith of the Church.
+          - listitem [ref=e212]:
+            - strong [ref=e213]: Pray one Our Father.
+            - text: The prayer Jesus Himself taught us.
+          - listitem [ref=e214]:
+            - strong [ref=e215]: Pray three Hail Marys.
+            - text: Traditionally offered for faith, hope, and charity.
+          - listitem [ref=e216]:
+            - strong [ref=e217]: Pray the Glory Be.
+            - text: Praise the Holy Trinity.
+          - listitem [ref=e218]:
+            - strong [ref=e219]: Announce the first mystery.
+            - text: Pause, imagine the scene, and ask for the fruit of the mystery.
+          - listitem [ref=e220]:
+            - strong [ref=e221]: Pray one Our Father, ten Hail Marys, and one Glory Be.
+            - text: Let the words become steady, humble, and contemplative.
+          - listitem [ref=e222]:
+            - strong [ref=e223]: Repeat for all five mysteries.
+            - text: Each decade is a step through the Gospel.
+          - listitem [ref=e224]:
+            - strong [ref=e225]: Conclude with the Hail Holy Queen.
+            - text: Entrust yourself to Mary's maternal intercession.
+      - generic [ref=e226]:
+        - heading "How to pray it better" [level=3] [ref=e227]
+        - paragraph [ref=e228]: Do not rush. Before each decade, pause and name the mystery. Read or remember one short Scripture passage. Ask for the fruit of the mystery. Picture the scene. When distraction comes, gently return.
+        - paragraph [ref=e229]: The Rosary is not about perfect feelings. It is about faithful presence.
+        - group [ref=e230]:
+          - generic "For distraction" [ref=e231] [cursor=pointer]
+    - region "The prayer took shape over time" [ref=e232]:
+      - generic [ref=e233]: Chronology
+      - generic [ref=e234]:
+        - generic [ref=e235]:
+          - heading "The prayer took shape over time" [level=2] [ref=e236]
+          - paragraph [ref=e237]: The exhibit distinguishes roots, tradition, papal framing, shrine testimony, and later devotional memory.
+        - generic [ref=e238]:
+          - article [ref=e239]:
+            - generic [ref=e240]: 3rd c.
+            - generic [ref=e241]:
+              - generic [ref=e242]: Early roots
+              - heading "Counted prayer enters Christian practice" [level=3] [ref=e243]
+              - paragraph [ref=e244]: Counted prayer among early Christians prepared the way for later bead-based devotion. The Rosary was not fixed yet, but the habit of measuring prayer with the body was already alive.
+          - article [ref=e245]:
+            - img "Portrait of Saint Dominic" [ref=e246]
+            - generic [ref=e247]: 13th c.
+            - generic [ref=e248]:
+              - generic [ref=e249]: Dominican tradition
+              - heading "The devotion gathers around preaching" [level=3] [ref=e250]
+              - paragraph [ref=e251]: Catholic tradition associates the Rosary with Saint Dominic and the Dominican family. The historical record is gradual, but the Dominican story gave the devotion a preaching-shaped public form.
+          - article [ref=e252]:
+            - generic [ref=e253]: 15th c.
+            - generic [ref=e254]:
+              - generic [ref=e255]: Psalter of Mary
+              - heading "The prayer reaches a settled form" [level=3] [ref=e256]
+              - paragraph [ref=e257]: The devotion became recognizable as a set of repeated Hail Marys grouped around sacred mysteries, echoing the 150 Psalms in a prayer ordinary Catholics could carry.
+          - article [ref=e258]:
+            - img "Portrait of Pope Pius V" [ref=e259]
+            - generic [ref=e260]: "1569"
+            - generic [ref=e261]:
+              - generic [ref=e262]: Pius V
+              - heading "Rome gives the prayer clearer shape" [level=3] [ref=e263]
+              - paragraph [ref=e264]: Pope Pius V described the traditional form of the Rosary, giving the devotion a clearer public frame within the Church's life.
+          - article [ref=e265]:
+            - generic [ref=e266]: 1571-1573
+            - generic [ref=e267]:
+              - generic [ref=e268]: Lepanto and feast
+              - heading "A battle remembered through prayer" [level=3] [ref=e269]
+              - paragraph [ref=e270]: The Battle of Lepanto became tied to Catholic memory of Rosary prayer and gratitude. The feast of Our Lady of the Rosary grew from this devotional remembrance.
+          - article [ref=e271]:
+            - img "Portrait of Saint Bernadette Soubirous" [ref=e272]
+            - generic [ref=e273]: "1858"
+            - generic [ref=e274]:
+              - generic [ref=e275]: Lourdes
+              - heading "The Rosary at the Grotto" [level=3] [ref=e276]
+              - paragraph [ref=e277]: Saint Bernadette prayed the Rosary at Lourdes. The shrine became a place where prayer, pilgrimage, illness, and careful discernment meet.
+          - article [ref=e278]:
+            - img "Historical photograph of the children of Fatima" [ref=e279]
+            - generic [ref=e280]: "1917"
+            - generic [ref=e281]:
+              - generic [ref=e282]: Fatima
+              - heading "Pray the Rosary every day" [level=3] [ref=e283]
+              - paragraph [ref=e284]: At Fatima, Our Lady asked for conversion, repentance, sacrifice, peace, and the daily Rosary.
+          - article [ref=e285]:
+            - img "Photograph of Saint John Paul II" [ref=e286]
+            - generic [ref=e287]: "2002"
+            - generic [ref=e288]:
+              - generic [ref=e289]: Year of the Rosary
+              - heading "John Paul II gives the Luminous Mysteries" [level=3] [ref=e290]
+              - paragraph [ref=e291]: John Paul II described the Rosary as contemplating Christ with Mary and added the Luminous Mysteries, widening the prayer's meditation on Christ's public ministry.
+    - region "Rosary still life" [ref=e292]:
+      - img "Rosary beads, candlelight, and Marian iconography arranged on dark velvet" [ref=e293]
+      - generic [ref=e294]:
+        - paragraph [ref=e295]: Papal framing
+        - heading "The prayer kept finding new public language." [level=2] [ref=e296]
+        - paragraph [ref=e297]: Modern papal teaching gave the Rosary a public language for contemplation, peace, family life, and renewed attention to Christ. The form changed; the center did not.
+    - region "The Gospel carried in twenty scenes" [ref=e298]:
+      - generic [ref=e299]: The Mysteries
+      - generic [ref=e300]:
+        - heading "The Gospel carried in twenty scenes" [level=2] [ref=e301]
+        - paragraph [ref=e302]: The Joyful, Luminous, Sorrowful, and Glorious Mysteries lead the soul through the Incarnation, public ministry, Passion, and glory of Jesus Christ.
+      - generic [ref=e303]:
+        - article [ref=e304]:
+          - generic [ref=e305]:
+            - generic [ref=e306]:
+              - generic [ref=e307]: Usually prayed on Mondays and Saturdays
+              - heading "Joyful Mysteries" [level=3] [ref=e308]
+            - link "Walk this path" [ref=e309] [cursor=pointer]:
+              - /url: "#rosary-scroll"
+          - generic [ref=e310]:
+            - generic [ref=e311]:
+              - generic [ref=e312]: "1"
+              - generic [ref=e313]:
+                - heading "The Annunciation" [level=4] [ref=e314]
+                - paragraph [ref=e315]:
+                  - strong [ref=e316]: "Fruit:"
+                  - text: Humility
+                - paragraph [ref=e317]: Mary receives the message of the angel Gabriel. She does not understand everything, but she gives herself completely to God.
+                - paragraph [ref=e318]:
+                  - strong [ref=e319]: "Ask:"
+                  - text: Lord, teach me to say yes before I understand everything.
+                - paragraph [ref=e320]:
+                  - strong [ref=e321]: "Prayer intention:"
+                  - text: For openness to God's call.
+            - generic [ref=e322]:
+              - generic [ref=e323]: "2"
+              - generic [ref=e324]:
+                - heading "The Visitation" [level=4] [ref=e325]
+                - paragraph [ref=e326]:
+                  - strong [ref=e327]: "Fruit:"
+                  - text: Love of neighbor
+                - paragraph [ref=e328]: Mary goes in haste to serve Elizabeth. Grace does not make her passive. It makes her charitable.
+                - paragraph [ref=e329]:
+                  - strong [ref=e330]: "Ask:"
+                  - text: Lord, make my faith practical.
+                - paragraph [ref=e331]:
+                  - strong [ref=e332]: "Prayer intention:"
+                  - text: For charity in family and daily duties.
+            - generic [ref=e333]:
+              - generic [ref=e334]: "3"
+              - generic [ref=e335]:
+                - heading "The Nativity" [level=4] [ref=e336]
+                - paragraph [ref=e337]:
+                  - strong [ref=e338]: "Fruit:"
+                  - text: Poverty of spirit
+                - paragraph [ref=e339]: Jesus is born in humility. The King of the universe enters the world in poverty.
+                - paragraph [ref=e340]:
+                  - strong [ref=e341]: "Ask:"
+                  - text: Lord, free me from pride, vanity, and attachment.
+                - paragraph [ref=e342]:
+                  - strong [ref=e343]: "Prayer intention:"
+                  - text: For detachment from worldly approval.
+            - generic [ref=e344]:
+              - generic [ref=e345]: "4"
+              - generic [ref=e346]:
+                - heading "The Presentation" [level=4] [ref=e347]
+                - paragraph [ref=e348]:
+                  - strong [ref=e349]: "Fruit:"
+                  - text: Obedience
+                - paragraph [ref=e350]: Mary and Joseph present Jesus in the Temple. They obey the law of God with reverence.
+                - paragraph [ref=e351]:
+                  - strong [ref=e352]: "Ask:"
+                  - text: Lord, teach me to obey You in ordinary duties.
+                - paragraph [ref=e353]:
+                  - strong [ref=e354]: "Prayer intention:"
+                  - text: For fidelity to God's commandments.
+            - generic [ref=e355]:
+              - generic [ref=e356]: "5"
+              - generic [ref=e357]:
+                - heading "The Finding of Jesus in the Temple" [level=4] [ref=e358]
+                - paragraph [ref=e359]:
+                  - strong [ref=e360]: "Fruit:"
+                  - text: Deeper devotion to Jesus
+                - paragraph [ref=e361]: Mary and Joseph search for Jesus with sorrow and find Him in the Temple.
+                - paragraph [ref=e362]:
+                  - strong [ref=e363]: "Ask:"
+                  - text: Lord, when I lose sight of You, give me the grace to seek You again.
+                - paragraph [ref=e364]:
+                  - strong [ref=e365]: "Prayer intention:"
+                  - text: For those who feel distant from God.
+        - article [ref=e366]:
+          - generic [ref=e367]:
+            - generic [ref=e368]:
+              - generic [ref=e369]: Usually prayed on Thursdays
+              - heading "Luminous Mysteries" [level=3] [ref=e370]
+            - link "Walk this path" [ref=e371] [cursor=pointer]:
+              - /url: "#rosary-scroll"
+          - generic [ref=e372]:
+            - generic [ref=e373]:
+              - generic [ref=e374]: "1"
+              - generic [ref=e375]:
+                - heading "The Baptism of Jesus" [level=4] [ref=e376]
+                - paragraph [ref=e377]:
+                  - strong [ref=e378]: "Fruit:"
+                  - text: Openness to the Holy Spirit
+                - paragraph [ref=e379]: Jesus enters the waters of the Jordan. The Father reveals His beloved Son, and the Spirit descends.
+                - paragraph [ref=e380]:
+                  - strong [ref=e381]: "Ask:"
+                  - text: Lord, renew my baptismal identity.
+                - paragraph [ref=e382]:
+                  - strong [ref=e383]: "Prayer intention:"
+                  - text: For courage to live the Christian life publicly.
+            - generic [ref=e384]:
+              - generic [ref=e385]: "2"
+              - generic [ref=e386]:
+                - heading "The Wedding at Cana" [level=4] [ref=e387]
+                - paragraph [ref=e388]:
+                  - strong [ref=e389]: "Fruit:"
+                  - text: Trust in Mary's intercession
+                - paragraph [ref=e390]: "Mary notices the need before others do. She tells the servants: Do whatever He tells you."
+                - paragraph [ref=e391]:
+                  - strong [ref=e392]: "Ask:"
+                  - text: Mary, bring my needs to Jesus.
+                - paragraph [ref=e393]:
+                  - strong [ref=e394]: "Prayer intention:"
+                  - text: For marriages, families, and trust in God's timing.
+            - generic [ref=e395]:
+              - generic [ref=e396]: "3"
+              - generic [ref=e397]:
+                - heading "The Proclamation of the Kingdom" [level=4] [ref=e398]
+                - paragraph [ref=e399]:
+                  - strong [ref=e400]: "Fruit:"
+                  - text: Conversion
+                - paragraph [ref=e401]: Jesus calls all people to repentance and faith in the Gospel.
+                - paragraph [ref=e402]:
+                  - strong [ref=e403]: "Ask:"
+                  - text: Lord, convert the parts of my heart that still resist You.
+                - paragraph [ref=e404]:
+                  - strong [ref=e405]: "Prayer intention:"
+                  - text: For sinners, lukewarm Catholics, and those far from the Church.
+            - generic [ref=e406]:
+              - generic [ref=e407]: "4"
+              - generic [ref=e408]:
+                - heading "The Transfiguration" [level=4] [ref=e409]
+                - paragraph [ref=e410]:
+                  - strong [ref=e411]: "Fruit:"
+                  - text: Desire for holiness
+                - paragraph [ref=e412]: Jesus reveals His glory to Peter, James, and John. The Cross is not the end. Glory is coming.
+                - paragraph [ref=e413]:
+                  - strong [ref=e414]: "Ask:"
+                  - text: Lord, strengthen me when holiness feels difficult.
+                - paragraph [ref=e415]:
+                  - strong [ref=e416]: "Prayer intention:"
+                  - text: For perseverance in suffering and temptation.
+            - generic [ref=e417]:
+              - generic [ref=e418]: "5"
+              - generic [ref=e419]:
+                - heading "The Institution of the Eucharist" [level=4] [ref=e420]
+                - paragraph [ref=e421]:
+                  - strong [ref=e422]: "Fruit:"
+                  - text: Love of the Eucharist
+                - paragraph [ref=e423]: Jesus gives Himself as food for the life of the world.
+                - paragraph [ref=e424]:
+                  - strong [ref=e425]: "Ask:"
+                  - text: Lord, increase my love for the Mass, the Eucharist, and adoration.
+                - paragraph [ref=e426]:
+                  - strong [ref=e427]: "Prayer intention:"
+                  - text: For priests, reverence at Mass, and Eucharistic renewal.
+        - article [ref=e428]:
+          - generic [ref=e429]:
+            - generic [ref=e430]:
+              - generic [ref=e431]: Usually prayed on Tuesdays and Fridays
+              - heading "Sorrowful Mysteries" [level=3] [ref=e432]
+            - link "Walk this path" [ref=e433] [cursor=pointer]:
+              - /url: "#rosary-scroll"
+          - generic [ref=e434]:
+            - generic [ref=e435]:
+              - generic [ref=e436]: "1"
+              - generic [ref=e437]:
+                - heading "The Agony in the Garden" [level=4] [ref=e438]
+                - paragraph [ref=e439]:
+                  - strong [ref=e440]: "Fruit:"
+                  - text: Sorrow for sin and trust in God
+                - paragraph [ref=e441]: Jesus sweats blood in Gethsemane and surrenders to the Father.
+                - paragraph [ref=e442]:
+                  - strong [ref=e443]: "Ask:"
+                  - text: Lord, teach me to say, Not my will, but Yours be done.
+                - paragraph [ref=e444]:
+                  - strong [ref=e445]: "Prayer intention:"
+                  - text: For those suffering anxiety, fear, or spiritual darkness.
+            - generic [ref=e446]:
+              - generic [ref=e447]: "2"
+              - generic [ref=e448]:
+                - heading "The Scourging at the Pillar" [level=4] [ref=e449]
+                - paragraph [ref=e450]:
+                  - strong [ref=e451]: "Fruit:"
+                  - text: Purity
+                - paragraph [ref=e452]: Jesus suffers in His sacred body.
+                - paragraph [ref=e453]:
+                  - strong [ref=e454]: "Ask:"
+                  - text: Lord, purify my body, imagination, desires, and habits.
+                - paragraph [ref=e455]:
+                  - strong [ref=e456]: "Prayer intention:"
+                  - text: For freedom from lust, addiction, and impurity.
+            - generic [ref=e457]:
+              - generic [ref=e458]: "3"
+              - generic [ref=e459]:
+                - heading "The Crowning with Thorns" [level=4] [ref=e460]
+                - paragraph [ref=e461]:
+                  - strong [ref=e462]: "Fruit:"
+                  - text: Moral courage
+                - paragraph [ref=e463]: Jesus is mocked, humiliated, and crowned with thorns.
+                - paragraph [ref=e464]:
+                  - strong [ref=e465]: "Ask:"
+                  - text: Lord, free me from the need to be admired.
+                - paragraph [ref=e466]:
+                  - strong [ref=e467]: "Prayer intention:"
+                  - text: For humility and strength under ridicule.
+            - generic [ref=e468]:
+              - generic [ref=e469]: "4"
+              - generic [ref=e470]:
+                - heading "The Carrying of the Cross" [level=4] [ref=e471]
+                - paragraph [ref=e472]:
+                  - strong [ref=e473]: "Fruit:"
+                  - text: Perseverance
+                - paragraph [ref=e474]: Jesus carries the Cross to Calvary.
+                - paragraph [ref=e475]:
+                  - strong [ref=e476]: "Ask:"
+                  - text: Lord, help me carry the crosses I cannot escape.
+                - paragraph [ref=e477]:
+                  - strong [ref=e478]: "Prayer intention:"
+                  - text: For those carrying heavy burdens.
+            - generic [ref=e479]:
+              - generic [ref=e480]: "5"
+              - generic [ref=e481]:
+                - heading "The Crucifixion" [level=4] [ref=e482]
+                - paragraph [ref=e483]:
+                  - strong [ref=e484]: "Fruit:"
+                  - text: Forgiveness
+                - paragraph [ref=e485]: Jesus gives His life for sinners and forgives from the Cross.
+                - paragraph [ref=e486]:
+                  - strong [ref=e487]: "Ask:"
+                  - text: Lord, teach me to forgive as You forgive.
+                - paragraph [ref=e488]:
+                  - strong [ref=e489]: "Prayer intention:"
+                  - text: For mercy, repentance, and final perseverance.
+        - article [ref=e490]:
+          - generic [ref=e491]:
+            - generic [ref=e492]:
+              - generic [ref=e493]: Usually prayed on Wednesdays and Sundays
+              - heading "Glorious Mysteries" [level=3] [ref=e494]
+            - link "Walk this path" [ref=e495] [cursor=pointer]:
+              - /url: "#rosary-scroll"
+          - generic [ref=e496]:
+            - generic [ref=e497]:
+              - generic [ref=e498]: "1"
+              - generic [ref=e499]:
+                - heading "The Resurrection" [level=4] [ref=e500]
+                - paragraph [ref=e501]:
+                  - strong [ref=e502]: "Fruit:"
+                  - text: Faith
+                - paragraph [ref=e503]: Jesus rises from the dead. Sin and death do not have the final word.
+                - paragraph [ref=e504]:
+                  - strong [ref=e505]: "Ask:"
+                  - text: Lord, strengthen my faith in Your victory.
+                - paragraph [ref=e506]:
+                  - strong [ref=e507]: "Prayer intention:"
+                  - text: For those who doubt, grieve, or feel hopeless.
+            - generic [ref=e508]:
+              - generic [ref=e509]: "2"
+              - generic [ref=e510]:
+                - heading "The Ascension" [level=4] [ref=e511]
+                - paragraph [ref=e512]:
+                  - strong [ref=e513]: "Fruit:"
+                  - text: Hope
+                - paragraph [ref=e514]: Jesus ascends to the Father and prepares a place for us.
+                - paragraph [ref=e515]:
+                  - strong [ref=e516]: "Ask:"
+                  - text: Lord, lift my eyes toward heaven.
+                - paragraph [ref=e517]:
+                  - strong [ref=e518]: "Prayer intention:"
+                  - text: For hope and eternal perspective.
+            - generic [ref=e519]:
+              - generic [ref=e520]: "3"
+              - generic [ref=e521]:
+                - heading "The Descent of the Holy Spirit" [level=4] [ref=e522]
+                - paragraph [ref=e523]:
+                  - strong [ref=e524]: "Fruit:"
+                  - text: Gifts of the Holy Spirit
+                - paragraph [ref=e525]: The Holy Spirit descends upon Mary and the Apostles.
+                - paragraph [ref=e526]:
+                  - strong [ref=e527]: "Ask:"
+                  - text: Holy Spirit, fill me with wisdom, courage, love, and zeal.
+                - paragraph [ref=e528]:
+                  - strong [ref=e529]: "Prayer intention:"
+                  - text: For renewal in the Church.
+            - generic [ref=e530]:
+              - generic [ref=e531]: "4"
+              - generic [ref=e532]:
+                - heading "The Assumption of Mary" [level=4] [ref=e533]
+                - paragraph [ref=e534]:
+                  - strong [ref=e535]: "Fruit:"
+                  - text: Union with Jesus through Mary
+                - paragraph [ref=e536]: Mary is taken body and soul into heaven.
+                - paragraph [ref=e537]:
+                  - strong [ref=e538]: "Ask:"
+                  - text: Mary, lead me closer to Jesus and teach me to desire heaven.
+                - paragraph [ref=e539]:
+                  - strong [ref=e540]: "Prayer intention:"
+                  - text: For a holy death and devotion to Mary.
+            - generic [ref=e541]:
+              - generic [ref=e542]: "5"
+              - generic [ref=e543]:
+                - heading "The Coronation of Mary" [level=4] [ref=e544]
+                - paragraph [ref=e545]:
+                  - strong [ref=e546]: "Fruit:"
+                  - text: Final perseverance
+                - paragraph [ref=e547]: Mary is crowned Queen of Heaven and Earth.
+                - paragraph [ref=e548]:
+                  - strong [ref=e549]: "Ask:"
+                  - text: Lord, keep me faithful until the end.
+                - paragraph [ref=e550]:
+                  - strong [ref=e551]: "Prayer intention:"
+                  - text: For perseverance, protection, and salvation.
+    - region "Mystery decks for prayer and teaching" [ref=e552]:
+      - generic [ref=e553]: Downloadable Slide Decks
+      - generic [ref=e554]:
+        - generic [ref=e555]:
+          - heading "Mystery decks for prayer and teaching" [level=2] [ref=e556]
+          - paragraph [ref=e557]: Download the original slide decks for parish, family, class, or exhibit use. PDF exports remain in the local working folder and can be hosted later.
+        - generic [ref=e558]:
+          - article [ref=e559]:
+            - generic [ref=e560]: Joyful Mysteries
+            - strong [ref=e561]: Gozosos deck
+            - link "PPTX" [ref=e563] [cursor=pointer]:
+              - /url: ./downloads/joyful-mysteries-slides.pptx
+          - article [ref=e564]:
+            - generic [ref=e565]: Sorrowful Mysteries
+            - strong [ref=e566]: Dolorosos deck
+            - link "PPTX" [ref=e568] [cursor=pointer]:
+              - /url: ./downloads/sorrowful-mysteries-slides.pptx
+          - article [ref=e569]:
+            - generic [ref=e570]: Luminous Mysteries
+            - strong [ref=e571]: Luminosos deck
+            - link "PPTX" [ref=e573] [cursor=pointer]:
+              - /url: ./downloads/luminous-mysteries-slides.pptx
+          - article [ref=e574]:
+            - generic [ref=e575]: Glorious Mysteries
+            - strong [ref=e576]: Gloriosos deck
+            - link "PPTX" [ref=e578] [cursor=pointer]:
+              - /url: ./downloads/glorious-mysteries-slides.pptx
+    - region "Shrines where the Rosary stayed close to the message" [ref=e579]:
+      - generic [ref=e580]: Mary and the Rosary
+      - heading "Shrines where the Rosary stayed close to the message" [level=2] [ref=e581]
+      - generic [ref=e582]:
+        - article [ref=e583]:
+          - img "Historical photograph of the three children of Fatima" [ref=e584]
+          - generic [ref=e585]: Approved shrine tradition
+          - 'heading "Fatima: pray the Rosary every day" [level=3] [ref=e586]'
+          - paragraph [ref=e587]: "In 1917, Our Lady appeared to three shepherd children in Fatima, Portugal. Her message was urgent: conversion, repentance, prayer, sacrifice, and peace. Again and again, she asked for the daily Rosary."
+          - paragraph [ref=e588]: Pray. Repent. Offer sacrifices. Turn toward God. Pray the Rosary for peace.
+          - group [ref=e589]:
+            - generic "Why this anchors the site" [ref=e590] [cursor=pointer]
+        - article [ref=e591]:
+          - img "Portrait of Saint Bernadette Soubirous" [ref=e592]
+          - generic [ref=e593]: Approved shrine tradition
+          - 'heading "Lourdes: the Rosary at the Grotto" [level=3] [ref=e594]'
+          - paragraph [ref=e595]: When Saint Bernadette encountered the Lady at Lourdes, she prayed the Rosary. Lourdes reminds us that the Rosary is not only a prayer of words. It is a prayer of presence.
+          - paragraph [ref=e596]: The shrine also maintains a serious process for examining alleged healings, joining devotion with careful discernment.
+        - article [ref=e597]:
+          - img "Portrait of Blessed Bartolo Longo" [ref=e598]
+          - generic [ref=e599]: Biographical witness
+          - 'heading "Pompeii: the Rosary and conversion" [level=3] [ref=e600]'
+          - paragraph [ref=e601]: Blessed Bartolo Longo was once far from the Catholic faith. His life was transformed, and he became one of the great apostles of the Rosary.
+          - paragraph [ref=e602]: His story shows that the Rosary is also for the lost, the wounded, the confused, and the returning.
+        - article [ref=e603]:
+          - img "Statue of Our Lady of Kibeho" [ref=e604]
+          - generic [ref=e605]: Approved shrine tradition
+          - 'heading "Kibeho: repentance and the Seven Sorrows" [level=3] [ref=e606]'
+          - paragraph [ref=e607]: At Kibeho in Rwanda, the Marian message emphasized conversion, repentance, suffering, and prayer. The Rosary of the Seven Sorrows became especially important in that spiritual tradition.
+          - paragraph [ref=e608]: Kibeho reminds us that Marian devotion is not sentimental. Mary calls her children to repentance and deep conversion.
+    - region "Lives shaped by the Rosary" [ref=e609]:
+      - generic [ref=e610]: Saints and Witnesses
+      - generic [ref=e611]:
+        - heading "Lives shaped by the Rosary" [level=2] [ref=e612]
+        - paragraph [ref=e613]: The Rosary has been preached, defended, loved, and carried by saints, popes, shrines, families, and ordinary souls.
+      - generic [ref=e614]:
+        - article [ref=e615]:
+          - img "Portrait of Saint Dominic" [ref=e616]
+          - heading "Saint Dominic and the Dominican tradition" [level=3] [ref=e617]
+          - paragraph [ref=e618]: The Rosary has long been associated with preaching, contemplation, and teaching the Gospel to ordinary people.
+        - article [ref=e619]:
+          - img "Portrait of Saint Louis de Montfort" [ref=e620]
+          - heading "Saint Louis de Montfort" [level=3] [ref=e621]
+          - paragraph [ref=e622]: For de Montfort, the Rosary was a path of conversion, perseverance, and union with Jesus through Mary.
+        - article [ref=e623]:
+          - img "Portrait of Pope Leo XIII" [ref=e624]
+          - heading "Pope Leo XIII" [level=3] [ref=e625]
+          - paragraph [ref=e626]: Leo XIII wrote extensively on the Rosary and helped shape modern papal teaching on it as a response to crises in society, family, and the Church.
+        - article [ref=e627]:
+          - img "Photograph of Saint John Paul II" [ref=e628]
+          - heading "Saint John Paul II" [level=3] [ref=e629]
+          - paragraph [ref=e630]: In Rosarium Virginis Mariae, John Paul II described the Rosary as contemplating Christ with Mary and gave the Church the Luminous Mysteries.
+        - article [ref=e631]:
+          - img "Portrait of Blessed Bartolo Longo" [ref=e632]
+          - heading "Blessed Bartolo Longo" [level=3] [ref=e633]
+          - paragraph [ref=e634]: His life moved from spiritual darkness to Marian devotion, from confusion to mission, and from a wounded past to a life of service.
+    - region "Beautiful claims need careful labels" [ref=e635]:
+      - generic [ref=e636]: Testimonies and Miracles
+      - generic [ref=e637]:
+        - generic [ref=e638]:
+          - heading "Beautiful claims need careful labels" [level=2] [ref=e639]
+          - paragraph [ref=e640]: The Rosary does not need exaggeration to be powerful. This site names the source strength before it tells the story.
+        - generic [ref=e641]:
+          - generic [ref=e642]:
+            - strong [ref=e643]: Official Church Teaching
+            - generic [ref=e644]: Vatican, papal, catechetical, and liturgical sources.
+          - generic [ref=e645]:
+            - strong [ref=e646]: Approved Shrine Tradition
+            - generic [ref=e647]: Recognized shrine material from Fatima, Lourdes, Pompeii, Kibeho, and similar sources.
+          - generic [ref=e648]:
+            - strong [ref=e649]: Documented Historical Event
+            - generic [ref=e650]: Events supported by serious history and interpreted devotionally by Catholics.
+          - generic [ref=e651]:
+            - strong [ref=e652]: Shrine-Documented Testimony
+            - generic [ref=e653]: Accounts preserved by shrine records, medical bureaus, or official testimony processes.
+          - generic [ref=e654]:
+            - strong [ref=e655]: Biographical Witness
+            - generic [ref=e656]: Stories from saints, blesseds, or credible Catholic figures.
+          - generic [ref=e657]:
+            - strong [ref=e658]: Popular Devotional Account
+            - generic [ref=e659]: Stories widely repeated in Catholic culture but not presented as proven fact here.
+      - generic [ref=e660]:
+        - article [ref=e661]:
+          - generic [ref=e662]: Documented historical event
+          - 'heading "Lepanto: remembered through the Rosary" [level=3] [ref=e663]'
+          - paragraph [ref=e664]: Catholic tradition connects the 1571 victory at Lepanto with Rosary prayer and the intercession of Our Lady. The lesson is not triumphalism. It is dependence.
+          - group [ref=e665]:
+            - generic "Editorial rule" [ref=e666] [cursor=pointer]
+        - article [ref=e667]:
+          - generic [ref=e668]: Approved shrine tradition
+          - heading "Fatima and peace" [level=3] [ref=e669]
+          - paragraph [ref=e670]: "At Fatima, the Rosary was presented as a prayer for peace: intercession for nations, families, sinners, and the suffering world."
+        - article [ref=e671]:
+          - generic [ref=e672]: Shrine-documented testimony
+          - heading "Lourdes and healing" [level=3] [ref=e673]
+          - paragraph [ref=e674]: Lourdes is one of the most carefully documented Marian shrines in the world. Not every healing is specifically a Rosary miracle, but Lourdes gives an example of faith, gratitude, investigation, and restraint.
+        - article [ref=e675]:
+          - generic [ref=e676]: Biographical witness
+          - heading "Pompeii and conversion" [level=3] [ref=e677]
+          - paragraph [ref=e678]: Sometimes the greatest miracle is not the sudden healing of the body. It is the rescue of a soul.
+    - region "Can prayer affect the body?" [ref=e679]:
+      - generic [ref=e680]: Science and Well-Being
+      - generic [ref=e681]:
+        - heading "Can prayer affect the body?" [level=2] [ref=e683]
+        - generic [ref=e684]:
+          - paragraph [ref=e685]: Science cannot prove grace. It cannot measure the intercession of Mary. It cannot reduce prayer to a biological technique.
+          - paragraph [ref=e686]: But science can observe certain human effects of prayer. Some studies suggest that repetitive prayer, including the Rosary, may support slower breathing, greater calm, emotional regulation, coping, and spiritual well-being.
+          - paragraph [ref=e687]: These findings should be understood carefully. The Rosary is not a substitute for medicine. It is not a hack. It is not merely meditation with Catholic words. It is prayer.
+          - group [ref=e688]:
+            - generic "Boundary note" [ref=e689] [cursor=pointer]
+    - region "Today's Mystery" [ref=e690]:
+      - generic [ref=e691]: Daily Rosary
+      - generic [ref=e692]:
+        - generic [ref=e693]:
+          - heading "Today's Mystery" [level=2] [ref=e694]
+          - paragraph [ref=e695]: A daily point of entry for prayer, attention, and one small resolution.
+        - article [ref=e696]:
+          - text: Luminous Mysteries
+          - heading "The Baptism of Jesus" [level=3] [ref=e697]
+          - generic [ref=e698]:
+            - generic [ref=e699]:
+              - term [ref=e700]: Fruit
+              - definition [ref=e701]: Openness to the Holy Spirit
+            - generic [ref=e702]:
+              - term [ref=e703]: Meditation
+              - definition [ref=e704]: Jesus enters the waters of the Jordan. The Father reveals His beloved Son, and the Spirit descends.
+            - generic [ref=e705]:
+              - term [ref=e706]: Ask
+              - definition [ref=e707]: Lord, renew my baptismal identity.
+            - generic [ref=e708]:
+              - term [ref=e709]: Resolution
+              - definition [ref=e710]: I will accept one hidden duty without complaint.
+          - generic [ref=e711]: Our Father... Hail Mary... Glory Be...
+    - region "Has the Rosary changed your life?" [ref=e712]:
+      - generic [ref=e713]: Submit a Testimony
+      - generic [ref=e714]:
+        - generic [ref=e715]:
+          - heading "Has the Rosary changed your life?" [level=2] [ref=e716]
+          - paragraph [ref=e717]: Testimonies of conversion, healing, protection, peace, perseverance, and answered prayer are reviewed before publication. Private experiences are not presented as official Church judgments.
+        - generic [ref=e718]:
+          - generic [ref=e719]:
+            - text: Name
+            - textbox "Name" [ref=e720]:
+              - /placeholder: You may request anonymity
+          - generic [ref=e721]:
+            - text: Email
+            - textbox "Email" [ref=e722]:
+              - /placeholder: Used only for follow-up
+          - generic [ref=e723]:
+            - text: Location
+            - textbox "Location" [ref=e724]
+          - generic [ref=e725]:
+            - text: What happened?
+            - textbox "What happened?" [ref=e726]
+          - generic [ref=e727]:
+            - text: How was the Rosary involved?
+            - textbox "How was the Rosary involved?" [ref=e728]
+          - generic [ref=e729]:
+            - text: Supporting details
+            - textbox "Supporting details" [ref=e730]:
+              - /placeholder: Dates, witnesses, documents, medical records, or other details
+          - generic [ref=e731]:
+            - checkbox "I understand that submitting a testimony does not mean it will be published, officially verified, or presented as a Church-approved miracle." [ref=e732]
+            - generic [ref=e733]: I understand that submitting a testimony does not mean it will be published, officially verified, or presented as a Church-approved miracle.
+          - button "Prepare testimony" [ref=e734] [cursor=pointer]
+          - status
+    - region "About this project" [ref=e735]:
+      - generic [ref=e736]: About
+      - generic [ref=e737]:
+        - heading "About this project" [level=2] [ref=e738]
+        - paragraph [ref=e739]: This project was created to help Catholics and seekers rediscover the Holy Rosary as a prayer of contemplation, conversion, peace, and hope.
+        - paragraph [ref=e740]: The goal is not sensationalism. The goal is reverence. The Rosary is beautiful enough when presented truthfully.
+    - region "Core sources and downloads" [ref=e741]:
+      - generic [ref=e742]: Sources
+      - generic [ref=e743]:
+        - generic [ref=e744]:
+          - heading "Core sources and downloads" [level=2] [ref=e745]
+          - generic [ref=e746]:
+            - link "Download research report" [ref=e747] [cursor=pointer]:
+              - /url: ./downloads/deep-research-report%20(1).md
+            - button "Download mysteries JSON" [ref=e748] [cursor=pointer]
+            - button "Print / save as PDF" [ref=e749] [cursor=pointer]
+        - generic [ref=e750]:
+          - article [ref=e751]:
+            - heading "Core Church Documents" [level=3] [ref=e752]
+            - list [ref=e753]:
+              - listitem [ref=e754]:
+                - link "Rosarium Virginis Mariae" [ref=e755] [cursor=pointer]:
+                  - /url: https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html
+              - listitem [ref=e756]:
+                - link "Marialis Cultus" [ref=e757] [cursor=pointer]:
+                  - /url: https://www.vatican.va/content/paul-vi/en/apost_exhortations/documents/hf_p-vi_exh_19740202_marialis-cultus.html
+              - listitem [ref=e758]:
+                - link "Directory on Popular Piety and the Liturgy" [ref=e759] [cursor=pointer]:
+                  - /url: https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html
+              - listitem [ref=e760]:
+                - link "Compendium of the Catechism of the Catholic Church" [ref=e761] [cursor=pointer]:
+                  - /url: https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html
+          - article [ref=e762]:
+            - heading "Shrine Sources" [level=3] [ref=e763]
+            - list [ref=e764]:
+              - listitem [ref=e765]:
+                - link "Sanctuary of Fatima" [ref=e766] [cursor=pointer]:
+                  - /url: https://www.fatima.pt/en/pages/narrative-of-the-apparitions-
+              - listitem [ref=e767]:
+                - link "Sanctuary of Lourdes" [ref=e768] [cursor=pointer]:
+                  - /url: https://www.lourdes-france.com/en/day-pilgrims/the-rosary/
+              - listitem [ref=e769]:
+                - link "Kibeho Shrine Sources" [ref=e770] [cursor=pointer]:
+                  - /url: https://www.kibeho-cana.org/a-brief-history-of-the-apparitions-of-our-lady-of-kibeho/
+          - article [ref=e771]:
+            - heading "Prayer Guides and Research" [level=3] [ref=e772]
+            - list [ref=e773]:
+              - listitem [ref=e774]:
+                - link "USCCB Rosary Guide" [ref=e775] [cursor=pointer]:
+                  - /url: https://www.usccb.org/how-to-pray-the-rosary
+              - listitem [ref=e776]:
+                - link "Rosary Center and Confraternity" [ref=e777] [cursor=pointer]:
+                  - /url: https://www.rosarycenter.org/
+              - listitem [ref=e778]:
+                - link "BMJ study on Rosary prayer and breathing" [ref=e779] [cursor=pointer]:
+                  - /url: https://pubmed.ncbi.nlm.nih.gov/11751348/
