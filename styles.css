@@ -2316,11 +2316,11 @@ p {
 
   .rosary-bead:nth-child(10n + 1),
   .rosary-bead:nth-child(10n + 5) {
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(var(--twist));
   }
 
   .rosary-bead.is-active {
-    transform: translate(-50%, -50%) scale(1.22);
+    transform: translate(-50%, -50%) rotate(var(--twist)) scale(1.22);
   }
 
   .rail-caption {
