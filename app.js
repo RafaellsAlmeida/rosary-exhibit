@@ -203,12 +203,20 @@ const downloadLinks = {
 };
 
 const prayerTexts = {
+  signOfTheCross:
+    "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
   apostlesCreed:
     "I believe in God, the Father almighty, Creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died, and was buried; he descended into hell; on the third day he rose again from the dead; he ascended into heaven, and is seated at the right hand of God the Father almighty; from there he will come to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
+  ourFather:
+    "Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
+  hailMary:
+    "Hail Mary, full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.",
   gloryBe:
     "Glory be to the Father, and to the Son, and to the Holy Spirit, as it was in the beginning, is now, and ever shall be, world without end. Amen.",
   hailHolyQueen:
     "Hail, holy Queen, Mother of mercy, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us, and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.\n\nPray for us, O holy Mother of God, that we may be made worthy of the promises of Christ.\n\nLet us pray. O God, whose only begotten Son, by His life, death, and resurrection, has purchased for us the rewards of eternal life, grant, we beseech Thee, that while meditating on these mysteries of the most holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen.",
+  hailMaryDecadeNote:
+    "Traditionally, this mystery is followed by one Our Father, ten Hail Marys, and one Glory Be. Text of the Hail Mary (pray ten times):",
 };
 
 const openingBeads = [
@@ -222,7 +230,7 @@ const openingBeads = [
     prayerText: prayerTexts.apostlesCreed,
     image: imageLibrary.opening[0],
     alt: "Rosary beads and sacred paper arranged on dark blue fabric",
-    action: { label: "See the prayer guide", href: "#how-to-pray" },
+    action: { label: "See the prayer guide", href: "./how-to-pray.html" },
   },
   {
     type: "opening",
@@ -234,7 +242,7 @@ const openingBeads = [
     image: publicImages.ourFather.image,
     alt: publicImages.ourFather.alt,
     imageSource: publicImages.ourFather.source,
-    action: { label: "Why the prayer matters", href: "#what-is-rosary" },
+    action: { label: "Why the prayer matters", href: "./what-is.html" },
   },
   {
     type: "opening",
@@ -246,7 +254,7 @@ const openingBeads = [
     image: publicImages.faith.image,
     alt: publicImages.faith.alt,
     imageSource: publicImages.faith.source,
-    action: { label: "Mary's requests", href: "#marys-requests" },
+    action: { label: "Mary's requests", href: "./mary.html" },
   },
   {
     type: "opening",
@@ -258,7 +266,7 @@ const openingBeads = [
     image: publicImages.hope.image,
     alt: publicImages.hope.alt,
     imageSource: publicImages.hope.source,
-    action: { label: "Learn the rhythm", href: "#how-to-pray" },
+    action: { label: "Learn the rhythm", href: "./how-to-pray.html" },
   },
   {
     type: "opening",
@@ -270,7 +278,7 @@ const openingBeads = [
     image: publicImages.charity.image,
     alt: publicImages.charity.alt,
     imageSource: publicImages.charity.source,
-    action: { label: "Mary's requests", href: "#marys-requests" },
+    action: { label: "Mary's requests", href: "./mary.html" },
   },
   {
     type: "opening",
@@ -282,7 +290,7 @@ const openingBeads = [
     prayerText: prayerTexts.gloryBe,
     image: imageLibrary.opening[3],
     alt: "Sacred art of the Coronation of Mary",
-    action: { label: "Enter the mysteries", href: "#mysteries" },
+    action: { label: "Enter the mysteries", href: "./mysteries.html" },
   },
 ];
 
@@ -297,7 +305,7 @@ const closingBeads = [
     prayerText: prayerTexts.hailHolyQueen,
     image: "./assets/witnesses/assumption.jpg",
     alt: "Stone shrine relief of Mary holding the child Jesus",
-    action: { label: "Review the prayer guide", href: "#how-to-pray" },
+    action: { label: "Review the prayer guide", href: "./how-to-pray.html" },
   },
 ];
 
@@ -732,6 +740,8 @@ const chronology = [
     title: "Counted prayer enters Christian practice",
     summary:
       "Counted prayer among early Christians prepared the way for later bead-based devotion. The Rosary was not fixed yet, but the habit of measuring prayer with the body was already alive.",
+    image: publicImages.faith.image,
+    alt: publicImages.faith.alt,
   },
   {
     year: "13th c.",
@@ -748,6 +758,8 @@ const chronology = [
     title: "The prayer reaches a settled form",
     summary:
       "The devotion became recognizable as a set of repeated Hail Marys grouped around sacred mysteries, echoing the 150 Psalms in a prayer ordinary Catholics could carry.",
+    image: "./assets/public-domain/through-mary-to-jesus.jpg",
+    alt: "Sacred art of Mary raised toward heaven, evoking the Marian Psalter tradition",
   },
   {
     year: "1569",
@@ -764,6 +776,8 @@ const chronology = [
     title: "A battle remembered through prayer",
     summary:
       "The Battle of Lepanto became tied to Catholic memory of Rosary prayer and gratitude. The feast of Our Lady of the Rosary grew from this devotional remembrance.",
+    image: publicImages.lepanto.image,
+    alt: publicImages.lepanto.alt,
   },
   {
     year: "1858",
@@ -1042,6 +1056,19 @@ const sourceGroups = [
     ],
   },
   {
+    heading: "Suggested videos (English)",
+    sources: [
+      {
+        title: "The Easy Way(s) to Pray the Rosary — Ascension Presents",
+        url: "https://www.youtube.com/watch?v=MKVCVRkLNzE",
+      },
+      {
+        title: "How to Pray the Rosary with Bishop Barron",
+        url: "https://www.youtube.com/watch?v=HXcWknfC0vI",
+      },
+    ],
+  },
+  {
     heading: "Guided Rosary (Portuguese)",
     sources: [
       {
@@ -1205,9 +1232,9 @@ function rosarySteps() {
 }
 
 function sectionHrefForItem(item) {
-  if (item.stepType === "opening" || item.stepType === "closing") return item.action?.href || "#how-to-pray";
+  if (item.stepType === "opening" || item.stepType === "closing") return item.action?.href || "./how-to-pray.html";
   if (item.decade === "witness") return "./saints.html";
-  return "#mysteries";
+  return "./mysteries.html";
 }
 
 function linksForRosaryItem(item) {
@@ -1222,7 +1249,7 @@ function linksForRosaryItem(item) {
     },
     {
       label: "Sources",
-      href: "#sources",
+      href: "./sources.html",
     },
   ];
 
@@ -1301,7 +1328,7 @@ function setActiveRosaryStep(steps, index) {
   if (action) {
     const fallbackAction =
       item.stepType === "bead"
-        ? { label: "Read the full mysteries", href: "#mysteries" }
+        ? { label: "Read the full mysteries", href: "./mysteries.html" }
         : null;
     const activeAction = item.action || fallbackAction;
 
@@ -1466,7 +1493,7 @@ function renderMysteries() {
               <span>${set.days}</span>
               <h3>${set.key}</h3>
             </div>
-            <a class="mystery-action" href="#rosary-scroll">Walk this path</a>
+            <a class="mystery-action" href="./exhibition.html#rosary-scroll">Walk this path</a>
           </header>
           <div class="mystery-list">
             ${set.mysteries
@@ -1536,6 +1563,31 @@ function renderDailyMystery() {
 
   if (!todaySet || !firstMystery) return;
 
+  const pptxHref = downloadLinks[todaySet.key];
+
+  const openingPrayerArticle = (title, body) => `
+    <article class="daily-prayer-block">
+      <h4>${title}</h4>
+      <p class="daily-prayer-text">${body.replace(/\n/g, "<br />")}</p>
+    </article>
+  `;
+
+  const decadeArticles = todaySet.mysteries
+    .map(
+      (mystery, index) => `
+    <article class="daily-prayer-block daily-prayer-decade">
+      <p class="daily-decade-kicker">Decade ${index + 1} of 5 — ${todaySet.key}</p>
+      <h4>${mystery.title}</h4>
+      <p class="daily-decade-meta"><strong>Fruit:</strong> ${mystery.fruit}</p>
+      <p>${prayerTexts.hailMaryDecadeNote}</p>
+      <p class="daily-prayer-text">${prayerTexts.ourFather}</p>
+      <p class="daily-prayer-text">${prayerTexts.hailMary}</p>
+      <p class="daily-prayer-text">${prayerTexts.gloryBe}</p>
+    </article>
+  `
+    )
+    .join("");
+
   root.innerHTML = `
     <span>${todaySet.key}</span>
     <h3>${firstMystery.title}</h3>
@@ -1557,8 +1609,27 @@ function renderDailyMystery() {
         <dd>I will accept one hidden duty without complaint.</dd>
       </div>
     </dl>
-    <div class="prayer-line">Our Father... Hail Mary... Glory Be...</div>
+    ${
+      pptxHref
+        ? `<p class="daily-pptx-action"><a class="button button-primary" href="${pptxHref}">Open today's slide deck (PPTX)</a></p>`
+        : ""
+    }
+    <div class="daily-full-prayer" aria-label="Full rosary text for today">
+      <h3 class="daily-full-prayer-title">Full prayer — today</h3>
+      <p class="daily-full-prayer-lead">From the Creed through the Hail Holy Queen, using the five mysteries assigned to this day.</p>
+      ${openingPrayerArticle("Sign of the Cross", prayerTexts.signOfTheCross)}
+      ${openingPrayerArticle("The Apostles' Creed", prayerTexts.apostlesCreed)}
+      ${openingPrayerArticle("Our Father", prayerTexts.ourFather)}
+      ${openingPrayerArticle("Hail Mary (first, for faith)", prayerTexts.hailMary)}
+      ${openingPrayerArticle("Hail Mary (second, for hope)", prayerTexts.hailMary)}
+      ${openingPrayerArticle("Hail Mary (third, for charity)", prayerTexts.hailMary)}
+      ${openingPrayerArticle("Glory Be", prayerTexts.gloryBe)}
+      ${decadeArticles}
+      ${openingPrayerArticle("Hail Holy Queen", prayerTexts.hailHolyQueen)}
+    </div>
   `;
+
+  window.rosaryI18n?.applyTranslations(root);
 }
 
 function wireRevealAnimations() {
@@ -1639,6 +1710,88 @@ window.rosaryPath = {
   },
 };
 
+let mobileNavGlobalHandlersWired = false;
+
+function wireMobileNav() {
+  const mqCollapsed = window.matchMedia("(max-width: 900px)");
+
+  function closeMobileMenus() {
+    document.querySelectorAll(".site-nav.is-nav-open").forEach((nav) => {
+      nav.classList.remove("is-nav-open");
+      const toggleBtn = nav.querySelector(".nav-menu-toggle");
+      if (toggleBtn) {
+        toggleBtn.setAttribute("aria-expanded", "false");
+        toggleBtn.setAttribute("aria-label", "Open navigation menu");
+      }
+    });
+    document.body.classList.remove("nav-menu-open");
+  }
+
+  function setMenuOpen(nav, open) {
+    if (!mqCollapsed.matches) {
+      nav.classList.remove("is-nav-open");
+      document.body.classList.remove("nav-menu-open");
+      return;
+    }
+    nav.classList.toggle("is-nav-open", open);
+    const toggleBtn = nav.querySelector(".nav-menu-toggle");
+    if (toggleBtn) {
+      toggleBtn.setAttribute("aria-expanded", String(open));
+      toggleBtn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    }
+    document.body.classList.toggle("nav-menu-open", Boolean(open));
+  }
+
+  if (!mobileNavGlobalHandlersWired) {
+    mobileNavGlobalHandlersWired = true;
+    mqCollapsed.addEventListener("change", () => {
+      if (!mqCollapsed.matches) closeMobileMenus();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMobileMenus();
+    });
+  }
+
+  document.querySelectorAll(".site-nav").forEach((nav) => {
+    if (nav.dataset.mobileNavWired) return;
+
+    const brand = nav.querySelector(".brand");
+    const links = nav.querySelector(".nav-links");
+    if (!brand || !links) return;
+
+    nav.dataset.mobileNavWired = "true";
+
+    const topBar = document.createElement("div");
+    topBar.className = "site-nav-top";
+
+    nav.insertBefore(topBar, brand);
+    topBar.appendChild(brand);
+
+    const langSwitch = nav.querySelector(".language-switch");
+    if (langSwitch && langSwitch.parentElement === nav) {
+      topBar.appendChild(langSwitch);
+    }
+
+    const toggleBtn = document.createElement("button");
+    toggleBtn.type = "button";
+    toggleBtn.className = "nav-menu-toggle";
+    toggleBtn.setAttribute("aria-expanded", "false");
+    if (!links.id) links.id = "primary-nav-links";
+    toggleBtn.setAttribute("aria-controls", links.id);
+    toggleBtn.setAttribute("aria-label", "Open navigation menu");
+    toggleBtn.innerHTML = '<span class="nav-menu-toggle-bars" aria-hidden="true"></span>';
+    topBar.appendChild(toggleBtn);
+
+    toggleBtn.addEventListener("click", () => {
+      setMenuOpen(nav, !nav.classList.contains("is-nav-open"));
+    });
+
+    links.querySelectorAll("a").forEach((anchor) => {
+      anchor.addEventListener("click", () => setMenuOpen(nav, false));
+    });
+  });
+}
+
 renderRosaryPath();
 renderChronology();
 renderMysteries();
@@ -1649,3 +1802,4 @@ wireDownloads();
 wirePrint();
 wireTestimonyForm();
 window.rosaryI18n?.init();
+wireMobileNav();

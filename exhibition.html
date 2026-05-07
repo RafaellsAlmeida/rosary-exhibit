@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07090d" />
     <meta
       name="description"
-      content="A digital Catholic exhibition on the Holy Rosary: its Gospel mysteries, Marian roots, spiritual fruits, historical witnesses, and testimonies of grace."
+      content="Compact Rosary path and exhibition companion: scroll the strand, read opening prayers and decades, and explore linked guides on separate pages."
     />
     <title>The Rosary: A Path Through the Life of Christ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,56 +18,45 @@
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./i18n.js?v=1"></script>
-    <script defer src="./app.js?v=4"></script>
-    <script defer src="./immersive.js?v=2"></script>
-    <!-- 3D strand retained in beads-3d.js; disabled so the dock stays out of the UI -->
-    <!-- <script defer src="./beads-3d.js?v=2"></script> -->
+    <script defer src="./app.js?v=6"></script>
   </head>
   <body class="immersive-page home-page no-pull-rosary">
-    <a class="skip-link" href="#immersive-path">Skip to content</a>
+    <a class="skip-link" href="#rosary-scroll">Skip to content</a>
 
     <nav class="site-nav" aria-label="Primary navigation">
       <a class="brand" href="./index.html#top">The Rosary</a>
       <div class="nav-links">
-        <a href="./index.html#immersive-path">Immersive Path</a>
-        <a href="#exhibition-home">Exhibition Guide</a>
+        <a href="./index.html#immersive-path">Home</a>
+        <a href="#exhibition-home" aria-current="page">Exhibition Guide</a>
         <a href="#rosary-scroll">Compact Path</a>
-        <a href="#what-is-rosary">What Is</a>
-        <a href="#how-to-pray">How to Pray</a>
-        <a href="#mysteries">Mysteries</a>
+        <a href="./what-is.html">What Is</a>
+        <a href="./how-to-pray.html">How to Pray</a>
+        <a href="./mysteries.html">Mysteries</a>
         <a href="./history.html">History</a>
         <a href="./saints.html">Saints</a>
-        <a href="#marys-requests">Mary</a>
-        <a href="#testimonies">Testimonies</a>
-        <a href="#daily-rosary">Today</a>
-        <a href="#sources">Sources</a>
+        <a href="./mary.html">Mary</a>
+        <a href="./testimonies.html">Testimonies</a>
+        <a href="./today.html">Today</a>
+        <a href="./sources.html">Sources</a>
       </div>
     </nav>
 
     <header class="immersive-hero home-immersive-hero" id="top">
       <div>
-        <p class="eyebrow">The main experience</p>
-        <h1>The Rosary: A Path Through the Life of Christ</h1>
+        <p class="eyebrow">Exhibition guide</p>
+        <h1>A companion path through the Rosary</h1>
         <p>
-          Walk slowly through the prayer, bead by bead. The Rosary stays present
-          behind each scene as the scroll carries you from the Cross into the
-          mysteries and back to the Hail Holy Queen.
+          The home page holds the long immersive walk. Here, the compact strand stays beside you while you
+          scroll—then use the guides on their own pages for teaching, history, shrines, and sources.
         </p>
       </div>
       <div class="immersive-hero-actions">
-        <a class="button button-primary" href="#immersive-path">Begin at the Cross</a>
-        <a class="button button-secondary" href="#exhibition-home">Open the guide</a>
+        <a class="button button-primary" href="#rosary-scroll">Open the compact path</a>
+        <a class="button button-secondary" href="./index.html#immersive-path">Return to Home</a>
       </div>
     </header>
 
     <main class="site-main" id="main">
-      <section class="immersive-shell home-immersive-path" id="immersive-path" aria-label="Immersive Rosary path">
-        <div class="immersive-backdrop" aria-hidden="true">
-          <div id="immersive-map" class="immersive-map"></div>
-        </div>
-        <div id="immersive-stops" class="immersive-stops"></div>
-      </section>
-
       <section class="hero legacy-home-section" id="exhibition-home" aria-labelledby="exhibition-home-heading">
         <img
           class="hero-image"
@@ -76,20 +66,15 @@
         />
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-inner">
-          <p class="eyebrow">Exhibition guide</p>
-          <h2 id="exhibition-home-heading">A companion guide for the Rosary</h2>
+          <p class="eyebrow">How this page works</p>
+          <h2 id="exhibition-home-heading">Scroll the strand with the text</h2>
           <p class="subtitle">
-            Keep the wider exhibition here: the prayer Our Lady asked for, the
-            mysteries of Christ it reveals, and the graces it has carried
-            through history.
-          </p>
-          <p class="hero-position">
-            Use this section when you want the shorter guide, source trail, and
-            teaching material around the main prayer path.
+            Begin below at the cross-shaped rail, move through the opening prayers, then trace each decade. Every bead
+            opens context, images, and links.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#rosary-scroll">Open the compact path</a>
-            <a class="button button-secondary" href="#how-to-pray">Learn How to Pray</a>
+            <a class="button button-primary" href="#rosary-scroll">Begin the compact path</a>
+            <a class="button button-secondary" href="./how-to-pray.html">How to Pray</a>
           </div>
         </div>
         <div class="hero-next" aria-hidden="true">Continue into the compact path</div>
@@ -101,16 +86,16 @@
             <p class="eyebrow">Companion section</p>
             <h2 id="rosary-scroll-heading">Rosary</h2>
             <p>
-              Begin at the cross, descend through the opening prayers, enter
-              the decades, and return to the Hail Holy Queen.
+              Begin at the cross, descend through the opening prayers, enter the decades, and return to the Hail Holy
+              Queen.
             </p>
             <p>
-              Keep scrolling. The page keeps moving down while the active bead
-              travels down the strand, around the decades, and back up.
+              Keep scrolling. The page keeps moving down while the active bead travels down the strand, around the
+              decades, and back up.
             </p>
             <p class="bead-instruction">
-              Each bead is clickable. Use the physical strand as navigation,
-              then follow the text and links in the active bead.
+              Each bead is clickable. Use the physical strand as navigation, then follow the text and links in the
+              active bead.
             </p>
           </div>
           <div class="rosary-viewport">
@@ -127,12 +112,11 @@
                 <h3 id="bead-title">The Apostles' Creed</h3>
                 <p id="bead-scripture">I believe in God, the Father almighty...</p>
                 <p id="bead-body">
-                  The Rosary begins inside the faith of the Church. The Creed is
-                  not decoration; it is the doorway.
+                  The Rosary begins inside the faith of the Church. The Creed is not decoration; it is the doorway.
                 </p>
                 <div id="bead-detail" class="bead-detail"></div>
                 <div id="bead-links" class="bead-links" aria-label="Links for this bead"></div>
-                <a id="bead-action" class="bead-action" href="#how-to-pray">See the prayer guide</a>
+                <a id="bead-action" class="bead-action" href="./how-to-pray.html">See the prayer guide</a>
               </div>
             </article>
           </div>
@@ -140,48 +124,13 @@
         <div id="rosary-steps" class="rosary-steps"></div>
       </section>
 
-      <section class="section intro-section tone-deep" id="what-is-rosary" aria-labelledby="what-heading">
-        <div class="section-kicker">What Is the Rosary?</div>
-        <div class="split">
-          <div>
-            <h2 id="what-heading">A compendium of the Gospel</h2>
-            <details class="hidden-note">
-              <summary>Quiet distinction</summary>
-              <p>Mary does not compete with Christ in the Rosary. She teaches the soul to look at Him.</p>
-            </details>
-          </div>
-          <div class="copy-stack">
-            <p>
-              The Rosary is a meditative Catholic prayer centered on the life,
-              death, and glory of Jesus Christ.
-            </p>
-            <p>
-              Each decade invites us to contemplate one mystery from the Gospel:
-              the Annunciation, the Nativity, the Baptism of Jesus, the
-              Crucifixion, the Resurrection, Pentecost, and many others.
-            </p>
-            <p>
-              The Church has often called the Rosary a compendium of the Gospel
-              because it gathers the central events of salvation history into a
-              prayer that can be carried in the hand, prayed in the home,
-              whispered in suffering, or proclaimed in procession.
-            </p>
-            <p class="callout-line">
-              The Rosary is Marian because we pray it with Mary. It is
-              Christ-centered because every mystery leads us to Jesus.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section why-section tone-paper" aria-labelledby="why-heading">
+      <section class="section intro-section tone-deep" aria-labelledby="why-heading">
         <div class="section-kicker">Why This Exhibition Exists</div>
         <div class="wide-copy">
           <h2 id="why-heading">To rediscover the Rosary with faith and clarity</h2>
           <p>
-            Many Catholics know the Rosary as a family tradition. Some know it
-            as a daily devotion. Others see it as repetitive and do not yet
-            understand its depth.
+            Many Catholics know the Rosary as a family tradition. Some know it as a daily devotion. Others see it as
+            repetitive and do not yet understand its depth.
           </p>
         </div>
         <div class="purpose-grid">
@@ -194,10 +143,9 @@
         </div>
         <div class="truth-band">
           <p>
-            This exhibition does not treat every miracle story the same way.
-            Some events are official Church teaching. Some are shrine-documented
-            testimonies. Some are devotional traditions. Some are popular
-            stories that need more evidence.
+            This exhibition does not treat every miracle story the same way. Some events are official Church teaching.
+            Some are shrine-documented testimonies. Some are devotional traditions. Some are popular stories that need
+            more evidence.
           </p>
           <strong>Faith does not require exaggeration. The truth is already beautiful enough.</strong>
           <details class="hidden-note">
@@ -211,115 +159,13 @@
         <div class="section-kicker">Explore the Exhibition</div>
         <h2 id="map-heading">A pilgrimage through prayer, history, and witness</h2>
         <div class="exhibit-map">
-          <a href="#what-is-rosary"><span>01</span>The Prayer</a>
-          <a href="#mysteries"><span>02</span>The Mysteries</a>
-          <a href="#marys-requests"><span>03</span>Mary's Requests</a>
+          <a href="./what-is.html"><span>01</span>The Prayer</a>
+          <a href="./mysteries.html"><span>02</span>The Mysteries</a>
+          <a href="./mary.html"><span>03</span>Mary's Requests</a>
           <a href="./history.html"><span>04</span>History Timeline</a>
           <a href="./saints.html"><span>05</span>Saints and Witnesses</a>
-          <a href="#testimonies"><span>06</span>Testimonies and Miracles</a>
-          <a href="#science"><span>07</span>The Rosary and Human Flourishing</a>
-        </div>
-      </section>
-
-      <section class="section prayer-section tone-nave" id="how-to-pray" aria-labelledby="pray-heading">
-        <div class="section-kicker">How to Pray</div>
-        <div class="split">
-          <div>
-            <h2 id="pray-heading">A simple guide</h2>
-            <p class="section-note">
-              The structure is simple. The depth comes from remaining with the
-              mysteries of Christ.
-            </p>
-          </div>
-          <ol class="step-list">
-            <li><strong>Begin with the Sign of the Cross.</strong> In the name of the Father, and of the Son, and of the Holy Spirit. Amen.</li>
-            <li><strong>Pray the Apostles' Creed.</strong> This places the Rosary inside the faith of the Church.</li>
-            <li><strong>Pray one Our Father.</strong> The prayer Jesus Himself taught us.</li>
-            <li><strong>Pray three Hail Marys.</strong> Traditionally offered for faith, hope, and charity.</li>
-            <li><strong>Pray the Glory Be.</strong> Praise the Holy Trinity.</li>
-            <li><strong>Announce the first mystery.</strong> Pause, imagine the scene, and ask for the fruit of the mystery.</li>
-            <li><strong>Pray one Our Father, ten Hail Marys, and one Glory Be.</strong> Let the words become steady, humble, and contemplative.</li>
-            <li><strong>Repeat for all five mysteries.</strong> Each decade is a step through the Gospel.</li>
-            <li><strong>Conclude with the Hail Holy Queen.</strong> Entrust yourself to Mary's maternal intercession.</li>
-          </ol>
-        </div>
-        <div class="practice-panel">
-          <h3>How to pray it better</h3>
-          <p>
-            Do not rush. Before each decade, pause and name the mystery. Read or
-            remember one short Scripture passage. Ask for the fruit of the
-            mystery. Picture the scene. When distraction comes, gently return.
-          </p>
-          <p>
-            The Rosary is not about perfect feelings. It is about faithful
-            presence.
-          </p>
-          <details class="hidden-note hidden-note-inline">
-            <summary>For distraction</summary>
-            <p>Return without drama. The return itself is part of the prayer.</p>
-          </details>
-        </div>
-        <div class="prayer-texts" aria-label="Full Rosary prayers">
-          <article>
-            <span>Apostles' Creed</span>
-            <p>
-              I believe in God, the Father almighty, Creator of heaven and earth,
-              and in Jesus Christ, his only Son, our Lord, who was conceived by
-              the Holy Spirit, born of the Virgin Mary, suffered under Pontius
-              Pilate, was crucified, died, and was buried; he descended into
-              hell; on the third day he rose again from the dead; he ascended
-              into heaven, and is seated at the right hand of God the Father
-              almighty; from there he will come to judge the living and the dead.
-              I believe in the Holy Spirit, the holy catholic Church, the
-              communion of saints, the forgiveness of sins, the resurrection of
-              the body, and life everlasting. Amen.
-            </p>
-          </article>
-          <article>
-            <span>Glory Be</span>
-            <p>
-              Glory be to the Father, and to the Son, and to the Holy Spirit, as
-              it was in the beginning, is now, and ever shall be, world without
-              end. Amen.
-            </p>
-          </article>
-          <article>
-            <span>Hail Holy Queen</span>
-            <p>
-              Hail, holy Queen, Mother of mercy, our life, our sweetness and our
-              hope. To thee do we cry, poor banished children of Eve. To thee do
-              we send up our sighs, mourning and weeping in this valley of tears.
-              Turn then, most gracious advocate, thine eyes of mercy toward us,
-              and after this our exile show unto us the blessed fruit of thy
-              womb, Jesus. O clement, O loving, O sweet Virgin Mary.
-            </p>
-            <p>
-              Pray for us, O holy Mother of God, that we may be made worthy of
-              the promises of Christ.
-            </p>
-            <p>
-              Let us pray. O God, whose only begotten Son, by His life, death,
-              and resurrection, has purchased for us the rewards of eternal life,
-              grant, we beseech Thee, that while meditating on these mysteries of
-              the most holy Rosary of the Blessed Virgin Mary, we may imitate
-              what they contain and obtain what they promise, through the same
-              Christ our Lord. Amen.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section timeline-section tone-deep" aria-labelledby="timeline-heading">
-        <div class="section-kicker">Chronology</div>
-        <div class="split">
-          <div>
-            <h2 id="timeline-heading">The prayer took shape over time</h2>
-            <p class="section-note">
-              The exhibit distinguishes roots, tradition, papal framing, shrine
-              testimony, and later devotional memory.
-            </p>
-          </div>
-          <div id="chronology" class="chronology"></div>
+          <a href="./testimonies.html"><span>06</span>Testimonies and Miracles</a>
+          <a href="./today.html"><span>07</span>Today's Rosary</a>
         </div>
       </section>
 
@@ -332,259 +178,9 @@
           <p class="eyebrow">Papal framing</p>
           <h2>The prayer kept finding new public language.</h2>
           <p>
-            Modern papal teaching gave the Rosary a public language for
-            contemplation, peace, family life, and renewed attention to Christ.
-            The form changed; the center did not.
+            Modern papal teaching gave the Rosary a public language for contemplation, peace, family life, and renewed
+            attention to Christ. The form changed; the center did not.
           </p>
-        </div>
-      </section>
-
-      <section class="section mysteries-section tone-paper" id="mysteries" aria-labelledby="mysteries-heading">
-        <div class="section-kicker">The Mysteries</div>
-        <div class="wide-copy">
-          <h2 id="mysteries-heading">The Gospel carried in twenty scenes</h2>
-          <p>
-            The Joyful, Luminous, Sorrowful, and Glorious Mysteries lead the
-            soul through the Incarnation, public ministry, Passion, and glory of
-            Jesus Christ.
-          </p>
-        </div>
-        <div id="mystery-grid" class="mystery-grid"></div>
-      </section>
-
-      <section class="section slide-section tone-altar" id="slide-decks" aria-labelledby="slides-heading">
-        <div class="section-kicker">Downloadable Slide Decks</div>
-        <div class="split">
-          <div>
-            <h2 id="slides-heading">Mystery decks for prayer and teaching</h2>
-            <p class="section-note">
-              Download the original slide decks for parish, family, class, or
-              exhibit use. PDF exports remain in the local working folder and
-              can be hosted later.
-            </p>
-          </div>
-          <div class="slide-grid">
-            <article class="download-card joyful">
-              <span>Joyful Mysteries</span>
-              <strong>Gozosos deck</strong>
-              <div class="deck-actions">
-                <a href="./downloads/joyful-mysteries-slides.pptx" download>PPTX</a>
-              </div>
-            </article>
-            <article class="download-card sorrowful">
-              <span>Sorrowful Mysteries</span>
-              <strong>Dolorosos deck</strong>
-              <div class="deck-actions">
-                <a href="./downloads/sorrowful-mysteries-slides.pptx" download>PPTX</a>
-              </div>
-            </article>
-            <article class="download-card luminous">
-              <span>Luminous Mysteries</span>
-              <strong>Luminosos deck</strong>
-              <div class="deck-actions">
-                <a href="./downloads/luminous-mysteries-slides.pptx" download>PPTX</a>
-              </div>
-            </article>
-            <article class="download-card glorious">
-              <span>Glorious Mysteries</span>
-              <strong>Gloriosos deck</strong>
-              <div class="deck-actions">
-                <a href="./downloads/glorious-mysteries-slides.pptx" download>PPTX</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section mary-section tone-midnight" id="marys-requests" aria-labelledby="mary-heading">
-        <div class="section-kicker">Mary and the Rosary</div>
-        <h2 id="mary-heading">Shrines where the Rosary stayed close to the message</h2>
-        <div class="story-grid">
-          <article>
-            <img class="story-image" src="./assets/witnesses/fatima.jpg" alt="Historical photograph of the three children of Fatima" loading="lazy" />
-            <span class="source-label strong">Approved shrine tradition</span>
-            <h3>Fatima: pray the Rosary every day</h3>
-            <p>
-              In 1917, Our Lady appeared to three shepherd children in Fatima,
-              Portugal. Her message was urgent: conversion, repentance, prayer,
-              sacrifice, and peace. Again and again, she asked for the daily
-              Rosary.
-            </p>
-            <p>Pray. Repent. Offer sacrifices. Turn toward God. Pray the Rosary for peace.</p>
-            <a class="text-link" href="https://www.fatima.pt/en/pages/narrative-of-the-apparitions-" target="_blank" rel="noreferrer">Read the Fatima shrine narrative</a>
-            <details class="hidden-note hidden-note-inline">
-              <summary>Why this anchors the site</summary>
-              <p>Fatima gives the Rosary a clear public request without turning the site into rumor collecting.</p>
-            </details>
-          </article>
-          <article>
-            <img class="story-image" src="./assets/witnesses/bernadette-soubirous.jpg" alt="Portrait of Saint Bernadette Soubirous" loading="lazy" />
-            <span class="source-label strong">Approved shrine tradition</span>
-            <h3>Lourdes: the Rosary at the Grotto</h3>
-            <p>
-              When Saint Bernadette encountered the Lady at Lourdes, she prayed
-              the Rosary. Lourdes reminds us that the Rosary is not only a
-              prayer of words. It is a prayer of presence.
-            </p>
-            <p>
-              The shrine also maintains a serious process for examining alleged
-              healings, joining devotion with careful discernment.
-            </p>
-            <a class="text-link" href="https://www.lourdes-france.com/en/day-pilgrims/the-rosary/" target="_blank" rel="noreferrer">Visit the Lourdes Rosary guide</a>
-          </article>
-          <article>
-            <img class="story-image" src="./assets/witnesses/bartolo-longo.jpg" alt="Portrait of Blessed Bartolo Longo" loading="lazy" />
-            <span class="source-label witness">Biographical witness</span>
-            <h3>Pompeii: the Rosary and conversion</h3>
-            <p>
-              Blessed Bartolo Longo was once far from the Catholic faith. His
-              life was transformed, and he became one of the great apostles of
-              the Rosary.
-            </p>
-            <p>
-              His story shows that the Rosary is also for the lost, the wounded,
-              the confused, and the returning.
-            </p>
-            <a class="text-link" href="https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19801026_longo_en.html" target="_blank" rel="noreferrer">Read the Vatican biography</a>
-          </article>
-          <article>
-            <img class="story-image" src="./assets/witnesses/kibeho.jpg" alt="Statue of Our Lady of Kibeho" loading="lazy" />
-            <span class="source-label strong">Approved shrine tradition</span>
-            <h3>Kibeho: repentance and the Seven Sorrows</h3>
-            <p>
-              At Kibeho in Rwanda, the Marian message emphasized conversion,
-              repentance, suffering, and prayer. The Rosary of the Seven Sorrows
-              became especially important in that spiritual tradition.
-            </p>
-            <p>
-              Kibeho reminds us that Marian devotion is not sentimental. Mary
-              calls her children to repentance and deep conversion.
-            </p>
-            <a class="text-link" href="https://www.kibeho-cana.org/a-brief-history-of-the-apparitions-of-our-lady-of-kibeho/" target="_blank" rel="noreferrer">Read the Kibeho shrine history</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section saints-section tone-paper" id="saints" aria-labelledby="saints-heading">
-        <div class="section-kicker">Saints and Witnesses</div>
-        <div class="wide-copy">
-          <h2 id="saints-heading">Lives shaped by the Rosary</h2>
-          <p>
-            The Rosary has been preached, defended, loved, and carried by
-            saints, popes, shrines, families, and ordinary souls.
-          </p>
-        </div>
-        <div class="witness-list">
-          <article>
-            <img class="witness-image" src="./assets/witnesses/saint-dominic.jpg" alt="Portrait of Saint Dominic" loading="lazy" />
-            <h3>Saint Dominic and the Dominican tradition</h3>
-            <p>
-              The Rosary has long been associated with preaching, contemplation,
-              and teaching the Gospel to ordinary people.
-            </p>
-            <a class="text-link" href="./saints.html#dominic">Read more</a>
-          </article>
-          <article>
-            <img class="witness-image" src="./assets/witnesses/louis-de-montfort.jpg" alt="Portrait of Saint Louis de Montfort" loading="lazy" />
-            <h3>Saint Louis de Montfort</h3>
-            <p>
-              For de Montfort, the Rosary was a path of conversion,
-              perseverance, and union with Jesus through Mary.
-            </p>
-            <a class="text-link" href="./saints.html#montfort">Read more</a>
-          </article>
-          <article>
-            <img class="witness-image" src="./assets/witnesses/leo-xiii.jpg" alt="Portrait of Pope Leo XIII" loading="lazy" />
-            <h3>Pope Leo XIII</h3>
-            <p>
-              Leo XIII wrote extensively on the Rosary and helped shape modern
-              papal teaching on it as a response to crises in society, family,
-              and the Church.
-            </p>
-            <a class="text-link" href="./saints.html#leo-xiii">Read more</a>
-          </article>
-          <article>
-            <img class="witness-image" src="./assets/witnesses/john-paul-ii.jpg" alt="Photograph of Saint John Paul II" loading="lazy" />
-            <h3>Saint John Paul II</h3>
-            <p>
-              In Rosarium Virginis Mariae, John Paul II described the Rosary as
-              contemplating Christ with Mary and gave the Church the Luminous
-              Mysteries.
-            </p>
-            <a class="text-link" href="./saints.html#john-paul-ii">Read more</a>
-          </article>
-          <article>
-            <img class="witness-image" src="./assets/witnesses/bartolo-longo.jpg" alt="Portrait of Blessed Bartolo Longo" loading="lazy" />
-            <h3>Blessed Bartolo Longo</h3>
-            <p>
-              His life moved from spiritual darkness to Marian devotion, from
-              confusion to mission, and from a wounded past to a life of service.
-            </p>
-            <a class="text-link" href="./saints.html#bartolo-longo">Read more</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section testimony-section tone-evidence" id="testimonies" aria-labelledby="testimony-heading">
-        <div class="section-kicker">Testimonies and Miracles</div>
-        <div class="split">
-          <div>
-            <h2 id="testimony-heading">Beautiful claims need careful labels</h2>
-            <p class="section-note">
-              The Rosary does not need exaggeration to be powerful. This site
-              names the source strength before it tells the story.
-            </p>
-          </div>
-          <div class="classification-list">
-            <div><strong>Official Church Teaching</strong><span>Vatican, papal, catechetical, and liturgical sources.</span></div>
-            <div><strong>Approved Shrine Tradition</strong><span>Recognized shrine material from Fatima, Lourdes, Pompeii, Kibeho, and similar sources.</span></div>
-            <div><strong>Documented Historical Event</strong><span>Events supported by serious history and interpreted devotionally by Catholics.</span></div>
-            <div><strong>Shrine-Documented Testimony</strong><span>Accounts preserved by shrine records, medical bureaus, or official testimony processes.</span></div>
-            <div><strong>Biographical Witness</strong><span>Stories from saints, blesseds, or credible Catholic figures.</span></div>
-            <div><strong>Popular Devotional Account</strong><span>Stories widely repeated in Catholic culture but not presented as proven fact here.</span></div>
-          </div>
-        </div>
-        <div class="story-grid">
-          <article>
-            <span class="source-label history">Documented historical event</span>
-            <h3>Lepanto: remembered through the Rosary</h3>
-            <p>
-              Catholic tradition connects the 1571 victory at Lepanto with
-              Rosary prayer and the intercession of Our Lady. The lesson is not
-              triumphalism. It is dependence.
-            </p>
-            <details class="hidden-note hidden-note-inline">
-              <summary>Editorial rule</summary>
-              <p>Tell the battle as history first, then name the Catholic devotional memory attached to it.</p>
-            </details>
-          </article>
-          <article>
-            <span class="source-label strong">Approved shrine tradition</span>
-            <h3>Fatima and peace</h3>
-            <p>
-              At Fatima, the Rosary was presented as a prayer for peace:
-              intercession for nations, families, sinners, and the suffering
-              world.
-            </p>
-          </article>
-          <article>
-            <span class="source-label testimony">Shrine-documented testimony</span>
-            <h3>Lourdes and healing</h3>
-            <p>
-              Lourdes is one of the most carefully documented Marian shrines in
-              the world. Not every healing is specifically a Rosary miracle, but
-              Lourdes gives an example of faith, gratitude, investigation, and
-              restraint.
-            </p>
-          </article>
-          <article>
-            <span class="source-label witness">Biographical witness</span>
-            <h3>Pompeii and conversion</h3>
-            <p>
-              Sometimes the greatest miracle is not the sudden healing of the
-              body. It is the rescue of a soul.
-            </p>
-          </article>
         </div>
       </section>
 
@@ -596,19 +192,17 @@
           </div>
           <div class="copy-stack">
             <p>
-              Science cannot prove grace. It cannot measure the intercession of
-              Mary. It cannot reduce prayer to a biological technique.
+              Science cannot prove grace. It cannot measure the intercession of Mary. It cannot reduce prayer to a
+              biological technique.
             </p>
             <p>
-              But science can observe certain human effects of prayer. Some
-              studies suggest that repetitive prayer, including the Rosary, may
-              support slower breathing, greater calm, emotional regulation,
-              coping, and spiritual well-being.
+              But science can observe certain human effects of prayer. Some studies suggest that repetitive prayer,
+              including the Rosary, may support slower breathing, greater calm, emotional regulation, coping, and
+              spiritual well-being.
             </p>
             <p>
-              These findings should be understood carefully. The Rosary is not a
-              substitute for medicine. It is not a hack. It is not merely
-              meditation with Catholic words. It is prayer.
+              These findings should be understood carefully. The Rosary is not a substitute for medicine. It is not a
+              hack. It is not merely meditation with Catholic words. It is prayer.
             </p>
             <details class="hidden-note">
               <summary>Boundary note</summary>
@@ -618,123 +212,29 @@
         </div>
       </section>
 
-      <section class="section daily-section tone-altar" id="daily-rosary" aria-labelledby="daily-heading">
-        <div class="section-kicker">Daily Rosary</div>
-        <div class="daily-layout">
-          <div>
-            <h2 id="daily-heading">Today's Mystery</h2>
-            <p class="section-note">
-              A daily point of entry for prayer, attention, and one small
-              resolution.
-            </p>
-          </div>
-          <article id="daily-card" class="daily-card" aria-live="polite"></article>
-        </div>
-      </section>
-
-      <section class="section submit-section tone-paper" id="submit-testimony" aria-labelledby="submit-heading">
-        <div class="section-kicker">Submit a Testimony</div>
-        <div class="split">
-          <div>
-            <h2 id="submit-heading">Has the Rosary changed your life?</h2>
-            <p class="section-note">
-              Testimonies of conversion, healing, protection, peace,
-              perseverance, and answered prayer are reviewed before publication.
-              Private experiences are not presented as official Church
-              judgments.
-            </p>
-          </div>
-          <form class="testimony-form" id="testimony-form">
-            <label>
-              Name
-              <input name="name" type="text" autocomplete="name" placeholder="You may request anonymity" />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" autocomplete="email" placeholder="Used only for follow-up" />
-            </label>
-            <label>
-              Location
-              <input name="location" type="text" autocomplete="address-level2" />
-            </label>
-            <label>
-              What happened?
-              <textarea name="story" rows="5"></textarea>
-            </label>
-            <label>
-              How was the Rosary involved?
-              <textarea name="rosary" rows="4"></textarea>
-            </label>
-            <label>
-              Supporting details
-              <textarea
-                name="details"
-                rows="4"
-                placeholder="Dates, witnesses, documents, medical records, or other details"
-              ></textarea>
-            </label>
-            <label class="checkbox-row">
-              <input name="consent" type="checkbox" />
-              <span>
-                I understand that submitting a testimony does not mean it will
-                be published, officially verified, or presented as a
-                Church-approved miracle.
-              </span>
-            </label>
-            <button class="button button-primary" type="submit">Prepare testimony</button>
-            <p class="form-note" id="form-note" role="status"></p>
-          </form>
-        </div>
-      </section>
-
       <section class="section about-section tone-deep" aria-labelledby="about-heading">
         <div class="section-kicker">About</div>
         <div class="wide-copy">
           <h2 id="about-heading">About this project</h2>
           <p>
-            This project was created to help Catholics and seekers rediscover
-            the Holy Rosary as a prayer of contemplation, conversion, peace, and
-            hope.
+            This project was created to help Catholics and seekers rediscover the Holy Rosary as a prayer of
+            contemplation, conversion, peace, and hope.
           </p>
           <p>
-            The goal is not sensationalism. The goal is reverence. The Rosary is
-            beautiful enough when presented truthfully.
+            The goal is not sensationalism. The goal is reverence. The Rosary is beautiful enough when presented
+            truthfully.
           </p>
-        </div>
-      </section>
-
-      <section class="section sources-section tone-midnight" id="sources" aria-labelledby="sources-heading">
-        <div class="section-kicker">Sources</div>
-        <div class="split">
-          <div>
-            <h2 id="sources-heading">Core sources and downloads</h2>
-            <div class="report-actions">
-              <a class="button button-primary" href="./downloads/deep-research-report%20(1).md" download>
-                Download research report
-              </a>
-              <button class="button button-secondary" id="download-json" type="button">
-                Download mysteries JSON
-              </button>
-              <button class="button button-secondary" id="print-page" type="button">
-                Print / save as PDF
-              </button>
-            </div>
-          </div>
-          <div id="source-groups" class="source-groups"></div>
         </div>
       </section>
     </main>
 
-    <!-- 3D pull dock: markup kept for beads-3d.js; hidden while 3D is disabled -->
     <section class="pull-rosary" id="pull-rosary" aria-label="Pullable 3D Rosary navigation" hidden>
       <div class="pull-rosary-status" aria-live="polite">
         <span id="pull-rosary-kicker">Opening prayer</span>
         <strong id="pull-rosary-title">The Apostles' Creed</strong>
       </div>
       <canvas id="rosary-3d" aria-label="Drag the 3D Rosary strand to move through the prayer"></canvas>
-      <p class="pull-rosary-fallback">
-        Drag the Rosary strand at the bottom to move through the prayer.
-      </p>
+      <p class="pull-rosary-fallback">Drag the Rosary strand at the bottom to move through the prayer.</p>
     </section>
   </body>
 </html>

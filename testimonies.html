@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07090d" />
+    <meta
+      name="description"
+      content="Testimonies, miracles, and claims about the Rosary—labeled by source strength—and a form to submit your own story."
+    />
+    <title>Testimonies and the Rosary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./i18n.js?v=1"></script>
+    <script defer src="./app.js?v=6"></script>
+  </head>
+  <body class="content-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="./index.html#top">The Rosary</a>
+      <div class="nav-links">
+        <a href="./index.html#immersive-path">Home</a>
+        <a href="./exhibition.html#exhibition-home">Exhibition Guide</a>
+        <a href="./exhibition.html#rosary-scroll">Compact Path</a>
+        <a href="./what-is.html">What Is</a>
+        <a href="./how-to-pray.html">How to Pray</a>
+        <a href="./mysteries.html">Mysteries</a>
+        <a href="./history.html">History</a>
+        <a href="./saints.html">Saints</a>
+        <a href="./mary.html">Mary</a>
+        <a href="./testimonies.html" aria-current="page">Testimonies</a>
+        <a href="./today.html">Today</a>
+        <a href="./sources.html">Sources</a>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <img src="./assets/papal-study.png" alt="Rosary beads, candlelight, and Marian iconography arranged on dark velvet" />
+      <div class="page-hero-copy">
+        <p class="eyebrow">Testimonies and miracles</p>
+        <h1>Beautiful claims need careful labels</h1>
+        <p>The Rosary does not need exaggeration to be powerful. This site names the source strength before it tells the story.</p>
+      </div>
+    </header>
+
+    <main class="site-main" id="main">
+      <section class="section testimony-section tone-evidence" id="testimonies" aria-labelledby="testimony-heading">
+        <div class="section-kicker">Testimonies and Miracles</div>
+        <div class="split">
+          <div>
+            <h2 id="testimony-heading">Beautiful claims need careful labels</h2>
+            <p class="section-note">
+              The Rosary does not need exaggeration to be powerful. This site names the source strength before it tells the
+              story.
+            </p>
+          </div>
+          <div class="classification-list">
+            <div><strong>Official Church Teaching</strong><span>Vatican, papal, catechetical, and liturgical sources.</span></div>
+            <div><strong>Approved Shrine Tradition</strong><span>Recognized shrine material from Fatima, Lourdes, Pompeii, Kibeho, and similar sources.</span></div>
+            <div><strong>Documented Historical Event</strong><span>Events supported by serious history and interpreted devotionally by Catholics.</span></div>
+            <div><strong>Shrine-Documented Testimony</strong><span>Accounts preserved by shrine records, medical bureaus, or official testimony processes.</span></div>
+            <div><strong>Biographical Witness</strong><span>Stories from saints, blesseds, or credible Catholic figures.</span></div>
+            <div><strong>Popular Devotional Account</strong><span>Stories widely repeated in Catholic culture but not presented as proven fact here.</span></div>
+          </div>
+        </div>
+        <div class="story-grid">
+          <article>
+            <span class="source-label history">Documented historical event</span>
+            <h3>Lepanto: remembered through the Rosary</h3>
+            <p>
+              Catholic tradition connects the 1571 victory at Lepanto with Rosary prayer and the intercession of Our Lady.
+              The lesson is not triumphalism. It is dependence.
+            </p>
+            <details class="hidden-note hidden-note-inline">
+              <summary>Editorial rule</summary>
+              <p>Tell the battle as history first, then name the Catholic devotional memory attached to it.</p>
+            </details>
+          </article>
+          <article>
+            <span class="source-label strong">Approved shrine tradition</span>
+            <h3>Fatima and peace</h3>
+            <p>
+              At Fatima, the Rosary was presented as a prayer for peace: intercession for nations, families, sinners, and
+              the suffering world.
+            </p>
+          </article>
+          <article>
+            <span class="source-label testimony">Shrine-documented testimony</span>
+            <h3>Lourdes and healing</h3>
+            <p>
+              Lourdes is one of the most carefully documented Marian shrines in the world. Not every healing is specifically
+              a Rosary miracle, but Lourdes gives an example of faith, gratitude, investigation, and restraint.
+            </p>
+          </article>
+          <article>
+            <span class="source-label witness">Biographical witness</span>
+            <h3>Pompeii and conversion</h3>
+            <p>Sometimes the greatest miracle is not the sudden healing of the body. It is the rescue of a soul.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section submit-section tone-paper" id="submit-testimony" aria-labelledby="submit-heading">
+        <div class="section-kicker">Submit a Testimony</div>
+        <div class="split">
+          <div>
+            <h2 id="submit-heading">Has the Rosary changed your life?</h2>
+            <p class="section-note">
+              Testimonies of conversion, healing, protection, peace, perseverance, and answered prayer are reviewed
+              before publication. Private experiences are not presented as official Church judgments.
+            </p>
+          </div>
+          <form class="testimony-form" id="testimony-form">
+            <label>
+              Name
+              <input name="name" type="text" autocomplete="name" placeholder="You may request anonymity" />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" placeholder="Used only for follow-up" />
+            </label>
+            <label>
+              Location
+              <input name="location" type="text" autocomplete="address-level2" />
+            </label>
+            <label>
+              What happened?
+              <textarea name="story" rows="5"></textarea>
+            </label>
+            <label>
+              How was the Rosary involved?
+              <textarea name="rosary" rows="4"></textarea>
+            </label>
+            <label>
+              Supporting details
+              <textarea
+                name="details"
+                rows="4"
+                placeholder="Dates, witnesses, documents, medical records, or other details"
+              ></textarea>
+            </label>
+            <label class="checkbox-row">
+              <input name="consent" type="checkbox" />
+              <span>
+                I understand that submitting a testimony does not mean it will be published, officially verified, or
+                presented as a Church-approved miracle.
+              </span>
+            </label>
+            <button class="button button-primary" type="submit">Prepare testimony</button>
+            <p class="form-note" id="form-note" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

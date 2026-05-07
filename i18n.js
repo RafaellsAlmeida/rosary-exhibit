@@ -28,6 +28,7 @@
     "Skip to content": "Pular para o conteúdo",
     "Primary navigation": "Navegação principal",
     "Immersive Path": "Caminho Imersivo",
+    "Home": "Início",
     "Exhibition Guide": "Guia da Exposição",
     "Compact Path": "Caminho Compacto",
     "Compact Rosary": "Rosário Compacto",
@@ -42,12 +43,55 @@
     "Today": "Hoje",
     "Sources": "Fontes",
 
-    "The main experience": "A experiência principal",
+    "Open navigation menu": "Abrir menu de navegação",
+    "Close navigation menu": "Fechar menu de navegação",
+
+    "Open today's slide deck (PPTX)": "Abrir a apresentação de hoje (PPTX)",
+    "Full prayer — today": "Oração completa — hoje",
+    "From the Creed through the Hail Holy Queen, using the five mysteries assigned to this day.":
+      "Do Credo à Salve Rainha, com os cinco mistérios atribuídos a este dia.",
+    "Sign of the Cross": "Sinal da Cruz",
+    "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.":
+      "Em nome do Pai, e do Filho, e do Espírito Santo. Amém.",
+    "Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.":
+      "Pai-Nosso que estais no Céu, santificado seja o vosso nome; venha a nós o vosso reino; seja feita a vossa vontade assim na terra como no Céu. O pão nosso de cada dia nos dai hoje; perdoai-nos as nossas ofensas assim como nós perdoamos a quem nos tem ofendido; e não nos deixeis cair em tentação, mas livrai-nos do mal. Amém.",
+    "Hail Mary, full of grace, the Lord is with thee; blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.":
+      "Ave-Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres, e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós pecadores, agora e na hora da nossa morte. Amém.",
+    "Traditionally, this mystery is followed by one Our Father, ten Hail Marys, and one Glory Be. Text of the Hail Mary (pray ten times):":
+      "Tradicionalmente, este mistério é seguido de um Pai-Nosso, dez Ave-Marias e um Glória ao Pai. Texto da Ave-Maria (rezar dez vezes):",
+    "Hail Mary (first, for faith)": "Ave-Maria (primeira, pela fé)",
+    "Hail Mary (second, for hope)": "Ave-Maria (segunda, pela esperança)",
+    "Hail Mary (third, for charity)": "Ave-Maria (terceira, pela caridade)",
+
+    "A companion path through the Rosary": "Um caminho de acompanhamento pelo Rosário",
+    "The home page holds the long immersive walk. Here, the compact strand stays beside you while you scroll—then use the guides on their own pages for teaching, history, shrines, and sources.":
+      "A página inicial guarda o longo percurso imersivo. Aqui, o fio compacto permanece ao seu lado enquanto você rola—depois use os guias em páginas próprias para ensino, história, santuários e fontes.",
+    "Return to Home": "Voltar ao início",
+    "How this page works": "Como esta página funciona",
+    "Scroll the strand with the text": "Role o fio junto com o texto",
+    "Begin below at the cross-shaped rail, move through the opening prayers, then trace each decade. Every bead opens context, images, and links.":
+      "Comece abaixo no trilho em forma de cruz, passe pelas orações iniciais e trace cada dezena. Cada conta abre contexto, imagens e links.",
+    "Begin the compact path": "Começar o caminho compacto",
+
+    "A Gospel compendium, Marian yet Christ-centered prayer, and doorway into the mysteries.":
+      "Compêndio do Evangelho, oração mariana e cristocêntrica, e porta de entrada nos mistérios.",
+    "Shrines where Our Lady asked for prayer and conversion.":
+      "Santuários onde Nossa Senhora pediu oração e conversão.",
+    "The twenty mysteries of the Rosary: Joyful, Luminous, Sorrowful, and Glorious, with downloadable mystery slide decks.":
+      "Os vinte mistérios do Rosário: Gozosos, Luminosos, Dolorosos e Gloriosos, com apresentações para download.",
+    "Testimonies, miracles, and claims about the Rosary—labeled by source strength—and a form to submit your own story.":
+      "Testemunhos, milagres e relatos sobre o Rosário—com rótulos de confiabilidade da fonte—e um formulário para enviar sua história.",
+    "Core Vatican, shrine, and research sources for the Rosary exhibition, with downloads and print options.":
+      "Fontes vaticanas, de santuários e de pesquisa para a exposição do Rosário, com downloads e opção de impressão.",
+    "Today's Rosary: the mysteries for this day of the week, full prayer texts from the Creed through the Hail Holy Queen, and the matching slide deck.":
+      "Rosário de hoje: mistérios do dia da semana, textos completos do Credo à Salve Rainha e a apresentação correspondente.",
+    "Sources — The Rosary Exhibition": "Fontes — Exposição do Rosário",
     "The Rosary: A Path Through the Life of Christ": "O Rosário: Um Caminho pela Vida de Cristo",
     "Walk slowly through the prayer, bead by bead. The Rosary stays present behind each scene as the scroll carries you from the Cross into the mysteries and back to the Hail Holy Queen.": "Percorra a oração devagar, conta por conta. O Rosário permanece presente por trás de cada cena enquanto a rolagem leva você da Cruz aos mistérios e de volta à Salve Rainha.",
     "Begin at the Cross": "Começar pela Cruz",
     "Open the guide": "Abrir o guia",
     "Immersive Rosary path": "Caminho imersivo do Rosário",
+    "Home — immersive Rosary path": "Início — caminho imersivo do Rosário",
     "Exhibition guide": "Guia da exposição",
     "A companion guide for the Rosary": "Um guia de acompanhamento para o Rosário",
     "Keep the wider exhibition here: the prayer Our Lady asked for, the mysteries of Christ it reveals, and the graces it has carried through history.": "Mantenha aqui a exposição mais ampla: a oração que Nossa Senhora pediu, os mistérios de Cristo que ela revela e as graças que carregou pela história.",
@@ -100,6 +144,7 @@
     "History Timeline": "Linha do tempo histórica",
     "Saints and Witnesses": "Santos e testemunhas",
     "Testimonies and Miracles": "Testemunhos e milagres",
+    "Today's Rosary": "Rosário de hoje",
     "The Rosary and Human Flourishing": "O Rosário e o florescimento humano",
 
     "A simple guide": "Um guia simples",
@@ -232,6 +277,8 @@
     "Daily Rosary": "Rosário diário",
     "Today's Mystery": "Mistério de hoje",
     "A daily point of entry for prayer, attention, and one small resolution.": "Um ponto diário de entrada para oração, atenção e uma pequena resolução.",
+    "A daily point of entry for prayer, attention, and one small resolution—then the full text to pray through.":
+      "Um ponto diário de entrada para oração, atenção e uma pequena resolução—depois o texto completo para rezar.",
     "Fruit": "Fruto",
     "Meditation": "Meditação",
     "Ask": "Pedido",
@@ -283,7 +330,9 @@
     "The exhibit presents the event without triumphalism: prayer is shown as dependence on God, not as a tool for spectacle.": "A exposição apresenta o evento sem triunfalismo: a oração aparece como dependência de Deus, não como ferramenta de espetáculo.",
     "Read Rosarium Virginis Mariae": "Ler Rosarium Virginis Mariae",
     "Primary links for deeper study": "Links primários para estudo mais profundo",
-    "Start with Church documents and shrine sources, then use the downloadable research report from the main page for a fuller audit.": "Comece com documentos da Igreja e fontes de santuários, depois use o relatório de pesquisa para download na página principal para uma auditoria mais completa.",
+    "Start with Church documents and shrine sources, then continue on the Sources page for the research report and full bibliography.":
+      "Comece com documentos da Igreja e fontes de santuários; depois vá à página Fontes pelo relatório de pesquisa e bibliografia completa.",
+    "Open Sources": "Abrir Fontes",
 
     "Saints and witnesses": "Santos e testemunhas",
     "Lives that carried the Rosary into the world.": "Vidas que levaram o Rosário ao mundo.",
@@ -556,6 +605,7 @@
     "Core Church Documents": "Documentos centrais da Igreja",
     "Shrine Sources": "Fontes dos santuários",
     "Prayer Guides and Research": "Guias de oração e pesquisa",
+    "Suggested videos (English)": "Vídeos sugeridos (inglês)",
     "Guided Rosary (Portuguese)": "Rosário guiado (português)",
     "Frei Gilson / Som do Monte — official channel (daily Santo Rosário)":
       "Frei Gilson / Som do Monte — canal oficial (Santo Rosário diário)",
@@ -668,6 +718,11 @@
     if (decadeFrame) {
       const frame = PT_TEXT[`${decadeFrame[1]} mystery`] || PT_DECADES[decadeFrame[1]] || decadeFrame[1];
       return `${frame}: ${translateText(decadeFrame[2])}`;
+    }
+
+    const dailyDecade = value.match(/^Decade ([1-5]) of 5 — (.+)$/);
+    if (dailyDecade) {
+      return `Dezena ${dailyDecade[1]} de 5 — ${translateText(dailyDecade[2])}`;
     }
 
     return "";

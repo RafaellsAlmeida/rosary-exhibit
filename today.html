@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#07090d" />
     <meta
       name="description"
-      content="A digital Catholic exhibition on the Holy Rosary: its Gospel mysteries, Marian roots, spiritual fruits, historical witnesses, and testimonies of grace."
+      content="Today's Rosary: the mysteries for this day of the week, full prayer texts from the Creed through the Hail Holy Queen, and the matching slide deck."
     />
-    <title>The Rosary: A Path Through the Life of Christ</title>
+    <title>Today's Rosary</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,15 +19,14 @@
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./i18n.js?v=1"></script>
     <script defer src="./app.js?v=6"></script>
-    <script defer src="./immersive.js?v=2"></script>
   </head>
-  <body class="immersive-page">
-    <a class="skip-link" href="#immersive-path">Skip to content</a>
+  <body class="content-page">
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <nav class="site-nav" aria-label="Primary navigation">
-      <a class="brand" href="#top">The Rosary</a>
+      <a class="brand" href="./index.html#top">The Rosary</a>
       <div class="nav-links">
-        <a href="#immersive-path">Home</a>
+        <a href="./index.html#immersive-path">Home</a>
         <a href="./exhibition.html#exhibition-home">Exhibition Guide</a>
         <a href="./exhibition.html#rosary-scroll">Compact Path</a>
         <a href="./what-is.html">What Is</a>
@@ -37,33 +36,30 @@
         <a href="./saints.html">Saints</a>
         <a href="./mary.html">Mary</a>
         <a href="./testimonies.html">Testimonies</a>
-        <a href="./today.html">Today</a>
+        <a href="./today.html" aria-current="page">Today</a>
         <a href="./sources.html">Sources</a>
       </div>
     </nav>
 
-    <header class="immersive-hero home-immersive-hero" id="top">
-      <div>
-        <p class="eyebrow">The main experience</p>
-        <h1>The Rosary: A Path Through the Life of Christ</h1>
-        <p>
-          Walk slowly through the prayer, bead by bead. The Rosary stays present
-          behind each scene as the scroll carries you from the Cross into the
-          mysteries and back to the Hail Holy Queen.
-        </p>
-      </div>
-      <div class="immersive-hero-actions">
-        <a class="button button-primary" href="#immersive-path">Begin at the Cross</a>
-        <a class="button button-secondary" href="./exhibition.html#exhibition-home">Open the guide</a>
+    <header class="page-hero">
+      <img src="./assets/witnesses/coronation.jpg" alt="Sacred art of Mary and the child Jesus" />
+      <div class="page-hero-copy">
+        <p class="eyebrow">Daily Rosary</p>
+        <h1>Today's Mystery</h1>
+        <p>A daily point of entry for prayer, attention, and one small resolution—then the full text to pray through.</p>
       </div>
     </header>
 
     <main class="site-main" id="main">
-      <section class="immersive-shell home-immersive-path" id="immersive-path" aria-label="Home — immersive Rosary path">
-        <div class="immersive-backdrop" aria-hidden="true">
-          <div id="immersive-map" class="immersive-map"></div>
+      <section class="section daily-section tone-altar" id="daily-rosary" aria-labelledby="daily-heading">
+        <div class="section-kicker">Daily Rosary</div>
+        <div class="daily-layout">
+          <div>
+            <h2 id="daily-heading">Today's Mystery</h2>
+            <p class="section-note">A daily point of entry for prayer, attention, and one small resolution.</p>
+          </div>
+          <article id="daily-card" class="daily-card" aria-live="polite"></article>
         </div>
-        <div id="immersive-stops" class="immersive-stops"></div>
       </section>
     </main>
   </body>

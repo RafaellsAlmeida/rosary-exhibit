@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07090d" />
+    <meta
+      name="description"
+      content="Core Vatican, shrine, and research sources for the Rosary exhibition, with downloads and print options."
+    />
+    <title>Sources — The Rosary Exhibition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./i18n.js?v=1"></script>
+    <script defer src="./app.js?v=6"></script>
+  </head>
+  <body class="content-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="./index.html#top">The Rosary</a>
+      <div class="nav-links">
+        <a href="./index.html#immersive-path">Home</a>
+        <a href="./exhibition.html#exhibition-home">Exhibition Guide</a>
+        <a href="./exhibition.html#rosary-scroll">Compact Path</a>
+        <a href="./what-is.html">What Is</a>
+        <a href="./how-to-pray.html">How to Pray</a>
+        <a href="./mysteries.html">Mysteries</a>
+        <a href="./history.html">History</a>
+        <a href="./saints.html">Saints</a>
+        <a href="./mary.html">Mary</a>
+        <a href="./testimonies.html">Testimonies</a>
+        <a href="./today.html">Today</a>
+        <a href="./sources.html" aria-current="page">Sources</a>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <img src="./assets/hero-rosary.png" alt="A rosary, sealed paper, candlelight, and sacred art on dark blue fabric" />
+      <div class="page-hero-copy">
+        <p class="eyebrow">Sources</p>
+        <h1>Core sources and downloads</h1>
+        <p>Start with Church documents and shrine materials, then follow the research trail.</p>
+      </div>
+    </header>
+
+    <main class="site-main" id="main">
+      <section class="section sources-section tone-midnight" id="sources" aria-labelledby="sources-heading">
+        <div class="section-kicker">Sources</div>
+        <div class="split">
+          <div>
+            <h2 id="sources-heading">Core sources and downloads</h2>
+            <div class="report-actions">
+              <a class="button button-primary" href="./downloads/deep-research-report%20(1).md" download>
+                Download research report
+              </a>
+              <button class="button button-secondary" id="download-json" type="button">Download mysteries JSON</button>
+              <button class="button button-secondary" id="print-page" type="button">Print / save as PDF</button>
+            </div>
+          </div>
+          <div id="source-groups" class="source-groups"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
