@@ -1,16 +1,48 @@
 (function loadPullableRosary3D() {
-  const threeModuleUrl = "https://unpkg.com/three@0.160.0/build/three.module.js";
+  // Self-hosted so Vercel serves it with immutable cache headers from its own CDN
+  // edge — no third-party round-trip, no Lighthouse third-party-summary penalty.
+  const threeModuleUrl = "./vendor/three.module.min.js";
 
-  if (window.THREE) {
-    initPullableRosary3D(window.THREE);
-    return;
+  const dock = document.getElementById("pull-rosary");
+  if (!dock) return;
+
+  // Mark the dock as "loading" immediately so CSS can show a shimmer while
+  // Three.js is fetched and parsed. The 2D #rosary-map strand is already
+  // interactive at this point — it's the primary experience; the 3D dock is
+  // progressive enhancement only.
+  dock.classList.add("is-loading");
+
+  function doLoad() {
+    if (window.THREE) {
+      initPullableRosary3D(window.THREE);
+      return;
+    }
+
+    // Try self-hosted first (served from same domain, immutable cache).
+    // If the file isn't deployed yet or fetch fails, fall back to unpkg so
+    // the dock still works during the transition period.
+    const cdnFallback = "https://unpkg.com/three@0.160.0/build/three.module.min.js";
+
+    import(threeModuleUrl)
+      .catch(() => import(cdnFallback))
+      .then((module) => initPullableRosary3D(module))
+      .catch(() => {
+        // Both sources failed (offline, WebGL blocked, etc.).
+        // Keep the dock visible with its text fallback — never a blank box.
+        dock.classList.remove("is-loading");
+        dock.classList.add("is-fallback");
+      });
   }
 
-  import(threeModuleUrl)
-    .then((module) => initPullableRosary3D(module))
-    .catch(() => {
-      document.getElementById("pull-rosary")?.classList.add("is-fallback");
-    });
+  // Defer Three.js evaluation until the browser has spare capacity so it
+  // never competes with LCP/TTI metrics. requestIdleCallback is supported in
+  // all target browsers; the timeout forces it within 4 s on slow devices.
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(doLoad, { timeout: 4000 });
+  } else {
+    // Safari fallback — still async, just a fixed delay
+    setTimeout(doLoad, 200);
+  }
 })();
 
 function initPullableRosary3D(THREE) {
@@ -25,9 +57,17 @@ function initPullableRosary3D(THREE) {
     (a, b) => Number(a.dataset.step) - Number(b.dataset.step)
   );
 
-  if (!stepButtons.length) return;
+  if (!stepButtons.length) {
+    // 2D strand not rendered on this page — bail silently; dock stays loading
+    dock.classList.remove("is-loading");
+    dock.classList.add("is-fallback");
+    return;
+  }
 
+  // Three.js is ready and the 2D strand buttons exist. Transition the dock
+  // from loading shimmer to the live 3D canvas.
   document.body.classList.add("has-pull-rosary");
+  dock.classList.remove("is-loading");
 
   const maxStep = stepButtons.length - 1;
   const pickables = [];
