@@ -1726,6 +1726,30 @@ p {
   display: none;
 }
 
+/* Loading state ─ dock is visible but Three.js hasn't evaluated yet.
+   The fallback text is already readable; we add a gentle shimmer on the
+   decorative ::before stripe so the dock feels alive rather than empty. */
+.pull-rosary.is-loading::before {
+  animation: dock-shimmer 2.2s ease-in-out infinite;
+}
+
+@keyframes dock-shimmer {
+  0%, 100% { opacity: 0.28; }
+  50%       { opacity: 0.72; }
+}
+
+/* Failure state ─ WebGL blocked or Three.js fetch failed.
+   Keep the dock and its text visible so the user at least knows what they
+   missed. The canvas stays transparent (nothing is drawn into it). */
+.pull-rosary.is-fallback .pull-rosary-fallback {
+  display: block;
+  opacity: 0.58;
+}
+
+.pull-rosary.is-fallback canvas {
+  display: none;
+}
+
 .content-page {
   background:
     linear-gradient(180deg, rgba(18, 40, 63, 0.6), transparent 380px),
@@ -2092,6 +2116,15 @@ p {
   margin-top: 14px;
 }
 
+.resource-list {
+  margin: 10px 0 0;
+  padding-left: 1.25rem;
+}
+
+.resource-list li {
+  margin-top: 8px;
+}
+
 .prayer-texts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2123,6 +2156,445 @@ p {
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.7;
+}
+
+/* How to Pray: in-page nav + daily prayer slider */
+.how-to-pray-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20px max(18px, calc((100vw - var(--max)) / 2), env(safe-area-inset-left, 0)) 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.how-to-pray-nav__label {
+  color: var(--dim);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.how-to-pray-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.how-to-pray-nav__links a {
+  color: var(--gold-2);
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(241, 217, 156, 0.35);
+  padding-bottom: 2px;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.how-to-pray-nav__links a:hover,
+.how-to-pray-nav__links a:focus-visible {
+  color: var(--ink);
+  border-color: var(--gold);
+  outline: none;
+}
+
+#improve-prayer,
+#todays-prayer-interactive {
+  scroll-margin-top: 96px;
+}
+
+.resource-preview {
+  margin-top: 28px;
+  display: grid;
+  gap: 22px;
+}
+
+.resource-preview h3 {
+  margin: 0;
+}
+
+.resource-preview > p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.video-preview-grid,
+.deck-preview-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.video-preview-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.deck-preview-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.video-preview,
+.deck-preview {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.035);
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.video-preview:hover,
+.video-preview:focus-within,
+.deck-preview:hover,
+.deck-preview:focus-within {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.video-frame,
+.video-preview--channel img,
+.deck-preview-strip {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid rgba(247, 240, 231, 0.12);
+  background: rgba(7, 9, 13, 0.66);
+}
+
+.video-frame {
+  aspect-ratio: 16 / 9;
+}
+
+.video-frame iframe,
+.video-preview--channel img {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-frame iframe {
+  display: block;
+}
+
+.video-preview--channel img {
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.video-preview span,
+.deck-preview span {
+  display: block;
+  margin-top: 13px;
+  color: var(--gold-2);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.video-preview h4,
+.deck-preview h4,
+.deck-preview h3 {
+  margin: 7px 0 10px;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.video-preview p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.deck-preview-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  height: 154px;
+  padding: 4px;
+}
+
+.deck-preview-strip img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.daily-prayer-section .wide-copy {
+  margin-bottom: 26px;
+}
+
+.daily-prayer-slider {
+  margin-top: 28px;
+  outline: none;
+}
+
+.daily-prayer-slider:focus-visible {
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.daily-prayer-slider__shell {
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(150deg, rgba(18, 40, 63, 0.52), rgba(7, 9, 13, 0.18)),
+    rgba(255, 255, 255, 0.035);
+}
+
+.daily-prayer-slider__viewport {
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
+}
+
+.daily-prayer-slider__media {
+  position: relative;
+  min-height: 620px;
+  margin: 0;
+  background: rgba(7, 9, 13, 0.7);
+}
+
+.daily-prayer-slider__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 54%, rgba(7, 9, 13, 0.5)),
+    linear-gradient(180deg, rgba(7, 9, 13, 0.04), rgba(7, 9, 13, 0.64));
+  pointer-events: none;
+}
+
+.daily-prayer-slider__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.daily-prayer-slider__panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 620px;
+  overflow-y: auto;
+  padding: 34px;
+}
+
+.daily-prayer-slider__topline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--gold-2);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.daily-prayer-slider__panel h3 {
+  margin: 18px 0 0;
+  color: var(--ink);
+  font-size: 2.55rem;
+  line-height: 0.98;
+}
+
+.daily-prayer-slider__body {
+  margin-top: 22px;
+  color: rgba(247, 240, 231, 0.9);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.4rem;
+  line-height: 1.45;
+}
+
+.daily-prayer-slider__body p {
+  margin: 0;
+}
+
+.daily-prayer-slider__body p + p {
+  margin-top: 14px;
+}
+
+.daily-prayer-slider__callout,
+.daily-prayer-slider__intention {
+  margin: 20px 0 0;
+  padding: 15px 16px;
+  border: 1px solid rgba(241, 217, 156, 0.2);
+  border-radius: var(--radius);
+  color: var(--muted);
+  background: rgba(241, 217, 156, 0.055);
+  line-height: 1.6;
+}
+
+.daily-prayer-slider__intention strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--gold-2);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.daily-prayer-slider__meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0 0;
+}
+
+.daily-prayer-slider__meta:empty {
+  display: none;
+}
+
+.daily-prayer-slider__meta div {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.daily-prayer-slider__meta dt {
+  color: var(--gold-2);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.daily-prayer-slider__meta dd {
+  margin: 6px 0 0;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.daily-prayer-slider__deck {
+  margin-top: 20px;
+}
+
+.daily-prayer-slider__controls {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.daily-prayer-slider__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+}
+
+.daily-prayer-slider__dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(247, 240, 231, 0.3);
+  cursor: pointer;
+}
+
+.daily-prayer-slider__dots button[aria-current="step"] {
+  width: 28px;
+  background: var(--gold-2);
+}
+
+.daily-prayer-slider[data-mystery="joyful"] .daily-prayer-slider__shell,
+.daily-prayer-slider[data-slide-kind="joyful"] .daily-prayer-slider__shell {
+  border-color: rgba(213, 177, 106, 0.36);
+}
+
+.daily-prayer-slider[data-mystery="luminous"] .daily-prayer-slider__shell,
+.daily-prayer-slider[data-slide-kind="luminous"] .daily-prayer-slider__shell {
+  border-color: rgba(91, 122, 105, 0.46);
+}
+
+.daily-prayer-slider[data-mystery="sorrowful"] .daily-prayer-slider__shell,
+.daily-prayer-slider[data-slide-kind="sorrowful"] .daily-prayer-slider__shell {
+  border-color: rgba(156, 77, 91, 0.5);
+}
+
+.daily-prayer-slider[data-mystery="glorious"] .daily-prayer-slider__shell,
+.daily-prayer-slider[data-slide-kind="glorious"] .daily-prayer-slider__shell {
+  border-color: rgba(241, 217, 156, 0.44);
+}
+
+@media (max-width: 940px) {
+  .video-preview-grid,
+  .deck-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .daily-prayer-slider__viewport {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-prayer-slider__media {
+    min-height: 360px;
+  }
+
+  .daily-prayer-slider__panel {
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .video-preview-grid,
+  .deck-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deck-preview-strip {
+    height: 176px;
+  }
+
+  .daily-prayer-slider__viewport,
+  .daily-prayer-slider__media {
+    min-height: 0;
+  }
+
+  .daily-prayer-slider__panel {
+    padding: 22px;
+  }
+
+  .daily-prayer-slider__panel h3 {
+    font-size: 2rem;
+  }
+
+  .daily-prayer-slider__body {
+    font-size: 1.22rem;
+  }
+
+  .daily-prayer-slider__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-prayer-slider__controls {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-prayer-slider__controls .button {
+    width: 100%;
+  }
 }
 
 .chronology {
